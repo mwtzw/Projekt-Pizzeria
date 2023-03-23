@@ -1,0 +1,120 @@
+@font-face {
+    font-family: pizza;
+    src: url("/font/CHEESEPIZZA.ttf");
+}
+
+*{
+    margin: 0px;
+}
+header #navbarHeader .row a:hover {
+    background-color: #CE5E31;
+}
+.row a{
+    display: flex;
+    justify-content: center;
+    text-decoration:none ;
+    transition: 0.5s ease-in-out;
+}
+.navbar-toggler{
+    display: none;
+ }
+ #men{
+    display: flex;
+}
+#men li a::after{
+    content: "";
+height: 2px;
+width: 0;
+left:0px;
+display: block;
+background-color: #CE5E31;
+}
+#men li a:hover::after{
+    content: "";
+height: 2px;
+width: 120%;
+display: block;
+background-color: #CE5E31;
+transition: 0.3s ease-in-out;
+}
+
+#button-style{
+    background-color: #CE5E31;
+    color:white;
+    display: flex;
+    margin:auto;
+    text-align: center;
+    transition: 0.4s ease-in-out;
+}
+#button-style:hover{
+    transform: scale(1.2);
+}
+.banner{
+    width: 100%;
+    height: 70vh;
+    background-image:url("/img/pizza3.jpg.png");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+.banner::after{
+    content: '';
+    width: 100%;
+    height: 4%;
+    background: linear-gradient(to top,rgb(255, 255, 255), transparent);
+    position: absolute;
+    bottom: 0px;
+    left:0px;
+}
+.banner h1{
+    color: #ffffff;
+    font-family: pizza;
+    text-align: center;
+}
+#menu{
+    font-size: 400px;
+    text-shadow: 5px 2px 2px rgba(0, 0, 0, 0.975); 
+    margin-bottom: 7rem;
+}
+#guzik{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom:10vh;
+    width: 150px;
+    height: 40px;
+    background-color: #CE5E31;
+    color:white;
+    display: flex;
+    margin:auto;
+    text-align: center;
+    transition: 0.4s ease-in-out;
+    border-radius: 10px;
+    font-weight: bold;
+}
+#guzik:hover{
+    transform: scale(1.2);
+}
+.product{
+    width: 200px;
+    height: 300px;
+    background-color: rgb(255, 255, 255);
+    margin:20px;
+}
+@media (max-width: 800px) {
+
+    .navbar-toggler{
+       display: flex;
+    }
+   #men{
+       display: none;
+   }
+   #menu{
+    font-size: 250px;
+    padding-bottom: 4%;
+    }
+   }
+
+   
