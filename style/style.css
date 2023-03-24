@@ -98,11 +98,56 @@ transition: 0.3s ease-in-out;
     transform: scale(1.2);
 }
 .product{
-    width: 200px;
-    height: 300px;
+    width: 170px;
+    height: 270px;
     background-color: rgb(255, 255, 255);
     margin:20px;
 }
+#nr{
+    width: 25%;
+    border-radius: 0px;
+    border: none;
+    text-align: center;
+    padding-left: 1rem ;
+    padding-right: 1rem ;
+}
+#incrementor button{
+width: 40px;
+text-align: center;
+border: none;
+color:white;
+background-color: #CE5E31;
+font-size: 22px;
+}
+.plus{
+    border-radius:0px 20px 20px 0px;
+}
+.minus{
+    border-radius: 20px 0px 0px 20px;
+}
+.made{
+    border: 5px dashed rgb(255, 255, 255);
+    border-radius: 40px 40px 40px 40px;
+    border-radius: 33px;
+    background-image: url("/img/pizza2.jpg.png");
+    background-attachment: fixed;
+}
+#cena{
+    height: 80px;
+    background-color: #637c67;
+}
+#button-access{
+    background-color: #CE5E31;
+    border:none;
+}
+
+#pulse {
+    animation: pulse 1s infinite ease-in-out alternate;
+  }
+  @keyframes pulse {
+    from { transform: scale(0.8); }
+    to { transform: scale(1.2); }
+  }
 @media (max-width: 800px) {
 
     .navbar-toggler{
@@ -116,5 +161,7 @@ transition: 0.3s ease-in-out;
     padding-bottom: 4%;
     }
    }
+
+   
 
    
