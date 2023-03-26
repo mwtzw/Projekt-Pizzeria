@@ -11,7 +11,7 @@
     <!-- bootstrap  -->
     <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
     <!-- jquery -->
-    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="./style/jquery.nice-number.css">
     <script src="./javascript/jquery.nice-number.js"></script>
 </head>
@@ -63,7 +63,7 @@
         <div class="align-middle">
             <h1 id="menu">MENU</h1>
         </div>
-        <button type="button"  id="guzik" class="btn fw-bold">Czytaj Więcej</button>
+        <button type="button" id="guzik" class="btn fw-bold"><a id="hrefguzik" class=" d-flex align-items-center justify-content-center text-white text-decoration-none" href="#incrementor">Czytaj Więcej</a></button>
     </div>
     </div>
     <div class="container-fluid">
@@ -82,7 +82,7 @@
                     <h1 class="mt-3 fs-3 text-white">Cebula
                     </h1>
                     <div id="incrementor">
-                        <input class="fs-5" type="number" name="nr" id="nr" min="0" max="5">  
+                        <input class="fs-5" type="number" value="0" name="nr" id="nr" min="0" max="5">  
                     </div>
                     <h1 class="mt-2 fs-6 text-white fst-italic fw-lighter">Cena: 2zł/szt</h1>
                 </div>
@@ -93,7 +93,7 @@
               <div class="bg-success-emphasis rounded-5 rounded-top-0 w-100 h-100 text-center" style="background-color: #637c67;">
                   <h1 class="mt-3 fs-3 text-white">Sos Ostry</h1>
                   <div id="incrementor">
-                      <input class="fs-5" type="number" name="nr" id="nr" min="0" max="1">  
+                      <input class="fs-5" type="number" value="0" name="nr" id="nr" min="0" max="1">  
                   </div>
                   <h1 class="mt-2 fs-6 text-white fst-italic fw-lighter">Cena: 5zł/szt</h1>
               </div>
@@ -104,7 +104,7 @@
             <div class="bg-success-emphasis rounded-5 rounded-top-0 w-100 h-100 text-center" style="background-color: #637c67;">
                 <h1 class="mt-3 fs-3 text-white">Oliwki</h1>
                 <div id="incrementor">
-                    <input class="fs-5" type="number" name="nr" id="nr" min="0" max="10">  
+                    <input class="fs-5" type="number" value="0" name="nr" id="nr" min="0" max="10">  
                 </div>
                 <h1 class="mt-2 fs-6 text-white fst-italic fw-lighter">Cena: 1zł/szt</h1>
             </div>
@@ -115,7 +115,7 @@
           <div class="bg-success-emphasis rounded-5 rounded-top-0 w-100 h-100 text-center" style="background-color: #637c67;">
               <h1 class="mt-3 fs-3 text-white">Ser Zółty</h1>
               <div id="incrementor">
-                  <input class="fs-5" type="number" name="nr" id="nr" min="0" max="2">  
+                  <input class="fs-5" type="number" value="0" name="nr" id="nr" min="0" max="2">  
               </div>
               <h1 class="mt-2 fs-6 text-white fst-italic fw-lighter">Cena: 4zł/szt</h1>
           </div>
@@ -127,7 +127,7 @@
         <div class="bg-success-emphasis rounded-5 rounded-top-0 w-100 h-100 text-center" style="background-color: #637c67;">
             <h1 class="mt-3 fs-3 text-white">Bekon</h1>
             <div id="incrementor">
-                <input class="fs-5" type="number" name="nr" id="nr" min="0" max="7">  
+                <input class="fs-5" type="number" value="0" name="nr" id="nr" min="0" max="7">  
             </div>
             <h1 class="mt-2 fs-6 text-white fst-italic fw-lighter">Cena: 3zł/szt</h1>
         </div>
@@ -137,7 +137,7 @@
         </div>
         <div class="d-flex justify-content-center mb-5 ">
           <div id="cena" class="border-start border-top border-bottom rounded-5 rounded-start-pill d-flex justify-content-centerc align-items-center">
-          <h1 class="text-white fs-2 ps-3 pe-3 text-center fst-italic">Cena to: <b id="price">20zł</b></h1>
+          <h1 class="text-white fs-2 ps-3 pe-3 text-center fst-italic">Cena to: <b id="price" >20zł</b></h1>
           </div>
           <button id="button-access" class=" border-end border-top border-bottom fs-5 fw-bold rounded-5 rounded-start-0 text-white ps-3 pe-3"> Dodaj Pizze </button> 
         </div>
