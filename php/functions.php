@@ -25,6 +25,11 @@
                 return $result;
             }
         }
+        function getImage($name, $id=0) {
+            if($name === "avatar") $result = $this->getData("SELECT avatar FROM users WHERE id=$id")->results;
+            if($name === "product") $result = $this->getData("SELECT image FROM products WHERE id=$id")->results;
+            return $result[0][0];
+        }
     }
     define("Database", new DatabaseClass());
 
