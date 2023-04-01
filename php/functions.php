@@ -29,6 +29,7 @@
         function getImage($name, $id=0) {
             if($name === "avatar") $result = $this->getData("SELECT avatar FROM users WHERE id=$id")->results;
             if($name === "product") $result = $this->getData("SELECT image FROM products WHERE id=$id")->results;
+            if($name === "ingredient") $result = $this->getData("SELECT image FROM ingredients WHERE id=$id")->results;
             return $result[0][0];
         }
         function setData($query) {
@@ -41,8 +42,7 @@
                 return false;
             }
         }
-    }
-    define("Database", new DatabaseClass());
+    } define("Database", new DatabaseClass());
 
     class UserClass {    
         function loginUser($post) {
@@ -64,11 +64,7 @@
         function logout() {
             session_destroy();
         }
-
-
-
-    }
-    define("User", new UserClass()); 
+    } define("User", new UserClass()); 
     
     class TemplateClass {
         function bestsellerCard($data) {
@@ -86,8 +82,24 @@
                 </div>
             TEMPLATE;
         }
-        function basketProductCard($data, $count) {
+        function ingredientCard($data) {
+            return <<< TEMPLATE
+                <div class="product border rounded-5 d-flex flex-column align-items-center justify-content-start">
+                <img src="../php/getImage.php?name=ingredient&id=$data[0]" style="width:100px;height: 200px;">
+                <div class="bg-success-emphasis rounded-5 rounded-top-0 w-100 h-100 text-center" style="background-color: #4f8f5b;">
+                    <h1 class="mt-3 fs-3 text-white">$data[1]</h1>
+                    <div id="incrementor">
+                        <input class="fs-5 nr" type="number" value="0" name="ingredient[$data[0]]" id="nr" min="0" max="5">  
+                    </div>
+                    <h1 class="mt-2 fs-6 text-white fst-italic fw-lighter">Cena:$data[2]zł/szt</h1>
+                </div>
+                </div>
+            TEMPLATE;
+        }
+        function basketProductCard($data, $count, $number = -1) {
             $price = $data[3]*$count;
+            $link = ($number != -1) ? "?action=removeCustom&id=".$number : "?action=remove&id=".$data[0];
+            $count = ($count == 1) ? " " : "x".$count;
             return <<< TEMPLATE
                 <div class="d-flex flex-row align-items-center align-items-center">  
                     <div id="cart-product" class=" d-flex rounded-4 mt-3 mb-3"> 
@@ -95,21 +107,20 @@
                             <img src="../php/getImage.php?name=product&id=$data[0]" class="pizza" alt="pizza"> 
                         </div>
                         <div class="cart-product-description h-100 d-flex align-items-center justify-content-center flex-column"> 
-                            <h1 class=" text-center fs-4 pt-4">$data[1] x$count
+                            <h1 class=" text-center fs-4 pt-4">$data[1] $count
                                 <p class="fs-5 fw-lighter">$data[2]</p>
                             </h1>
                         </div>
                     </div>
                     <div class="d-flex flex-column">
                         <h1 class="text-center fst-italic fs-3 w-25 ms-3"> $price zł </h1>
-                        <a href="/php/basket.php?action=remove&id=$data[0]"><img class="ms-4 bin" src="/img/bin.png" style="width:30px;"alt="bin"></a>
+                        <a href="/php/basket.php$link"><img class="ms-4 bin" src="/img/bin.png" style="width:30px;"alt="bin"></a>
                     </div>
                 </div>
             TEMPLATE;
         }
-        function basket($cards, $price) {
+        function basket($cards, $price, $customCards = "") {
             return <<< TEMPLATE
-
                 <button class="btn cart" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"> <img src="/img/shopping-cart2.png" style="width:30px;" alt="koszyk"> </button>
                 <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
                     <div class="offcanvas-header">
@@ -124,7 +135,7 @@
                     <hr class="m-auto mt-2 mb-2" style="width:80%;height:3px;">
                     <div class="offcanvas-body">
                         <div class="d-flex justify-content-center align-items-start flex-column">
-                        $cards
+                        $cards $customCards
                         </div>
                         <hr class="m-auto mt-4 mb-2" style="width:85%;height:3px;">
                         <div class="d-flex justify-content-center align-items-center">
@@ -133,7 +144,6 @@
                         </div>
                     </div>
                 </div>
-
             TEMPLATE;
         }
         function loginForm() {
@@ -178,19 +188,25 @@
                 </li>
             TEMPLATE; 
         }
-    }
-    define("Template", new TemplateClass());
+    } define("Template", new TemplateClass());
 
     class ContentClass { 
         function generateBestsellers($count = 4) {
             $query = "SELECT id, name, description, price FROM products ORDER BY sold DESC LIMIT $count";
             $result = Database->getData($query)->results;
             for($i = 0; $i < $count; $i++) {
-                echo Template->bestsellerCard($result[$i]);
+                if(!$result[$i][0]==0) echo Template->bestsellerCard($result[$i]);
+            }
+        }
+        function generateIngredients() {
+            $query = "SELECT id, name, price FROM ingredients";
+            $result = Database->getData($query)->results;
+            for($i = 0; $i < count($result); $i++) {
+                echo Template->ingredientCard($result[$i]);
             }
         }
         function generateBasket() {
-            echo Template->basket(Basket->getBasketCards(), Basket->getCalculatedPrice());
+            echo Template->basket(Basket->getBasketCards(), Basket->getCalculatedPrice(), Basket->getCustomBasketCards());
         }
         function generateLoginForm() {
             echo Template->loginForm();
@@ -198,8 +214,7 @@
         function generateLoginButton() {
             echo Template->loginButton();
         }
-    }
-    define("Content", new ContentClass());
+    } define("Content", new ContentClass());
 
     class BasketClass {
         public $price = 0;
@@ -209,8 +224,8 @@
         function getObjectBasket($user) {
             return json_decode($this->getJsonBasket($user));
         }
-        function getArrayBasket($user) {
-            return json_decode($this->getJsonBasket($user), true)["products"];
+        function getArrayBasket($user, $property = "products") {
+            return json_decode($this->getJsonBasket($user), true)[$property];
         }
         function setBasket($user, $data) {
             $data = json_encode($data);
@@ -229,7 +244,35 @@
             }
             return $cards;
         }
+        function getCustomBasketCards() {
+            $data = Basket->getArrayBasket(User->getUserId(), "customProducts");
+            $cards = "";
+            $price = 20;
+            $i = 0;
+            foreach ($data as $key) {
+                $count = $key['count'];
+                $ingredients = $key["ingredients"];
+                $desc ="";
+                foreach($ingredients as $ing) {
+                    $id = $ing["id"];
+                    $ingCount = $ing["count"];
+                    $query = "SELECT id, name, price FROM ingredients WHERE id=$id";
+                    $result = Database->getData($query)->results[0];
+                    $desc .= $result[1]."(x".$ingCount."), "; 
+                    $price += $result[2]*$ingCount;
+                }
+                $card = array(0, "Twoja Pizza".$key->id, $desc, $price);
+                $cards .= Template->basketProductCard($card, $count, $i);
+                $price = 20;
+                $i++;
+            }
+            return $cards;
+        }
         function getCalculatedPrice() {
+            $price = $this->getProductsPrice() + $this->getCustomProductsPrice();
+            return $price;
+        }
+        function getProductsPrice() {
             $data = $this->getArrayBasket(User->getUserId());
             $price = 0;
             foreach ($data as $key) {
@@ -238,6 +281,24 @@
                 $query = "SELECT price FROM products WHERE id=$id";
                 $result = Database->getData($query)->results;
                 $price = $price + ($count*$result[0][0]);
+            }
+            return $price;
+        }
+        function getCustomProductsPrice() {
+            $data = Basket->getArrayBasket(User->getUserId(), "customProducts");
+            $price = 0;
+            foreach ($data as $key) {
+                $pizzaPrice = 20;
+                $count = $key['count'];
+                $ingredients = $key["ingredients"];
+                foreach($ingredients as $ing) {
+                    $id = $ing["id"];
+                    $ingCount = $ing["count"];
+                    $query = "SELECT id, name, price FROM ingredients WHERE id=$id";
+                    $result = Database->getData($query)->results[0];
+                    $pizzaPrice += $result[2]*$ingCount;
+                }
+                $price += $pizzaPrice*$count;
             }
             return $price;
         }
@@ -270,7 +331,27 @@
             }
             $data = array("id"=>intval($id),"count"=>intval($count));
             array_push($basket->products, $data);
-            var_dump($basket);
+            $this->setBasket(User->getUserId(), $basket);
+        }
+        function removeCustomProduct($number) {
+            $basket = $this->getObjectBasket(User->getUserId());
+            if(count($basket->customProducts) >= $number) {
+                unset($basket->customProducts[$number]);
+                $basket->customProducts = array_values($basket->customProducts);
+                $this->setBasket(User->getUserId(), $basket);
+            }
+        }
+        function addCustomProduct($data, $count = 1) {
+            $basket = $this->getObjectBasket(User->getUserId());
+            $ingredients = [];
+            foreach($data as $key => $value) {
+                if($value != 0) array_push($ingredients, array("id" => intval($key), "count" => intval($value)));
+            }
+            $customProduct = array(
+                "count"=>intval($count), 
+                "ingredients"=> $ingredients
+            );
+            array_push($basket->customProducts, $customProduct);
             $this->setBasket(User->getUserId(), $basket);
         }
         function clearBasket() {
@@ -278,5 +359,4 @@
             $basket->products = [];
             $this->setBasket(User->getUserId(), $basket);
         }
-    }
-    define("Basket", new BasketClass());
+    } define("Basket", new BasketClass());
