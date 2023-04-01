@@ -245,15 +245,15 @@
             $basket = $this->getObjectBasket(User->getUserId());
             for($i=0; $i<count($basket->products); $i++) {
                 if($basket->products[$i]->id == $id) {
-                    if($basket->products[$i]->count > 1) {
-                        $count = $basket->products[$i]->count - 1;
+                    if($basket->products[$i]->count > $count) {
+                        $count = $basket->products[$i]->count - $count;
                         $data = array("id"=>intval($id),"count"=>$count);
                         $basket->products[$i] = $data;
-                        var_dump($basket);
                         $this->setBasket(User->getUserId(), $basket);
                     }
                     else {
                         unset($basket->products[$i]);
+                        $basket->products = array_values($basket->products);
                         $this->setBasket(User->getUserId(), $basket);
                     }
                 }
