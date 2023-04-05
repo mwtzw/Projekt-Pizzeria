@@ -10,3 +10,4 @@ https://105.pl/
 - [ ] Strona główna 
 - [ ] Zmniejszenie obrazkow
 - [ ] Stopka
+- [ ] Stronę z zamówieniami wybieranie płatności itp.
