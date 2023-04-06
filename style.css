@@ -7,16 +7,14 @@
     margin: 0px;
     scroll-behavior: smooth;
 }
-#login-page{
 
-}
-#login-form{
+/* #login-form{
     background-color: rgb(255, 255, 255);
     width: 500px;
     height: 700px;
     opacity: 70%;
     border-radius: 20px;
-}
+} */
 header #navbarHeader .row a:hover {
     background-color: #CE5E31;
 }
@@ -49,7 +47,7 @@ background-color: #CE5E31;
 transition: 0.3s ease-in-out;
 }
 
-#button-style{
+.button-style{
     background-color: #CE5E31;
     color:white;
     display: flex;
@@ -57,13 +55,13 @@ transition: 0.3s ease-in-out;
     text-align: center;
     transition: 0.4s ease-in-out;
 }
-#button-style:hover{
+.button-style:hover{
     transform: scale(1.1);
 }
 .banner{
     width: 100%;
     height: 70vh;
-    background-image:url("img/pizza3p.png");
+    background-image:url("img/pizza3p.jpg");
     background-size: cover;
     background-attachment:fixed;
     position: relative;
@@ -116,6 +114,10 @@ transition: 0.3s ease-in-out;
     height: 270px;
     background-color: rgb(255, 255, 255);
     margin:20px;
+}
+.product img{
+    width:100px;
+    height: 200px;
 }
 #nr{
     width: 25%;
@@ -207,7 +209,7 @@ font-size: 22px;
     left:0px;
 }
 #back{
-   background-image: url("img/back2.png"); 
+   background-image: url("img/back2.jpg"); 
    background-repeat: repeat;    
     position: relative;
 }
@@ -271,6 +273,105 @@ font-size: 22px;
     height: 85%;
 }
 
+#payment1{
+    width: 100%;
+    position: relative;
+}
+.infoblock{
+    z-index: 2;
+    height: 220px;
+    width: 400px;
+    margin: 80px 20px 40px 20px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 6px 6px 12px 3px rgba(1, 1, 1, 0.411);
+    transition: 0.4s ease-in-out;
+}
+.infoblock:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+.infoblock-text{
+    line-height: 45px;
+}
+#stopka{
+    width: 100%;
+    background-image: url("./img/pizza-gfb7907314_1920.jpg");
+    position: relative;
+    padding-top: 150px;
+}
+#stopka::before{
+    background: url("img/wave4.png"); 
+    content: '';
+    width: 100%;
+    height:400px;
+    background-repeat: no-repeat;    
+    position: absolute;
+    top:0px;
+    left:0px;
+}
+.stopkablock{
+    z-index: 2;
+    height: 240px;
+    width: 300px;
+    margin: 20px 40px 20px 40px;
+}
+.stopkablock ul li{
+    list-style-type: none;
+}
+.stopkablock img{
+    width: 50px;
+    filter: invert(90%);
+    transition: 0.3s ease-in-out;
+}
+.stopkablock img:hover{
+    transform: scale(1.08);
+    cursor: pointer;
+    filter: invert(100%);
+}
+#authors h4{
+    font-size: 160%;
+}
+#authors img{
+    width: 40px;
+    filter: invert(100%);
+    transition: 0.3s ease-in-out;
+}
+#authors img:hover{
+    transform: scale(1.08);
+    cursor:pointer;
+}
+.guzik-login{
+    background-color: #CE5E31;
+    color:white;
+    transition: 0.3s ease-in-out;
+}
+.guzik-login:hover{
+    background-color: #da5925;
+    color:white;
+    transform: scale(1.02);
+}
+.modal-content{
+    background-color: rgba(255, 255, 255, 0.921);
+}
+.modal.fade.show {
+    backdrop-filter: blur(4px);
+}
+.form-control{
+    box-shadow: 4px 5px 5px rgba(0, 0, 0, 0.144);
+}
+.login-social img{
+    width:30px; 
+    filter: invert(100%);
+    transition: 0.3s ease-in-out;
+}
+.login-social img:hover{
+    transform: scale(1.05);
+    cursor:pointer;
+}
+#res:hover, #log:hover{
+    cursor: pointer;
+    color:rgb(73, 73, 73);
+}
 @media (max-width: 800px) {
 
     .navbar-toggler{
@@ -283,6 +384,28 @@ font-size: 22px;
     font-size: 250px;
     padding-bottom: 4%;
     }
+    #authors{
+        font-size: 70%;
+    }
+    #authors img{
+        width: 30px;
+    }
+    .product{
+        width: 130px;
+        height: 220px;
+        background-color: rgb(255, 255, 255);
+        margin:7px;
+    }
+    .product img{
+        width:70px;
+        height: 120px;
+    }
+
+    #incrementor button{
+        width: 30px;
+        font-size: 12px;
+        }
+
    }
 
    
