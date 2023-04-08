@@ -2,6 +2,11 @@ $(function(){
     $('input[type="number"]').niceNumber();
 });
 
+AOS.init({
+    once: true,
+    delay:100
+});
+
  // do ogarniecia JS aby cena się zmieniała zgodnei z cennikiem tyle ile produktów się doda to taka cena 
 let plus = document.getElementsByClassName("plus")
 let minus = document.getElementsByClassName("minus")
@@ -115,7 +120,7 @@ setTimeout(() => {
             form2.classList.add("d-none")
             form2.classList.remove("d-block")
         })
-        let loginbutton = document.getElementsByClassName("button-style")
+        let loginbutton = document.getElementsByClassName("button-style2")
         for(let n = 0; loginbutton.length > n; n++){
             loginbutton[n].addEventListener('click',()=>{
                 form1.classList.add("d-block")
@@ -124,6 +129,14 @@ setTimeout(() => {
                 form2.classList.remove("d-block")
             }) 
         }
+
+        let pizzadescription = document.getElementsByClassName("pizza-description")
+        for(let n = 1; pizzadescription.length > n; n+=2){
+            pizzadescription[n].style = "background-color: #4f8f5b;"
+        }
+        
+
+
   }, "500");
 
 

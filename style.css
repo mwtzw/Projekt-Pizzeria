@@ -41,22 +41,59 @@ background-color: #CE5E31;
 #men li a:hover::after{
     content: "";
 height: 2px;
-width: 120%;
+width: 100%;
 display: block;
 background-color: #CE5E31;
 transition: 0.3s ease-in-out;
 }
 
-.button-style{
+#dropdown-menu li a:hover::after{
+content: "";
+height: 2px;
+width: 100%;
+display: block;
+background-color: #00f7ff;
+transition: 0.3s ease-in-out;
+}
+.profile img{
+    width: 34px;
+    border-radius: 10px;
+    transition: 0.3s ease-in-out;
+}
+.profile img:hover{
+    transform: scale(1.1);
+}
+.dropdown-menu{
+    background-color: rgba(255, 255, 255, 0.986);
+    --bs-dropdown-link-active-bg: #e6e6e6;
+    --bs-dropdown-link-active-color: #000000;
+    margin-left: -50px;
+    background-color: #212529;
+    --bs-dropdown-link-color: white;
+    transition: 0.4s ease-in-out;
+    --bs-dropdown-spacer: 0.5rem;
+    padding-bottom:15px;
+    border-radius: 20px;
+    --bs-dropdown-border-color:none;
+}
+.dropdown-item{
+    width: 70%;
+    border-radius: 20px;
+    margin-left:22px;
+}
+.button-style2{
     background-color: #CE5E31;
     color:white;
     display: flex;
     margin:auto;
     text-align: center;
     transition: 0.4s ease-in-out;
+    transform: scale(1.0);
 }
-.button-style:hover{
-    transform: scale(1.1);
+.button-style2:hover{
+    background-color: #CE5E31;
+    color: rgb(255, 255, 255);
+    transform: scale(1.05);
 }
 .banner{
     width: 100%;
@@ -107,7 +144,7 @@ transition: 0.3s ease-in-out;
     height: 40px;
 }
 #guzik:hover{
-    transform: scale(1.2);
+    transform: scale(1.06);
 }
 .product{
     width: 170px;
@@ -170,22 +207,29 @@ font-size: 22px;
     transition: 0.3s ease-in;
     color:rgb(255, 102, 102);
   }
-  .card{
-    width: 320px;
-    height: 540px;
-    border: 1px black solid;
+
+  .grid-parent{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
   }
 .pizza-description{
     background-color: #CE5E31;
 }
 .card{
+    width: 320px;
+    height: 580px;
+    border: 1px black solid;
     border: none;
     box-shadow: 0px 0px 30px 4px rgba(0, 0, 0, 0.432);
-    transition: 0.4s ease-in-out;
-    z-index: 2;
-}
+    z-index: 10;
+    transition: 0.4s;
+  }
+
 .card:hover{
-    transform: scale(1.1);
+    transform: scale(1.08);
+    cursor: pointer;
 }
 .btn1{
     background-color: gold;
@@ -193,19 +237,56 @@ font-size: 22px;
     transition: 0.3s ease-in-out;
 }
 .btn1:hover{
-    box-shadow: 0px 0px 25px 3px rgb(246, 255, 0);
+    box-shadow: 0px 0px 25px 5px rgb(246, 255, 0);
 }
 .pizza-price{
     font-size: 50px;
 }
+.buttons {
+  
+    padding: 4px;
+    width: 100%;
+    position: relative;
+  }
 
+  .buttons input {
+    appearance: none;
+    cursor: pointer;
+   background-color: rgb(255, 255, 255);
+  box-shadow: 0px 0px 5px 4px rgb(255, 255, 255);
+  transition: 0.5s ease-in-out;
+  border:none;
+  width: 70px;
+  margin-top:5px;
+  margin-bottom:5px;
+  margin-right: 6px;
+  margin-left:10px;
+  border-radius: 20px;
+    text-align:center;
+  }
+
+  .buttons input:checked {
+    background-color: gold;
+  box-shadow: 0px 0px 3px 4px gold;
+  transition: 0.5s ease-in-out;
+  border:none;
+  width: 70px;
+  margin-top:5px;
+  margin-left:10px;
+  border-radius: 20px;
+  }
+
+  .buttons input::before {
+    content: attr(label);
+    text-align: center;
+  }
 .pizza-description::before{
     content: '';
     width: 100%;
     height: 4%;
     background: linear-gradient(to bottom,rgb(255, 255, 255), transparent);
     position: absolute;
-    bottom: 52%;
+    bottom: 55%;
     left:0px;
 }
 #back{
@@ -231,7 +312,8 @@ font-size: 22px;
     background: url("img/wave3.png"); 
     content: '';
     width: 100%;
-    height:200px;
+    height:100px;
+    z-index:0;
     background-repeat: no-repeat;    
     position: absolute;
     bottom:0px;
@@ -241,21 +323,22 @@ font-size: 22px;
     transition: 0.3s ease-in-out;
 }
 .cart:hover{
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 .finish{
     background-color: #CE5E31;
     border-radius: 8px;
-    height: 35px;
+    height: 40px;
+    width: 180px;
     border:none;
 }
 .finish:hover{
     background-color: #e36d3f;
 }
 #cart-product{
-    width: 300px;
+    width: 360px;
     height: 130px;
-    box-shadow: 0px 4px 10px 2px rgba(0, 0, 0, 0.44);
+    box-shadow: 0px 4px 10px 2px rgba(0, 0, 0, 0.269);
 }
 .cart-product-photo{
     width: 40%;
@@ -268,9 +351,12 @@ font-size: 22px;
     transition: 0.3s ease-in-out;
     cursor: pointer;
 }
+.bin{
+   margin-left:35px; 
+}
 .pizza{
-    width: 95%;
-    height: 85%;
+    width: 90%;
+    height: 70%;
 }
 
 #payment1{
@@ -284,7 +370,7 @@ font-size: 22px;
     margin: 80px 20px 40px 20px;
     background-color: rgb(255, 255, 255);
     box-shadow: 6px 6px 12px 3px rgba(1, 1, 1, 0.411);
-    transition: 0.4s ease-in-out;
+    transition: 0.3s ease-in-out;
 }
 .infoblock:hover{
     transform: scale(1.05);
@@ -371,6 +457,12 @@ font-size: 22px;
 #res:hover, #log:hover{
     cursor: pointer;
     color:rgb(73, 73, 73);
+}
+.paymethod{
+    box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.216);
+}
+.adres{
+    box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.216);
 }
 @media (max-width: 800px) {
 
