@@ -1,0 +1,329 @@
+body{
+    background-image: url("./img/regulamin.jpg");
+}
+#user-info{
+    width: 750px;
+    height: 360px;
+    background: linear-gradient(137deg, rgba(33,37,41,1) 0%, rgba(55,56,57,1) 100%);
+    color:white;
+    border-radius: 20px;
+}
+#calender{
+    width: 350px;
+    height: 360px;
+    background: linear-gradient(137deg, rgba(33,37,41,1) 0%, rgba(55,56,57,1) 100%);
+    border-radius: 20px;
+}
+#promotion{
+    width: 350px;
+    height: 360px;
+    background: linear-gradient(137deg, rgba(33,37,41,1) 0%, rgba(55,56,57,1) 100%);
+    border-radius: 20px 0px 20px 20px;
+}
+#history{
+    width: 750px;
+    height: 400px;
+    background: linear-gradient(137deg, rgba(33,37,41,1) 0%, rgba(55,56,57,1) 100%);
+    border-radius: 20px 5px 20px 20px;
+}
+#top-pizza{
+    width: 750px;
+    height: 400px;
+    background: linear-gradient(137deg, rgba(33,37,41,1) 0%, rgba(55,56,57,1) 100%);
+    border-radius: 20px;
+
+}
+
+/* kalendarz */
+
+.wrapper {
+    width: 450px;
+    background: transparent;
+    border-radius: 20px;
+
+}
+ol, ul {
+    padding-left: 0rem;
+}
+.wrapper header {
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 25px 30px 10px;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    border-radius: 20px;
+    background: transparent;
+    color:white;
+}
+header .icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+header .icons span {
+    height: 38px;
+    width: 38px;
+    margin: 0 1px;
+    cursor: pointer;
+    color: white;
+    text-align: center;
+    font-size: 1.9rem;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border-radius: 20%;
+    bottom:17px;
+    position: relative;
+    transition: 0.2s ease-in-out;
+}
+.icons span:last-child {
+    margin-right: 10px;
+}
+header .icons span:hover {
+    transform: scale(1.2);
+}
+header .current-date {
+    font-size: 1.45rem;
+    font-weight: 500;
+}
+.calendar {
+    padding: 10px;
+}
+.calendar ul {
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    list-style: none;
+    text-align: center;
+}
+.calendar .days {
+    margin-bottom: 10px;
+}
+.calendar li {
+    color: white;
+    width: calc(100% / 7);
+    font-size: 1.07rem;
+}
+.calendar .weeks li {
+    font-weight: 500;
+    cursor: default;
+}
+.calendar .days li {
+    z-index: 1;
+    cursor: pointer;
+    position: relative;
+    margin-top: 30px;
+}
+.days li.inactive {
+    color: #9e9e9e;
+}
+.days li.active {
+    color: #fff;
+}
+.days li::before {
+    position: absolute;
+    content: "";
+    left: 50%;
+    top: 50%;
+    height: 40px;
+    width: 40px;
+    z-index: -1;
+    border-radius: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.days li.active::before {
+    background: #CE5E31;
+}
+
+#kalendarz{
+    transform: scale(0.65);
+    z-index: 20;
+}
+  /* kalendarz */
+
+
+  #user-photo{
+    width: 40%;
+    height: 100%;
+  }
+  #user-description{
+    width: 60%;
+    height: 100%;
+  }
+  #user-photo img{
+    width: 80%;
+    border: 2px white solid;
+    border-radius: 100%;
+  }
+  .social-media img{
+    width: 35px;
+    transition: 0.3s ease-in-out;
+    filter: invert(100)
+  }
+  .social-media img:hover{
+    transform: scale(1.07);
+    cursor: pointer;
+  }
+  .email{
+    font-size: 24px;
+  }
+  #promotion h1{
+    color:white;
+}
+
+#promotion{
+    overflow: scroll;
+    scrollbar-color:dark;
+}
+#promotion::-webkit-scrollbar {
+    width: 8px;
+    height: 15px;
+  }
+  #promotion::-webkit-scrollbar-thumb {
+    background: #666;
+    border-radius: 20px;
+  }
+  
+  #promotion::-webkit-scrollbar-track {
+    background: #dddddd00;
+    border-radius: 20px;
+  }
+  #promotion::-webkit-scrollbar-corner{
+    background-color: transparent;
+  }
+
+.promocja img{
+    width: 300px;
+    border-radius: 20px;
+}
+.promocja2{
+    position: relative;
+}
+.kod{
+    position: absolute;
+    background-color: rgba(102, 102, 102, 0.726);
+    width: 100%;
+    height: 86%;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+    clip-path: circle(0% at 50% 50%);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.307);
+    font-size: 30px;
+    font-weight: bold;
+    transition: 0.7s ease-in-out;
+}
+
+
+.table{
+    color:white;
+}
+#history{
+    overflow: scroll;
+}
+#history::-webkit-scrollbar {
+    width: 8px;
+    height: 15px;
+  }
+  #history::-webkit-scrollbar-thumb {
+    background: #666;
+    border-radius: 20px;
+  }
+  
+  #history::-webkit-scrollbar-track {
+    background: #dddddd00;
+    border-radius: 20px;
+  }
+  #history::-webkit-scrollbar-corner{
+    background-color: transparent;
+  }
+
+
+  .podium-space{
+    width: 33%;
+    height: 100%;
+}
+.podium-space img{
+    width: 180px;
+    margin-bottom: 10px;
+    animation-name: gora;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+
+}
+
+@keyframes gora {
+    0% {transform: scale(1.0) translateY(7px) rotate(0deg)}
+    50% {transform: scale(1.04)  translateY(0px) rotate(180deg); }
+    100% {transform: scale(1.0) translateY(7px) rotate(360deg) ;}
+  }
+
+#pierwsze-podium{
+    width: 180px;
+    height: 100px;
+    background-color: gold;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    color:white;
+}
+#trzecie-podium{
+    width: 180px;
+    height: 80px;
+    background-color: rgb(141, 75, 0);
+    border-radius: 20px;
+    color:white;
+}
+#drugie-podium{
+    width: 180px;
+    height: 90px;
+    background-color: silver;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    color:white;
+}
+
+.promocja2:hover .kod {
+    clip-path: circle(70% at 50% 50%);
+    -webkit-clip-path: circle(70% at 50% 50%);
+}
+
+  @media (min-width: 800px) {
+    #navbarHeader{
+        display: none;
+    }
+}
+
+  @media (max-width: 800px) {
+
+    .email{
+        font-size: 65%;
+    }
+    #pierwsze-podium,
+    #drugie-podium,
+    #trzecie-podium{
+        width: 90px;
+    }
+    #pierwsze-podium{
+        height: 50px;
+    }
+    #drugie-podium{
+        height: 45px;
+    }
+    #trzecie-podium{
+        height: 40px;
+    }
+    .podium-space img{
+    width: 100px;
+
+}
+   }
+
+   
+
+   
