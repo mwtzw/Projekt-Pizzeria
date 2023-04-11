@@ -10,7 +10,7 @@ AOS.init({
  // do ogarniecia JS aby cena się zmieniała zgodnei z cennikiem tyle ile produktów się doda to taka cena 
 let plus = document.getElementsByClassName("plus")
 let minus = document.getElementsByClassName("minus")
-let nr = document.getElementsByName("nr")
+let nr = document.getElementsByClassName("nr")
 let price = document.querySelector("#price")
 let wynik = 20
 let product_price = 0
