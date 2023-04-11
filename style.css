@@ -6,6 +6,7 @@
 *{
     margin: 0px;
     scroll-behavior: smooth;
+    --bs-nav-link-color: none;
 }
 
 /* #login-form{
@@ -464,6 +465,14 @@ font-size: 22px;
 .adres{
     box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.216);
 }
+
+@media (min-width: 800px) {
+    #navbarHeader{
+        display: none;
+    }
+}
+
+
 @media (max-width: 800px) {
 
     .navbar-toggler{
