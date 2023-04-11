@@ -437,7 +437,7 @@ class TemplateClass
                             <div class="modal-body pd-2 rounded-5">
 
                             <!-- form  do LOGOWANIA -->
-                            <form action="/php/login.php" method="post" class="m-3 d-block">
+                            <form action="/php/user.php?action=login" method="post" class="m-3 d-block">
                                 <div class="form-floating mb-3">
                                 <input name="email" type="email" class="form-control rounded-4" id="floatingInput" placeholder=".">
                                 <label for="floatingInput">Adres e-mail</label>
@@ -511,10 +511,10 @@ class TemplateClass
     function loginButton()
     {
         return <<< TEMPLATE
-                <li>
-                    <button type="button" data-bs-toggle="modal" data-bs-target="#login-page" class="button-style2 btn fs-3 text-align-center fw-bolder">Zaloguj się</button>
-                </li>
-            TEMPLATE;
+            <li class="nav-item m-1 d-flex justify-content-center align-items-center">
+                <button type="button" data-bs-toggle="modal" data-bs-target="#login-page" class="button-style2 btn fs-5 text-align-center fw-bolder">Zaloguj się</button>
+            </li>
+        TEMPLATE;
     }
     function basketButton()
     {
@@ -534,7 +534,7 @@ class TemplateClass
                 <ul class="dropdown-menu dropdown-menu-lg-start">
                     <li><a class="dropdown-item" href="dashbord.html">Dashbord</a></li>
                     <li><a class="dropdown-item" href="#">Historia</a></li>
-                    <li><a class="dropdown-item" href="#">Wyloguj się</a></li>
+                    <li><a class="dropdown-item" href="/php/user.php?action=logout">Wyloguj się</a></li>
                 </ul>
                 </div>
             </li>
