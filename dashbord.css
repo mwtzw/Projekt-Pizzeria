@@ -292,6 +292,9 @@ header .current-date {
     clip-path: circle(70% at 50% 50%);
     -webkit-clip-path: circle(70% at 50% 50%);
 }
+.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active{
+    border-color: none;
+}
 
   @media (min-width: 800px) {
     #navbarHeader{
