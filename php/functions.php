@@ -179,7 +179,7 @@ class BasketClass
                 $desc .= $result[1] . "(x" . $ingCount . "), ";
                 $price += $result[2] * $ingCount;
             }
-            $card = array(0, "Twoja Pizza" . $key->id, $desc, $price);
+            $card = array(0, "Twoja Pizza", $desc, $price);
             $cards .= Template->basketProductCard($card, $count, 0, $i);
             $price = 20;
             $i++;
