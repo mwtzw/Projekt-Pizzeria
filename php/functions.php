@@ -75,10 +75,12 @@ class UserClass
         $name = $POST['name'];
         $surname = $POST['surname'];
         $phone = $POST['phone'];
-        $mail = $POST['email'];
+        $email = $POST['email'];
         $password = md5($POST['password']);
 
-        Database->setData("INSERT INTO users(email, phone, password, name, surname) VALUES ('$mail', '$phone', '$password', '$name', '$surname')");
+        Database->setData("INSERT INTO users(email, phone, password, name, surname) VALUES ('$email', '$phone', '$password', '$name', '$surname')");
+        $result = Database->getData("SELECT id FROM users WHERE email='$email' AND password='$password'")->results[0][0];
+        Database->setData("INSERT INTO baskets (userId) VALUES ('$result')");
     }
 }
 define("User", new UserClass());
