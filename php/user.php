@@ -7,4 +7,4 @@ if(isset($_GET)) {
         User->logout();
     }
 }
-header("Location: /index.php");
+header("Location: /menu1.php");

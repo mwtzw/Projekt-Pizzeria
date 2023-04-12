@@ -17,7 +17,7 @@
     width: 100%;
     padding-bottom: 30px;
     margin:0px;
-    background-image: url('/img/tlobest3.jpg');
+    background-image: url('./img/tlobest3.jpg');
     position: relative;
 }
 .bestse::before{
