@@ -24,4 +24,4 @@ if(isset($_POST["size"])) {
     $id = $_POST["id"];
     Basket->addProduct($id, $size);
 }
-header("Location: /menu1.php");
+header("Location: ../menu1.php");
