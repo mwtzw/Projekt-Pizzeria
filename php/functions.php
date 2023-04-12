@@ -59,11 +59,17 @@ class UserClass
     }
     function isLoggedIn()
     {
-        return $_SESSION['isLoggedIn'];
+        if(isset($_SESSION)) {
+            return $_SESSION['isLoggedIn'];
+        }
+        else return false;
     }
     function isNotLoggedIn()
     {
-        return !$_SESSION['isLoggedIn'];
+        if(isset($_SESSION)) {
+            return !$_SESSION['isLoggedIn'];
+        }
+        else return true;
     }
     function logout()
     {
