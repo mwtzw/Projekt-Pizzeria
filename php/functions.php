@@ -46,8 +46,8 @@ class UserClass
     {
         $email = $post["email"];
         $password = md5($post["password"]);
-        $result = Database->getData("SELECT id, email, phone, name, surname, postcode, city, street, houseNumber FROM users WHERE email='$email' AND password='$password'");
-        $_SESSION['isLoggedIn'] = false;
+        $result = Database->getData("SELECT id FROM users WHERE email='$email' AND password='$password'");
+        unset($_SESSION['isLoggedIn']);
         if ($result->resultNum) {
             $_SESSION['isLoggedIn'] = true;
             $_SESSION['userId'] = $result->results[0][0];
@@ -59,17 +59,12 @@ class UserClass
     }
     function isLoggedIn()
     {
-        if(isset($_SESSION)) {
-            return $_SESSION['isLoggedIn'];
-        }
-        else return false;
+        return isset($_SESSION['isLoggedIn']);
     }
     function isNotLoggedIn()
     {
-        if(isset($_SESSION)) {
-            return !$_SESSION['isLoggedIn'];
-        }
-        else return true;
+        
+        return !isset($_SESSION['isLoggedIn']);
     }
     function logout()
     {

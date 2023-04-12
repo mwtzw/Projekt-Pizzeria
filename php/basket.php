@@ -1,5 +1,5 @@
 <?php require("functions.php");
-if(isset($_GET)) {
+if(isset($_GET['action'])) {
     if($_GET['action'] === "remove") {
         $id = $_GET["id"];
         $size = $_GET["size"];
