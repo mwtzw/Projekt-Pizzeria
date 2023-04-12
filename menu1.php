@@ -1,32 +1,32 @@
 <?php require "php/functions.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>!!!!!!!!!!!!!!!!!!!!!!!!
-    </title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    <!-- bootstrap  -->
-    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
-    <!-- jquery -->
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="./style/jquery.nice-number.css">
-    <script src="./javascript/jquery.nice-number.js"></script>
-    <!-- AOS -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>!!!!!!!!!!!!!!!!!!!!!!!!
+  </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+  </script>
+  <!-- bootstrap  -->
+  <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+  <!-- jquery -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./style/jquery.nice-number.css">
+  <script src="./javascript/jquery.nice-number.js"></script>
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
+
 <body>
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
     AOS.init();
   </script>
-
-    <header>
-       
+  <header>
     <!-- =====================MEUN======================= -->
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
       <div class="container py-3">
@@ -82,64 +82,130 @@
   </div>
   </div>
   </header>
-<!-- MAIN ================================ -->
-      <div class="container-fluid main-banner">
+  <div class="container-fluid banner">
     <div class="h-100 align-items-center d-flex justify-content-center flex-column">
-        <div class="align-middle">
-            <h1 id="menu">ITALIANA</h1>
-        </div>
-        
+      <div class="align-middle">
+        <h1 id="menu">MENU</h1>
+      </div>
+      <button type="button" id="guzik" class="btn fw-bold"><a id="hrefguzik" class=" d-flex align-items-center justify-content-center text-white text-decoration-none" href="#text2">Czytaj Więcej</a></button>
     </div>
+  </div>
+  <div class="container-fluid">
+    <div id="text2">
+      <h1 class="display-1 d-flex justify-content-center mt-4 mb-5">Stworz Wlasna Pizze </h1>
     </div>
+  </div>
+  <!-- wybieranie składkoników -->
+  <form action="php/basket.php" method="post">
     <div class="container-fluid">
-      <div id="test" class="d-flex justify-content-center">
-         <div id="find" class="justify-content-center align-items-center d-flex flex-column">
-          <h2>Zamawiaj Pizze Online</h2>
-          <div id="zam-online">
-
+      <div class="d-flex justify-content-center align-items-center mb-5">
+        <div class="p=4 made w-75 mb-4">
+          <div data-aos="zoom-in-up" data-aos-delay="0" id="comp" class="mt-5 mb-3 d-flex flex-wrap justify-content-center align-items-center">
+            <?php Content->generateIngredients(); ?>
           </div>
-         </div>
+          <div class="d-flex justify-content-center mb-5 ">
+            <div id="cena" class="border-start border-top border-bottom rounded-5 rounded-start-pill d-flex justify-content-centerc align-items-center">
+              <h1 class="text-white fs-2 ps-3 pe-3 text-center fst-italic">Cena to: <b id="price">20zł</b>
+              </h1>
+            </div>
+            <button id="button-access" class=" border-end border-top border-bottom fs-5 fw-bold rounded-5 rounded-start-0 text-white ps-3 pe-3">
+              Do koszyka
+            </button>
+          </div>
+        </div>
       </div>
-  </div>
+    </div>
+  </form>
+  <!-- wybieranie pizzy -->
+  <div id="back" class="container-fluid pt-5 pb-5">
+    <div class="pt-5 pb-5">
 
-<!-- BESTSELLERY ================================ -->
-<DIV class="container-fluid bestse">
-  <div class="top d-flex justify-content-center flex-wrap">
-    <div class="best d-flex justify-content-between align-items-center flex-column">
-      <img src="./img/laur.png" alt="laur" class="laur">
-      <div class="best-zdjecie mt-2">
-        <img src="./img/products/meat.png" alt="miesna">
+      <div class="grid-parent d-flex flex-wrap justify-content-center">
+        <?php Content->generateProducts(); ?>
       </div>
-      <div id="podium-drugie" class="mb-5 text-white d-flex justify-content-center align-items-center fs-1 fw-bold">2</div>
-    </div>
-    <div class="best2 d-flex justify-content-center align-items-center flex-column">
-      <img src="./img/laur1.png" alt="laur" class="laur2">
-      <div class="best-zdjecie">
-        <img src="./img/products/peperoni.png" alt="peperoni">
-      </div>
-      <div id="podium-pierwsze" class="text-white d-flex justify-content-center align-items-center fs-1 fw-bold">1</div>
-    </div>
-    <div class="best d-flex justify-content-between align-items-center flex-column">
-      <img src="./img/laur3.png" alt="laur" class="laur">
-      <div class="best-zdjecie mt-2">
-        <img src="./img/products/hawai.png" alt="hawai">
-      </div>
-      <div id="podium-trzecie" class="mb-5 text-white d-flex justify-content-center align-items-center fs-1 fw-bold">3</div>
     </div>
   </div>
-</DIV>
-<div id="back2"> </div>
-<!-- BESTSELLERY ================================ -->
+  <div id="back2"></div>
+  <div id="payment1" class="d-flex justify-content-center align-items-center flex-wrap">
+    <div data-aos="fade-right" data-aos-delay="200">
+      <div class="infoblock d-flex align-items-center justify-content-center">
+        <div class="infoblock-text w-50">
+          <p class="fs-1 ms-5"> Dostępne metody płatności </p>
+        </div>
+        <div class="infoblock-image w-50 d-flex flex-column align-items-center justify-content-center">
+          <img style="width:80px;" class="mt-2" src="./img/payment-method.png" alt="payment">
+          <img style="width:80px;" class="mt-2" src="./img/blik.png" alt="payment">
+          <img style="width:80px;" class="mt-2" src="./img/dotpay.jpg" alt="payment">
+        </div>
+      </div>
+    </div>
+    <div data-aos="fade-right" data-aos-delay="400">
+      <div class="infoblock d-flex align-items-center justify-content-center">
+        <div class="infoblock-text w-50">
+          <p class="fs-1 ms-5"> Zamów przez internet </p>
+        </div>
+        <div class="infoblock-image w-50 d-flex flex-column align-items-center justify-content-center">
+          <img style="width:120px;" class="mt-2" src="./img/wifi.png" alt="payment">
+        </div>
+      </div>
+    </div>
+    <div data-aos="fade-right" data-aos-delay="600">
+      <div class="infoblock d-flex align-items-center justify-content-center">
+        <div class="infoblock-text w-50">
+          <p class="fs-1 ms-5"> Darmowa dostawa </p>
+        </div>
+        <div class="infoblock-image w-50 d-flex flex-column align-items-center justify-content-center">
+          <img style="width:80px;" class="mt-2" src="./img/delivery.png" alt="payment">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="stopka">
+    <div class="d-flex justify-content-center align-items-center flex-wrap">
+      <div class="stopkablock text-white d-flex flex-column ">
+        <h2 class="ms-4 mt-3"> Nasze Pizzerie</h2>
+        <ul class="fs-5 fst-italic">
+          <li> Gdańsk</li>
+          <li> Warszawa</li>
+          <li> Wyszków</li>
+          <li> Katowice</li>
+          <li> Kraków</li>
+        </ul>
+      </div>
+      <div class="stopkablock text-white d-flex flex-column ">
+        <h2 class="ms-4 mt-3"> Informacje</h2>
+        <ul class="fs-5 fst-italic">
+          <a href="regulamin.html" style="color:white;">
+            <li> Regulamin</li>
+          </a>
+          <li> Promocje</li>
+          <li> Kontakt</li>
+          <li> Polityka Prywatności</li>
+        </ul>
+      </div>
 
-<div id="test">
-  
-</div>
-      <script src="./javascript/mainscript.js"> </script>
-<!-- MAIN -->
+      <div class="stopkablock text-white d-flex flex-column">
+        <h2 class="ms-4 mt-3"> Znajdziesz nas</h2>
+        <ul class="fs-5 fst-italic">
+          <li> Instagram</li>
+          <li> Tiktok</li>
+          <li> Facebook</li>
+          <img class="m-2 mt-3" src="./img/instagram.png" alt="insta">
+          <img class="m-2 mt-3" src="./img/tiktok.png" alt="insta">
+          <img class="m-2 mt-3" src="./img/facebook.png" alt="insta">
+        </ul>
+      </div>
+    </div>
+    <div id="authors" class="d-flex justify-content-center text-white">
+      <h4 class="fw-lighter"> Mateusz Skrzypek <img src="./img/github-sign.png" alt="github"> | <img src="./img/github-sign.png" alt="github"> Mateusz Wyszogrodzki </h4>
 
-<?php if (User->isNotLoggedIn()) {
+    </div>
+  </div>
+  <?php if (User->isNotLoggedIn()) {
     Content->generateLoginForm();
   }
   ?>
+    <script src="javascript/script.js"> </script>
 </body>
+
 </html>
