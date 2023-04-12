@@ -1,5 +1,4 @@
 <?php require("config.php");
-session_start();
 
 class DatabaseClass
 {
@@ -348,7 +347,7 @@ class TemplateClass
                                 <p class="fs-5 fw-lighter">$data[2]</p>
                             </h1>
                         </div>
-                        <div class="d-flex flex-column">
+                        <div class="cena-koszyk d-flex flex-column">
                             <h1 class="text-center fw-light fst-italic fs-4 w-30 ms-3 me-3" style="font-size:4px; ">$price zł</h1>
                             <a href="/php/basket.php$link"><img class="bin" src="./img/bin.png" style="width:30px;" alt="bin"></a>
                         </div>

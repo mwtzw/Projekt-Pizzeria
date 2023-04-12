@@ -1,5 +1,5 @@
 <?php
-session_start();
+if (!isset($_SESSION)) { session_start(); }
 define("MYSQL_USER", 'root');
 define("MYSQL_PASSWORD", '');
 define("MYSQL_HOST", 'localhost');
