@@ -1,0 +1,109 @@
+#test{
+    height: 300px;
+    width: 100%;
+    position: relative;
+}
+#find{
+ width: 600px;
+ height: 400px;
+ position: relative;
+ bottom:120px;
+ background-color: rgb(255, 255, 255);
+ border-radius: 30px;
+ box-shadow: 0px 8px 15px 1px rgba(0, 0, 0, 0.253);
+}
+.bestse{
+    background-color: aqua;
+    width: 100%;
+    padding-bottom: 30px;
+    margin:0px;
+    background-image: url('/img/tlobest3.jpg');
+    position: relative;
+}
+.bestse::before{
+    background: url("img/wave2.png"); 
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;    
+    position: absolute;
+    bottom: 0px;
+    left:0px;
+}
+.best{
+    width: 400px;
+    margin:20px;
+    height: 500px;
+    margin-top:70px;
+}
+.best2{
+    width: 400px;
+    margin:20px;
+    height: 600px;
+    margin-top: 0px;
+}
+#podium-drugie{
+    width: 250px;
+    height: 100px;
+    background-color: silver;
+    border-radius: 30px;
+}
+#podium-pierwsze{
+    width: 300px;
+    height: 140px;
+    background-color: gold;
+    border-radius: 60px;
+
+}
+#podium-trzecie{
+    width: 250px;
+    height: 100px;
+    background-color: rgb(134, 71, 0);
+    border-radius: 30px;
+}
+.best-zdjecie img{
+    width: 300px;
+    animation-name: gora;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+.best2 .best-zdjecie img{
+    width: 340px;
+    animation-name: gora;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    margin-bottom: 60px;
+}
+
+.best{
+    position: relative;
+}
+.best2{
+    position: relative;
+}
+.laur{
+    width: 270px;
+    position: absolute;
+    top: 180px;
+}
+.laur2{
+    width: 270px;
+    position: absolute;
+    top: 257px;
+}
+
+@keyframes gora {
+    0% {transform: scale(1.0) rotate(0deg)}
+    50% {transform: scale(1.04) rotate(180deg); }
+    100% {transform: scale(1.0) rotate(360deg) ;}
+  }
+
+@media (max-width: 800px) {
+
+    
+    .bestse{
+        background-attachment: fixed;
+    }
+   }
+
+   
