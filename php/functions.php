@@ -109,7 +109,7 @@ class ContentClass
     }
     function generateBasket()
     {
-        echo Template->basket(Basket->getBasketCards(), Basket->getCalculatedPrice(), Basket->getCustomBasketCards());
+        echo Template->basket(Basket->getPaymentMethods(), "12345678", Basket->getBasketCards(), Basket->getCalculatedPrice(), Basket->getCustomBasketCards());
     }
     function generateLoginForm()
     {
@@ -314,6 +314,26 @@ class BasketClass
         $basket->products = [];
         $this->setBasket(User->getUserId(), $basket);
     }
+
+    function getPaymentMethods() { 
+        $methods = "";
+        $result = Database->getData("SELECT id, name FROM paymentMethods");
+        for($i = 0; $i < $result->resultNum; $i++) {
+            $methods .= Template->paymentMethod($result->results[$i]);
+        }
+        return $methods;
+    }
+    function order($POST) {
+        $userId = intval(User->getUserId());
+        $orderData = $this->getJsonBasket(User->getUserId());
+        $address = $POST['address'];
+        $paymentMethod = intval($POST['paymentMethod']);
+        $cost = number_format(floatval($this->getCalculatedPrice()), 2);
+        $phone = $POST['phone'];
+        
+        Database->setData("INSERT INTO orders (userId, orderData, address, paymentMethod, cost, phone) VALUES ($userId, '$orderData', '$address', $paymentMethod, $cost, '$phone')");
+        $this->clearBasket();
+    }
 }
 define("Basket", new BasketClass());
 
@@ -387,7 +407,7 @@ class TemplateClass
                 </div>
             TEMPLATE;
     }
-    function basket($cards, $price, $customCards = "")
+    function basket($paymentMethods, $phone, $cards, $price, $customCards = "")
     {
         $price = number_format($price, 2);
         return <<< TEMPLATE
@@ -413,32 +433,31 @@ class TemplateClass
                     <hr class="m-auto mt-4 mb-2" style="width:85%;height:3px;">
 
                     <!-- order form  -->
-                    <form>
+                    <form method="POST" action="php/basket.php?action=order">
                         <div class="d-flex flex-column">
                             <div class="d-flex flex-row text-align-center align-items-center m-1 mt-2">
                                 <label class="fw-lighter fst-italic w-50"> Podaj adres dostawy: </label>
-                                <input type="text" class="form-control adres w-50" placeholder="Podaj Adres">
+                                <input name="address" required type="text" class="form-control adres w-50" placeholder="Podaj Adres">
                             </div>
                             <div class="d-flex flex-row text-align-center align-items-center m-1 mt-2">
                                 <label class="fw-lighter fst-italic w-50"> Podaj numer telefonu: </label>
-                                <input type="text" class="form-control adres w-50" placeholder="Podaj Telefon">
+                                <input name="phone" required type="tel" class="form-control adres w-50" placeholder="Podaj Telefon" value="$phone">
                             </div>
                             <div class="d-flex flex-row text-align-center align-items-center  m-1 mb-2">
                                 <label class="fw-lighter fst-italic w-50"> Metoda Płatności: </label>
-                                <select class="form-select paymethod  w-50" aria-label="Default select example">
-                                <option selected>Karta Płatnicza</option>
-                                <option value="Gotówka">Gotówka</option>
-                                <option value="Paypal">Paypal</option>
+                                <select name="paymentMethod" required class="form-select paymethod  w-50" aria-label="Default select example">
+                                    $paymentMethods
                                 </select>
                             </div>
                         </div>
-                    </form>
+                    
                     <!-- order form  -->
 
                     <div class="mt-3 d-flex justify-content-center align-items-center">
-                        <button type="button" class="finish  text-white">Zamów</button>
+                        <input type="submit" class="finish  text-white" value="Zamów">
                         <h1 class="fs-2 text-center fw-bold ms-4">$price zł </h1>
                     </div>
+                    </form>
                 </div>
             </div>
             <!-- koszyk -->
@@ -609,6 +628,11 @@ class TemplateClass
             <div class="promocja2">
                 <div class="d-flex justify-content-center align-items-center text-white">Nie ma promocji ciebie </div>
             </div>
+        TEMPLATE;
+    }
+    function paymentMethod($data) {
+        return <<< TEMPLATE
+            <option value="$data[0]">$data[1]</option>
         TEMPLATE;
     }
 }
