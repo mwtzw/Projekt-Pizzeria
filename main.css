@@ -1,3 +1,4 @@
+
 #test{
     height: 300px;
     width: 100%;
@@ -8,7 +9,7 @@
  height: 400px;
  position: relative;
  bottom:120px;
- background-color: rgb(255, 255, 255);
+ background-color: rgb(232, 232, 232);
  border-radius: 30px;
  box-shadow: 0px 8px 15px 1px rgba(0, 0, 0, 0.253);
 }
@@ -91,7 +92,59 @@
     position: absolute;
     top: 257px;
 }
+#locals{
+    width: 90%;
+    height: 280px;
+    background-color: white;
+    border-radius: 20px 20px 20px 20px;
+}
+#locals button{
+    width: 25%;
+    height: 40px;
+    border:none;
+}
+#locals button:nth-child(1){
+    width: 25%;
+    height: 40px;
+    border:none;
+    border-radius: 20px 0px 0px 0px;
+}
+#locals button:nth-child(4){
+    width: 25%;
+    height: 40px;
+    border:none;
+    border-radius: 0px 20px 0px 0px;
+}
+.modal-body iframe{
+    width:80%;
+    height:320px;
+    border-radius: 30px;
+    box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.105);
+}
+.call{
+    background-color: #CE5E31;
+    transition: 0.3s ease-in-out;
+    font-weight: bold;
+    transform: scale(0.9);
+}
+.call2{
+    background-color: #f1652d92;
+    transition: 0.3s ease-in-out;
+    font-weight: bold;
+    transform: scale(0.9);
+}
+.call:hover{
+    transform: scale(0.93);
+}
+.local-info img{
+    width: 60px;
 
+}
+.active{
+    background-color: #CE5E31;
+    color: white;
+    font-weight: bold;
+}
 @keyframes gora {
     0% {transform: scale(1.0) rotate(0deg)}
     50% {transform: scale(1.04) rotate(180deg); }
