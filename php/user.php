@@ -12,5 +12,10 @@ if(isset($_GET)) {
         header("Location: ../index.php");
         exit();
     }
+    if($_GET['action'] === "register") {
+        if(isset($_POST['email'])) User->register($_POST);
+        header("Location: ../index.php");
+        exit();
+    }
 }
 header("Location: ../index.php");

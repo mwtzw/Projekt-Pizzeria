@@ -65,12 +65,22 @@ class UserClass
     }
     function isNotLoggedIn()
     {
-        
         return !isset($_SESSION['isLoggedIn']);
     }
     function logout()
     {
         session_destroy();
+    }
+    function register($POST) {
+        $name = $POST['name'];
+        $surname = $POST['surname'];
+        $phone = $POST['phone'];
+        $email = $POST['email'];
+        $password = md5($POST['password']);
+
+        Database->setData("INSERT INTO users(email, phone, password, name, surname) VALUES ('$email', '$phone', '$password', '$name', '$surname')");
+        $result = Database->getData("SELECT id FROM users WHERE email='$email' AND password='$password'")->results[0][0];
+        Database->setData("INSERT INTO baskets (userId) VALUES ('$result')");
     }
 }
 define("User", new UserClass());
@@ -458,31 +468,31 @@ class TemplateClass
                     </form>
                     <!-- form  -->
                     <!-- form  do REJESTRACJI -->
-                    <form id="form2" class="m-3 d-none">
+                    <form id="form2" action="php/user.php?action=register" method="post" class="m-3 d-none">
                         <div class="form-floating mb-3">
-                        <input type="text" class="form-control rounded-4" id="floatingInput" placeholder=".">
+                        <input name="name" type="text" class="form-control rounded-4" id="floatingInput" placeholder=".">
                         <label for="floatingInput">Imię</label>
                         </div>
 
                         <div class="form-floating mb-3">
-                        <input type="text" class="form-control rounded-4" id="floatingInput" placeholder=".">
+                        <input name="surname" type="text" class="form-control rounded-4" id="floatingInput" placeholder=".">
                         <label for="floatingInput">Nazwisko</label>
                         </div>
 
 
                         <div class="form-floating mb-3">
-                        <input type="text" class="form-control rounded-4" id="floatingInput" placeholder=".">
+                        <input name="phone" type="text" class="form-control rounded-4" id="floatingInput" placeholder=".">
                         <label for="floatingInput">Numer</label>
                         </div>
 
                         <div class="form-floating mb-3">
-                        <input type="text" class="form-control rounded-4" id="floatingInput" placeholder=".">
+                        <input name="email" type="text" class="form-control rounded-4" id="floatingInput" placeholder=".">
                         <label for="floatingInput">Adres e-mail</label>
                         </div>
 
 
                         <div class="form-floating mb-3">
-                        <input type="password" id="password-field" class="form-control rounded-4" id="floatingPassword" placeholder=".">
+                        <input name="password" type="password" id="password-field" class="form-control rounded-4" id="floatingPassword" placeholder=".">
                         <label for="floatingPassword">Hasło</label>
 
                         </div>
