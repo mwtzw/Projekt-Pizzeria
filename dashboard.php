@@ -138,70 +138,9 @@
     <div class="d-flex justify-content-center flex-wrap">
       <div data-aos="zoom-in-up" id="history" class="p-4 m-3">
         <h1 class="text-white text-center">Historia Zamówień</h1>
-        <div class="tabelka text-white">
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">ID</th>
-                <th scope="col">DATA</th>
-                <th scope="col">METODA</th>
-                <th scope="col">KWOTA</th>
-                <th scope="col">PIZZA</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>10.04.2023</td>
-                <td>Karta</td>
-                <td>40,39zł</td>
-                <td>Miesna</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>11.04.2023</td>
-                <td>Gotówka</td>
-                <td>20,30zł</td>
-                <td>Hawajska</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>12.04.2023</td>
-                <td>Paypal</td>
-                <td>30,99zł</td>
-                <td>Peperoni</td>
-              </tr>
-              <tr>
-                <th scope="row">4</th>
-                <td>12.04.2023</td>
-                <td>Paypal</td>
-                <td>30,99zł</td>
-                <td>Peperoni</td>
-              </tr>
-              <tr>
-                <th scope="row">5</th>
-                <td>11.04.2023</td>
-                <td>Gotówka</td>
-                <td>20,30zł</td>
-                <td>Hawajska</td>
-              </tr>
-              <tr>
-                <th scope="row">6</th>
-                <td>12.04.2023</td>
-                <td>Paypal</td>
-                <td>30,99zł</td>
-                <td>Peperoni</td>
-              </tr>
-              <tr>
-                <th scope="row">7</th>
-                <td>12.04.2023</td>
-                <td>Paypal</td>
-                <td>30,99zł</td>
-                <td>Peperoni</td>
-              </tr>
-
-            </tbody>
-          </table>
+          <div class="tabelka text-white text-center">
+            <?php Content->generateUserOrderHistory() ?>
+          </div>
         </div>
       </div>
       <!-- ========================= TOP PIZZA  ===============================  -->

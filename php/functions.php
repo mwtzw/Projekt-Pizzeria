@@ -158,6 +158,20 @@ class ContentClass
             echo Template->noUserFavoritePizzas();
         }
     }
+    function generateUserOrderHistory() {
+        $user = User->getUserId();
+        $query = "SELECT orders.id, date, address, paymentMethods.name, cost FROM orders JOIN paymentMethods ON orders.paymentMethod = paymentMethods.id WHERE userId = $user";
+        $result = Database->getData($query);
+        if($result->resultNum > 0) {
+            $historyRows = "";
+            for($i = 0; $i < $result->resultNum; $i++) {
+                $historyRows .= Template->userOrderHistoryRow($result->results[$i]);
+            }
+            echo Template->userOrderHistory($historyRows);
+        } else {
+            echo Template->noUserOrderHistory();
+        }
+    }
 }
 define("Content", new ContentClass());
 
@@ -652,9 +666,9 @@ class TemplateClass
     }
     function userFavoritePizzas($data) {
         return <<< TEMPLATE
-            <div data-aos="zoom-in-up" id="top-pizza" class="m-3">
+            <div data-aos="zoom-in-up" id="top-pizza" class="m-3 pt-4">
                 <div class="h-100 d-flex justify-content-center align-items-center flex-column">
-                    <h1 class="text-white text-center pt-3"> Ulubione pizze </h1>
+                    <h1 class="text-white text-center "> Ulubione pizze </h1>
                     <div class="d-flex justify-content-center align-items-center ps-5 pe-5 h-100">
                         <div class="podium-space d-flex justify-content-center align-items-center flex-column m-2">
                             <img data-aos="zoom-in-up" data-aos-delay="500" src="$data[1]" alt="mięsna">
@@ -675,15 +689,52 @@ class TemplateClass
     }
     function noUserFavoritePizzas() {
         return <<< TEMPLATE
-            <div data-aos="zoom-in-up" id="top-pizza" class="m-3">
-                <div class="h-100 d-flex justify-content-center align-items-center flex-column">
-                    <h1 class="text-white text-center pt-3"> Ulubione pizze </h1>
-                    <div class="d-flex justify-content-center align-items-center ps-5 pe-5 h-100 text-white">
-                        Nie masz jeszcze ulubionych pizz
-                    </div>
+        <div data-aos="zoom-in-up" id="top-pizza" class="m-3 p-4">
+            <div class="d-flex justify-content-center align-items-center flex-column">
+                <h1 class="text-white text-center "> Ulubione pizze </h1>
+                <div class="d-flex justify-content-center align-items-center ps-5 pe-5 h-100 text-white">
+                    Nie masz jeszcze ulubionych pizz
                 </div>
             </div>
+        </div>
         TEMPLATE;
     }
+    function userOrderHistory($rows) {
+        return <<< TEMPLATE
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">DATA</th>
+                    <th scope="col">ADRES</th>
+                    <th scope="col">METODA</th>
+                    <th scope="col">KWOTA</th>
+                </tr>
+                </thead>
+                <tbody>
+                    $rows
+                </tbody>
+            </table>
+        TEMPLATE;
+    }
+    function noUserOrderHistory() {
+        return <<< TEMPLATE
+        <div class="tabelka text-white align-items-center">
+            Jeszcze nic nie zamówiłeś
+        </div>
+        TEMPLATE;
+    }
+    function userOrderHistoryRow($data) {
+        return <<< TEMPLATE
+            <tr>
+                <th scope="row">$data[0]</th>
+                <td>$data[1]</td>
+                <td>$data[2]</td>
+                <td>$data[3]</td>
+                <td>$data[4] zł</td>
+            </tr>
+        TEMPLATE;
+    }
+
 }
 define("Template", new TemplateClass());
