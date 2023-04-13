@@ -205,26 +205,7 @@
         </div>
       </div>
       <!-- ========================= TOP PIZZA  ===============================  -->
-      <div data-aos="zoom-in-up" id="top-pizza" class="m-3">
-        <div class="h-100 d-flex justify-content-center align-items-center flex-column">
-          <h1 class="text-white text-center pt-3"> Ulubione pizze </h1>
-          <div class="d-flex justify-content-center align-items-center ps-5 pe-5 h-100">
-            <div class="podium-space d-flex justify-content-center align-items-center flex-column m-2">
-              <img data-aos="zoom-in-up" data-aos-delay="500" src="./img/meat.png" alt="mięsna">
-              <div id="drugie-podium" class="d-flex justify-content-center align-items-center fs-1 fw-bold">2</div>
-            </div>
-            <div class="podium-space d-flex justify-content-center align-items-center flex-column m-2">
-              <img data-aos="zoom-in-up" data-aos-delay="650" src="./img/peperoni.png" alt="peperoni">
-              <div id="pierwsze-podium" class="d-flex justify-content-center align-items-center fs-1 fw-bold">1</div>
-            </div>
-            <div class="podium-space d-flex justify-content-center align-items-center flex-column m-2">
-              <img data-aos="zoom-in-up" data-aos-delay="350" src="./img/hawai.png" alt="hawajska">
-              <div id="trzecie-podium" class="d-flex justify-content-center align-items-center fs-1 fw-bold">3</div>
-            </div>
-          </div>
-        </div>
-
-      </div>
+      <?php Content->generateUserFavoritePizzas() ?>
       <!-- ========================= TOP PIZZA  ===============================  -->
 
     </div>

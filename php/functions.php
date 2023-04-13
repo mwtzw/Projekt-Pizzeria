@@ -143,6 +143,21 @@ class ContentClass
         }
         
     }
+    function generateUserFavoritePizzas() {
+        $user = User->getUserId();
+        $query = "SELECT JSON_VALUE(orderData, '$.products[*].id'), SUM(JSON_VALUE(orderData, '$.products[*].count')) AS purchased FROM orders WHERE userId = $user GROUP BY JSON_VALUE(orderData, '$.products[*].id') ORDER BY purchased DESC LIMIT 3";
+        $result = Database->getData($query);
+        if($result->resultNum == 3) {
+            $paths = [];
+            for ($i=0; $i < 3; $i++) { 
+                $image = Database->getData("SELECT image FROM products WHERE id = ".$result->results[$i][0]);
+                array_push($paths, $image->results[0][0]);
+            }
+            echo Template->userFavoritePizzas($paths);
+        } else {
+            echo Template->noUserFavoritePizzas();
+        }
+    }
 }
 define("Content", new ContentClass());
 
@@ -312,9 +327,9 @@ class BasketClass
     {
         $basket = $this->getObjectBasket(User->getUserId());
         $basket->products = [];
+        $basket->customProducts = [];
         $this->setBasket(User->getUserId(), $basket);
     }
-
     function getPaymentMethods() { 
         $methods = "";
         $result = Database->getData("SELECT id, name FROM paymentMethods");
@@ -633,6 +648,41 @@ class TemplateClass
     function paymentMethod($data) {
         return <<< TEMPLATE
             <option value="$data[0]">$data[1]</option>
+        TEMPLATE;
+    }
+    function userFavoritePizzas($data) {
+        return <<< TEMPLATE
+            <div data-aos="zoom-in-up" id="top-pizza" class="m-3">
+                <div class="h-100 d-flex justify-content-center align-items-center flex-column">
+                    <h1 class="text-white text-center pt-3"> Ulubione pizze </h1>
+                    <div class="d-flex justify-content-center align-items-center ps-5 pe-5 h-100">
+                        <div class="podium-space d-flex justify-content-center align-items-center flex-column m-2">
+                            <img data-aos="zoom-in-up" data-aos-delay="500" src="$data[1]" alt="mięsna">
+                            <div id="drugie-podium" class="d-flex justify-content-center align-items-center fs-1 fw-bold">2</div>
+                        </div>
+                        <div class="podium-space d-flex justify-content-center align-items-center flex-column m-2">
+                            <img data-aos="zoom-in-up" data-aos-delay="650" src="$data[0]" alt="peperoni">
+                            <div id="pierwsze-podium" class="d-flex justify-content-center align-items-center fs-1 fw-bold">1</div>
+                        </div>
+                        <div class="podium-space d-flex justify-content-center align-items-center flex-column m-2">
+                            <img data-aos="zoom-in-up" data-aos-delay="350" src="$data[2]" alt="hawajska">
+                            <div id="trzecie-podium" class="d-flex justify-content-center align-items-center fs-1 fw-bold">3</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        TEMPLATE;
+    }
+    function noUserFavoritePizzas() {
+        return <<< TEMPLATE
+            <div data-aos="zoom-in-up" id="top-pizza" class="m-3">
+                <div class="h-100 d-flex justify-content-center align-items-center flex-column">
+                    <h1 class="text-white text-center pt-3"> Ulubione pizze </h1>
+                    <div class="d-flex justify-content-center align-items-center ps-5 pe-5 h-100 text-white">
+                        Nie masz jeszcze ulubionych pizz
+                    </div>
+                </div>
+            </div>
         TEMPLATE;
     }
 }
