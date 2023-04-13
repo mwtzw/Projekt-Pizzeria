@@ -244,7 +244,7 @@ font-size: 22px;
 .pizza-description{
     background-color: #CE5E31;
 }
-.card{
+.pizzee .card{
     width: 320px;
     height: 580px;
     border: 1px black solid;
@@ -254,7 +254,7 @@ font-size: 22px;
     transition: 0.4s;
   }
 
-.card:hover{
+.pizzee .card:hover{
     transform: scale(1.08);
     cursor: pointer;
 }

@@ -304,7 +304,7 @@ class TemplateClass
     {
         return <<< TEMPLATE
                 <form method="POST" action="php/basket.php">
-                    <div data-aos="zoom-in-up" data-aos-delay="300">
+                    <div class="pizzee" data-aos="zoom-in-up" data-aos-delay="300">
                         <div class=" card m-4 rounded-5">
                         <div class="pizza-photo w-100 d-flex justify-content-center">
                             <img src="$data[4]" class=" w-75 h-100 p-1">

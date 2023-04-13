@@ -34,13 +34,13 @@ setTimeout(() => {
 
     // -----------------------------------------------
     guziki[0].addEventListener("click",()=>{
-        guziki[0].classList.add("active")
+        guziki[0].classList.add("active2")
         guziki[0].classList.remove("fw-lighter")
-        guziki[1].classList.remove("active")
+        guziki[1].classList.remove("active2")
         guziki[1].classList.add("fw-lighter")
-        guziki[2].classList.remove("active")
+        guziki[2].classList.remove("active2")
         guziki[2].classList.add("fw-lighter")
-        guziki[3].classList.remove("active")
+        guziki[3].classList.remove("active2")
         guziki[3].classList.add("fw-lighter")
         // =======================
         local[0].classList.add('d-flex')
@@ -54,13 +54,13 @@ setTimeout(() => {
         local[3].classList.remove('d-flex')
     })
     guziki[1].addEventListener("click",()=>{
-        guziki[1].classList.add("active")
+        guziki[1].classList.add("active2")
         guziki[1].classList.remove("fw-lighter")
-        guziki[0].classList.remove("active")
+        guziki[0].classList.remove("active2")
         guziki[0].classList.add("fw-lighter")
-        guziki[2].classList.remove("active")
+        guziki[2].classList.remove("active2")
         guziki[2].classList.add("fw-lighter")
-        guziki[3].classList.remove("active")
+        guziki[3].classList.remove("active2")
         guziki[3].classList.add("fw-lighter")
         // =======================
         local[0].classList.add('d-none')
@@ -74,13 +74,13 @@ setTimeout(() => {
         local[3].classList.remove('d-flex')
     })
     guziki[2].addEventListener("click",()=>{
-        guziki[2].classList.add("active")
+        guziki[2].classList.add("active2")
         guziki[2].classList.remove("fw-lighter")
-        guziki[0].classList.remove("active")
+        guziki[0].classList.remove("active2")
         guziki[0].classList.add("fw-lighter")
-        guziki[1].classList.remove("active")
+        guziki[1].classList.remove("active2")
         guziki[1].classList.add("fw-lighter")
-        guziki[3].classList.remove("active")
+        guziki[3].classList.remove("active2")
         guziki[3].classList.add("fw-lighter")
         // =======================
         local[0].classList.add('d-none')
@@ -94,13 +94,13 @@ setTimeout(() => {
         local[3].classList.remove('d-flex')
     })
     guziki[3].addEventListener("click",()=>{
-        guziki[3].classList.add("active")
+        guziki[3].classList.add("active2")
         guziki[3].classList.remove("fw-lighter")
-        guziki[0].classList.remove("active")
+        guziki[0].classList.remove("active2")
         guziki[0].classList.add("fw-lighter")
-        guziki[2].classList.remove("active")
+        guziki[2].classList.remove("active2")
         guziki[2].classList.add("fw-lighter")
-        guziki[1].classList.remove("active")
+        guziki[1].classList.remove("active2")
         guziki[1].classList.add("fw-lighter")
         // =======================
         local[0].classList.add('d-none')
@@ -114,4 +114,7 @@ setTimeout(() => {
         local[3].classList.remove('d-none')
     })
 
+
+
+    
 }, "500");

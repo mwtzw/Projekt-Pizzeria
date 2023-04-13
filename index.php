@@ -7,9 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>!!!!!!!!!!!!!!!!!!!!!!!!
     </title>
+      <!-- bootstrap  -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <!-- bootstrap  -->
+     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
     <!-- jquery -->
     <link rel="stylesheet" href="style.css">
@@ -18,6 +20,14 @@
     <script src="./javascript/jquery.nice-number.js"></script>
     <!-- AOS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- AOS -->
+    <!-- OWL CAROUSEL -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!-- biblioteka do galeri -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js"></script>
+    <!-- biblioteka do galeri -->
 </head>
 <body>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
@@ -85,8 +95,9 @@
 <!-- MAIN ================================ -->
       <div class="container-fluid main-banner">
     <div class="h-100 align-items-center d-flex justify-content-center flex-column">
-        <div class="align-middle">
+        <div class="align-middle d-flex justify-content-center align-items-center flex-column position-relative">
             <h1 id="menu">ITALIANA</h1>
+            <h1 id="menu-opis"> Prawdziwa Włoska Pizzeria</h1>
         </div>
         
     </div>
@@ -97,13 +108,13 @@
             <h2 class="mb-4 fw-bold">Nasze Pizzerie </h2>
               <div id="locals" class="d-flex flex-column"> 
                 <div class="d-flex">
-                    <button class="guziki active"> Warszawa </button>
+                    <button class="guziki active2"> Warszawa </button>
                     <button class="guziki fw-lighter"> Kraków </button>
                     <button class="guziki fw-lighter"> Poznań </button>
                     <button class="guziki fw-lighter"> Wyszków </button>
                 </div>
                <!-- INFO  -->
-               <div class="local-info d-flex justify-content-center align-items-center h-100">
+                <div class="local-info d-flex justify-content-center align-items-center h-100">
                   <div class="w-50 d-flex justify-content-center align-items-center flex-column"> 
                     <img src="./img/phone.png" class="mb-3" alt="phone">
                     <h1 class="fw-bold fs-4"> Numer Telefonu</h1>
@@ -116,22 +127,22 @@
                     <h1 class="fw-light fs-4"> ul. Kapucyńska 32</h1>
                     <button class="call border rounded-5 w-50 text-white mt-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop"> Odwiedź </button>
                   </div>
-                  </div>
+                </div>
 
 
-              <div class="local-info d-none justify-content-center align-items-center h-100">
-                  <div class="w-50 d-flex justify-content-center align-items-center flex-column"> 
-                    <img src="./img/phone.png" class="mb-3" alt="phone">
-                    <h1 class="fw-bold fs-4"> Numer Telefonu</h1>
-                    <h1 class="fw-light fs-4">tel: 603-203-321</h1>
-                    <button class="call2 border rounded-5 w-50 text-white mt-1" disabled> Zadzwoń </button>
-                  </div>
-                  <div class="w-50 d-flex justify-content-center align-items-center flex-column"> 
-                    <img src="./img/location.png" class="mb-3" alt="location">
-                    <h1 class="fw-bold fs-4"> Kraków</h1>
-                    <h1 class="fw-light fs-4"> ul. Floriańska 57</h1>
-                    <button class="call border rounded-5 w-50 text-white mt-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop2"> Odwiedź </button>
-                  </div>
+                 <div class="local-info d-none justify-content-center align-items-center h-100">
+                    <div class="w-50 d-flex justify-content-center align-items-center flex-column"> 
+                      <img src="./img/phone.png" class="mb-3" alt="phone">
+                      <h1 class="fw-bold fs-4"> Numer Telefonu</h1>
+                      <h1 class="fw-light fs-4">tel: 603-203-321</h1>
+                      <button class="call2 border rounded-5 w-50 text-white mt-1" disabled> Zadzwoń </button>
+                    </div>
+                    <div class="w-50 d-flex justify-content-center align-items-center flex-column"> 
+                      <img src="./img/location.png" class="mb-3" alt="location">
+                      <h1 class="fw-bold fs-4"> Kraków</h1>
+                      <h1 class="fw-light fs-4"> ul. Floriańska 57</h1>
+                      <button class="call border rounded-5 w-50 text-white mt-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop2"> Odwiedź </button>
+                    </div>
                   </div>
 
               <div class="local-info d-none justify-content-center align-items-center h-100">
@@ -201,9 +212,184 @@
 <div id="back2"> </div>
 <!-- BESTSELLERY ================================ -->
 
-<div id="test">
-  
+<!-- GALERIA ZDJĘĆ  -->
+<div class="container gallery mt-5 mb-5">
+        <div class="mt-5 mb-5 carousel-container position-relative row">
+          
+        <!-- Sorry! Lightbox doesn't work - yet. -->
+          
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-slide-number="0">
+              <img src="./img/galeria/pizzeria2.jpg" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/Pn6iimgM-wo/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+            </div>
+            <div class="carousel-item" data-slide-number="1">
+              <img src="./img/galeria/pizzeria1.jpg" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/tXqVe7oO-go/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+            </div>
+            <div class="carousel-item" data-slide-number="2">
+              <img src="./img/galeria/pizzeria3.jpg" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/qlYQb7B9vog/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+            </div>
+            <div class="carousel-item" data-slide-number="3">
+              <img src="./img/galeria/pizzeria4.jpg" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/QfEfkWk1Uhk/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+            </div>
+            <div class="carousel-item" data-slide-number="4">
+              <img src="./img/galeria/pizzeria5.jpg" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/CSIcgaLiFO0/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+            </div>
+            <div class="carousel-item" data-slide-number="5">
+              <img src="./img/galeria/pizzeria6.jpg" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/a_xa7RUKzdc/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+            </div>
+            
+          </div>
+        </div>
+        
+        <!-- Carousel Navigation -->
+        <div id="carousel-thumbs" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row mx-0">
+                <div id="carousel-selector-0" class="thumb col-4 col-sm-2 px-1 py-2 selected" data-target="#myCarousel" data-slide-to="0">
+                  <img src="/img/galeria/pizzeria2.jpg" class="img-fluid" alt="...">
+                </div>
+                <div id="carousel-selector-1" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="1">
+                  <img src="/img/galeria/pizzeria1.jpg" class="img-fluid" alt="...">
+                </div>
+                <div id="carousel-selector-2" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="2">
+                  <img src="/img/galeria/pizzeria3.jpg" class="img-fluid" alt="...">
+                </div>
+                <div id="carousel-selector-3" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="3">
+                  <img src="/img/galeria/pizzeria4.jpg" class="img-fluid" alt="...">
+                </div>
+                <div id="carousel-selector-4" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="4">
+                  <img src="/img/galeria/pizzeria5.jpg" class="img-fluid" alt="...">
+                </div>
+                <div id="carousel-selector-5" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="5">
+                  <img src="/img/galeria/pizzeria6.jpg" class="img-fluid" alt="...">
+                </div>
+              </div>
+            </div>
+    
+          </div>
+    
+        </div>
+        
+        </div> <!-- /row -->
+        </div> <!-- /container -->
+<!-- GALERIA ZDJĘĆ  -->
+
+<!-- ------------------O NAS ----------------------- -->
+
+<div class="aboutus container-fluid d-flex align-items-center">
+  <div class="container aboutus-content">
+    <div class="mb-5 d-flex justify-content-center flex-row"> 
+      <div class="aboutus-photo d-flex justify-content-center align-items-center"> 
+        <img src="./img/historia.jpg" alt="aboutuusphoot">
+      </div>
+      <div class="aboutus-description d-flex justify-content-center align-items-start flex-column"> 
+        <h1> Nasza Historia</h1>
+        <p class="fw-lighter"> W małym, urokliwym miasteczku W Polsce, otwarta została pizzeria o nazwie "Italiana". Była prowadzona przez starego, uśmiechniętego Włocha imieniem Luigi. 
+          Luigi urodził się i wychował w rodzinie z długą tradycją wypieku pizzy.
+          Pizzeria "La Piazza" stała się miejscem, gdzie ludzie ze wszystkich okolicznych wiosek
+          i miast przychodzili, by delektować się prawdziwie włoską pizzą. Pianista grający na fortepianie
+          w kącie lokalu tworzył przyjemną atmosferę, a zapach świeżo pieczonej pizzy unosił się w powietrzu.
+          Luigi słynął z niezwykłego talentu do tworzenia wyjątkowych kompozycji smaków na swoich daniach.
+          Jego sosy pomidorowe były długo gotowane, aż do uzyskania perfekcyjnej konsystencji, a składniki
+            takie jak świeże owoce morza, aromatyczne zioła i oliwki pochodziły z lokalnych upraw i ryneczków.</p>
+      </div>
+    </div>
+    <div class="d-flex mt-5 justify-content-center flex-row-reverse"> 
+      <div class="aboutus-photo d-flex justify-content-center align-items-center"> 
+        <img src="./img/ciasto.jpg" alt="aboutuusphoot">
+      </div>
+      <div class="aboutus-description d-flex justify-content-center align-items-start flex-column"> 
+        <h1> Cienkie Ciasto</h1>
+        <p class="fw-lighter"> Cienkie ciasto w pizzerii, często nazywane także jako ciasto na pizzę w stylu neapolitańskim, to rodzaj ciasta używanego do przygotowywania autentycznych włoskich pizz. Jest charakterystyczne ze względu na swoją cienką, elastyczną i chrupiącą konsystencję, która jest jednym z kluczowych elementów prawdziwej pizzy neapolitańskiej.
+
+Aby przygotować cienkie ciasto w pizzerii, potrzebne są podstawowe składniki, takie jak mąka pszenna, woda, drożdże, sól i ewentualnie oliwa z oliwek. Składniki są dokładnie wymieszane, a następnie wyrabiane, aby uzyskać elastyczne i jednolite ciasto. Ciasto jest wałkowane na okrągłą formę, a jego grubość jest zwykle utrzymana na minimalnym poziomie, zazwyczaj wynoszącym około 2-3 mm.</p>
+      </div>
+    </div>
+  </div>
 </div>
+<div id="back3"> </div>
+
+<!-- ------------------O NAS ----------------------- -->
+
+<!-- OPINIE KARUZELA============================================ -->
+<div class="gtco-testimonials mt-5">
+        <div class="owl-carousel owl-carousel1 owl-theme">
+          <div>
+            <div class="card text-center"><img class="card-img-top" src="./img/users/user1.png" alt="">
+              <div class="card-body">
+                <h5>Jan Kowalski <br />
+                  <span> Uzytkownik </span>
+                </h5>
+                <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard </p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="card text-center"><img class="card-img-top" src="./img/users/user2.png" alt="">
+              <div class="card-body">
+                <h5>Kacper Król <br />
+                  <span> Uzytkownik </span>
+                </h5>
+                <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard  </p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="card text-center"><img class="card-img-top" src="./img/users/default.png" alt="">
+              <div class="card-body">
+                <h5>Anna Mak <br />
+                  <span> Uzytkownik </span>
+                </h5>
+                <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard </p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="card text-center"><img class="card-img-top" src="./img/users/szef1.png" alt="">
+              <div class="card-body">
+                <h5>Kacper Mat <br />
+                  <span> Uzytkownik </span>
+                </h5>
+                <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard  </p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="card text-center"><img class="card-img-top" src="./img/users/user3.png" alt="">
+              <div class="card-body">
+                <h5>Kuba Kępka<br />
+                  <span> Uzytkownik </span>
+                </h5>
+                <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard  </p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="card text-center"><img class="card-img-top" src="./img/users/szef1.png" alt="">
+              <div class="card-body">
+                <h5>Mateusz Skrzypek<br />
+                  <span> Pracownik </span>
+                </h5>
+                <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard  </p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="card text-center"><img class="card-img-top" src="./img/users/default.png" alt="">
+              <div class="card-body">
+                <h5>Mateusz Wyszogrodzki<br />
+                  <span> Programista </span>
+                </h5>
+                <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard  </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- OPINIE KARUZELA============================================ -->
+<!-- stopka =================================================== -->
 <div id="stopka">
     <div class="d-flex justify-content-center align-items-center flex-wrap">
       <div class="stopkablock text-white d-flex flex-column ">
@@ -245,7 +431,10 @@
 
     </div>
   </div>
+  <!-- stopka =================================================== -->
       <script src="./javascript/mainscript.js"> </script>
+      <script src="./javascript/karuzela.js"> </script>
+      <script src="./javascript/galeria.js"> </script>
 <!-- MAIN -->
 
 <?php if (User->isNotLoggedIn()) {
