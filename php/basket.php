@@ -1,5 +1,5 @@
 <?php require("functions.php");
-if(isset($_GET)) {
+if(isset($_GET['action'])) {
     if($_GET['action'] === "remove") {
         $id = $_GET["id"];
         $size = $_GET["size"];
@@ -24,4 +24,4 @@ if(isset($_POST["size"])) {
     $id = $_POST["id"];
     Basket->addProduct($id, $size);
 }
-header("Location: /index.php");
+header("Location: ../menu1.php");

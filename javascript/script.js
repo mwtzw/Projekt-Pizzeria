@@ -102,6 +102,10 @@ setTimeout(() => {
                 }, "100")
             }) 
         }
+        let pizzadescription = document.getElementsByClassName("pizza-description")
+        for(let n = 1; pizzadescription.length > n; n+=2){
+            pizzadescription[n].style = "background-color: #4f8f5b;"
+        }
 
         let register = document.querySelector("#res")
         let login = document.querySelector("#log")
@@ -130,14 +134,11 @@ setTimeout(() => {
             }) 
         }
 
-        let pizzadescription = document.getElementsByClassName("pizza-description")
-        for(let n = 1; pizzadescription.length > n; n+=2){
-            pizzadescription[n].style = "background-color: #4f8f5b;"
-        }
+ 
         
 
 
-  }, "500");
+  }, 500);
 
 // =============================== kalendarz
   const daysTag = document.querySelector(".days");
