@@ -131,6 +131,18 @@ class ContentClass
     function generateUserDashboard() {
         echo Template->userDashboard(User->getUserData());
     }
+    function generateUserPromotions() {
+        $query = "SELECT promoCode, image FROM specialOffers WHERE isUsed = 0 AND userId = ".User->getUserId();
+        $result = Database->getData($query);
+        if($result->success && $result->resultNum){
+            for ($i = 0; $i < $result->resultNum; $i++) {
+                echo Template->userPromotion($result->results[$i]);
+            }
+        } else {
+            echo Template->userNoPromotion();
+        }
+        
+    }
 }
 define("Content", new ContentClass());
 
@@ -581,6 +593,21 @@ class TemplateClass
                         <img src="./img/github-sign.png" class="m-2" alt="facebook">
                     </div>
                 </div>
+            </div>
+        TEMPLATE;
+    }
+    function userPromotion($data) {
+        return <<< TEMPLATE
+            <div class="promocja2">
+                <div class=" kod d-flex justify-content-center align-items-center"> Kod: $data[0] </div>
+                <img src="$data[1]" class="mb-3" alt="promocja">
+            </div>
+        TEMPLATE;
+    }
+    function userNoPromotion() {
+        return <<< TEMPLATE
+            <div class="promocja2">
+                <div class="d-flex justify-content-center align-items-center text-white">Nie ma promocji ciebie </div>
             </div>
         TEMPLATE;
     }

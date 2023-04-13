@@ -88,26 +88,13 @@
   <!-- =====================MEUN======================= -->
 
   <div class="container-fluid">
-
     <div class="d-flex justify-content-center flex-wrap">
       <?php Content->generateUserDashboard() ?>
       <!-- ========================= PROMOCJE ===============================  -->
       <div data-aos="zoom-in-up" id="promotion" class="m-3">
         <h1 class="p-3 text-center"> Promocje </h1>
         <div class="promocja d-flex align-items-center flex-column">
-          <div class="promocja2">
-            <div class=" kod d-flex justify-content-center align-items-center"> Kod: D234XS3 </div>
-            <img src="./img/reklama2.png" class="mb-3" alt="promocja">
-          </div>
-
-          <div class="promocja2">
-            <div class=" kod d-flex justify-content-center align-items-center"> Kod: DwaTrzy </div>
-            <img src="./img/promocja.png" class="mb-3" alt="promocja">
-          </div>
-          <div class="promocja2">
-            <div class=" kod d-flex justify-content-center align-items-center"> Kod: Spotkanie2 </div>
-            <img src="./img/reklama3.png" class="mb-3" alt="promocja">
-          </div>
+          <?php Content->generateUserPromotions() ?>
         </div>
       </div>
       <!-- ========================= PROMOCJE  ===============================  -->
