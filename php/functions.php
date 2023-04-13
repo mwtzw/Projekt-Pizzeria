@@ -84,7 +84,9 @@ class UserClass
 
         Database->setData("INSERT INTO users(email, phone, password, name, surname) VALUES ('$email', '$phone', '$password', '$name', '$surname')");
         $result = Database->getData("SELECT id FROM users WHERE email='$email' AND password='$password'")->results[0][0];
-        Database->setData("INSERT INTO baskets (userId) VALUES ('$result')");
+        $basket = array("products" => [], "customProducts" => []);
+        $basket = json_encode($basket);
+        Database->setData("INSERT INTO baskets (userId, basketData) VALUES ('$result', '$basket')");
     }
 }
 define("User", new UserClass());
@@ -621,6 +623,7 @@ class TemplateClass
         TEMPLATE;
     }
     function userDashboard($data) {
+        $phone = join(" ", str_split($data[4], 3));
         return <<< TEMPLATE
             <div class="d-flex justify-content-center flex-wrap">
                 <div data-aos="zoom-in-up" id="user-info" class="d-flex justify-content-center m-3">
@@ -634,7 +637,7 @@ class TemplateClass
                     <h3 class="mt-2 ms-4 fst-italic fw-lighter fs-5">Imie: <b class="fs-4">$data[1]</b></h3>
                     <h3 class="mt-2 ms-4 fst-italic fw-lighter fs-5">Nazwisko: <b class="fs-4">$data[2]</b> </h3>
                     <h3 class="mt-2 ms-4 fst-italic fw-lighter fs-5">E-mail: <b class="email">$data[3]</b> </h3>
-                    <h3 class="mt-2 ms-4 fst-italic fw-lighter fs-5">Telefon: <b class="fs-4">$data[4]</b></h3>
+                    <h3 class="mt-2 ms-4 fst-italic fw-lighter fs-5">Telefon: <b class="fs-4">$phone</b></h3>
                     <div class="social-media d-flex justify-content-center align-items-center flex-row m-3">
                         <img src="./img/facebook.png" class="m-2" alt="facebook">
                         <img src="./img/instagram.png" class="m-2" alt="facebook">
