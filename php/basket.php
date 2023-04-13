@@ -14,14 +14,18 @@ if(isset($_GET['action'])) {
     if($_GET['action'] === "clear") {
         Basket->clearBasket();
     }
-}
-if(isset($_POST["ingredient"])) {
-    $ingredients = $_POST["ingredient"];
-    Basket->addCustomProduct($ingredients);
-}
-if(isset($_POST["size"])) {
-    $size = $_POST["size"];
-    $id = $_POST["id"];
-    Basket->addProduct($id, $size);
+    if($_GET['action'] === "order") {
+        if(isset($_POST["paymentMethod"])) Basket->order($_POST);
+    }
+} else {
+    if(isset($_POST["ingredient"])) {
+        $ingredients = $_POST["ingredient"];
+        Basket->addCustomProduct($ingredients);
+    }
+    if(isset($_POST["size"])) {
+        $size = $_POST["size"];
+        $id = $_POST["id"];
+        Basket->addProduct($id, $size);
+    }
 }
 header("Location: ../menu1.php");

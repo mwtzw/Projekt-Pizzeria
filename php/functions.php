@@ -48,16 +48,20 @@ class UserClass
         session_start();
         $email = $post["email"];
         $password = md5($post["password"]);
-        $result = Database->getData("SELECT id FROM users WHERE email='$email' AND password='$password'");
+        $result = Database->getData("SELECT id, name, surname, email, phone, image FROM users WHERE email='$email' AND password='$password'");
         if ($result->resultNum) {
             $_SESSION['isLoggedIn'] = true;
             $_SESSION['userId'] = $result->results[0][0];
+            $_SESSION['userData'] = $result->results[0];
             return true;
         } else return false;
     }
     function getUserId()
     {
         return $_SESSION['userId'];
+    }
+    function getUserData() {
+        return $_SESSION['userData'];
     }
     function isLoggedIn()
     {
@@ -80,7 +84,9 @@ class UserClass
 
         Database->setData("INSERT INTO users(email, phone, password, name, surname) VALUES ('$email', '$phone', '$password', '$name', '$surname')");
         $result = Database->getData("SELECT id FROM users WHERE email='$email' AND password='$password'")->results[0][0];
-        Database->setData("INSERT INTO baskets (userId) VALUES ('$result')");
+        $basket = array("products" => [], "customProducts" => []);
+        $basket = json_encode($basket);
+        Database->setData("INSERT INTO baskets (userId, basketData) VALUES ('$result', '$basket')");
     }
 }
 define("User", new UserClass());
@@ -105,7 +111,7 @@ class ContentClass
     }
     function generateBasket()
     {
-        echo Template->basket(Basket->getBasketCards(), Basket->getCalculatedPrice(), Basket->getCustomBasketCards());
+        echo Template->basket(Basket->getPaymentMethods(), "12345678", Basket->getBasketCards(), Basket->getCalculatedPrice(), Basket->getCustomBasketCards());
     }
     function generateLoginForm()
     {
@@ -123,6 +129,50 @@ class ContentClass
     {
         $result = Database->getData("SELECT image FROM users WHERE id=" . User->getUserId())->results[0][0];
         echo Template->userMenu($result);
+    }
+    function generateUserDashboard() {
+        echo Template->userDashboard(User->getUserData());
+    }
+    function generateUserPromotions() {
+        $query = "SELECT promoCode, image FROM specialOffers WHERE isUsed = 0 AND userId = ".User->getUserId();
+        $result = Database->getData($query);
+        if($result->success && $result->resultNum){
+            for ($i = 0; $i < $result->resultNum; $i++) {
+                echo Template->userPromotion($result->results[$i]);
+            }
+        } else {
+            echo Template->userNoPromotion();
+        }
+        
+    }
+    function generateUserFavoritePizzas() {
+        $user = User->getUserId();
+        $query = "SELECT JSON_VALUE(orderData, '$.products[*].id'), SUM(JSON_VALUE(orderData, '$.products[*].count')) AS purchased FROM orders WHERE userId = $user GROUP BY JSON_VALUE(orderData, '$.products[*].id') ORDER BY purchased DESC LIMIT 3";
+        $result = Database->getData($query);
+        if($result->resultNum == 3) {
+            $paths = [];
+            for ($i=0; $i < 3; $i++) { 
+                $image = Database->getData("SELECT image FROM products WHERE id = ".$result->results[$i][0]);
+                array_push($paths, $image->results[0][0]);
+            }
+            echo Template->userFavoritePizzas($paths);
+        } else {
+            echo Template->noUserFavoritePizzas();
+        }
+    }
+    function generateUserOrderHistory() {
+        $user = User->getUserId();
+        $query = "SELECT orders.id, date, address, paymentMethods.name, cost FROM orders JOIN paymentMethods ON orders.paymentMethod = paymentMethods.id WHERE userId = $user";
+        $result = Database->getData($query);
+        if($result->resultNum > 0) {
+            $historyRows = "";
+            for($i = 0; $i < $result->resultNum; $i++) {
+                $historyRows .= Template->userOrderHistoryRow($result->results[$i]);
+            }
+            echo Template->userOrderHistory($historyRows);
+        } else {
+            echo Template->noUserOrderHistory();
+        }
     }
 }
 define("Content", new ContentClass());
@@ -293,7 +343,27 @@ class BasketClass
     {
         $basket = $this->getObjectBasket(User->getUserId());
         $basket->products = [];
+        $basket->customProducts = [];
         $this->setBasket(User->getUserId(), $basket);
+    }
+    function getPaymentMethods() { 
+        $methods = "";
+        $result = Database->getData("SELECT id, name FROM paymentMethods");
+        for($i = 0; $i < $result->resultNum; $i++) {
+            $methods .= Template->paymentMethod($result->results[$i]);
+        }
+        return $methods;
+    }
+    function order($POST) {
+        $userId = intval(User->getUserId());
+        $orderData = $this->getJsonBasket(User->getUserId());
+        $address = $POST['address'];
+        $paymentMethod = intval($POST['paymentMethod']);
+        $cost = number_format(floatval($this->getCalculatedPrice()), 2);
+        $phone = $POST['phone'];
+        
+        Database->setData("INSERT INTO orders (userId, orderData, address, paymentMethod, cost, phone) VALUES ($userId, '$orderData', '$address', $paymentMethod, $cost, '$phone')");
+        $this->clearBasket();
     }
 }
 define("Basket", new BasketClass());
@@ -368,7 +438,7 @@ class TemplateClass
                 </div>
             TEMPLATE;
     }
-    function basket($cards, $price, $customCards = "")
+    function basket($paymentMethods, $phone, $cards, $price, $customCards = "")
     {
         $price = number_format($price, 2);
         return <<< TEMPLATE
@@ -394,32 +464,31 @@ class TemplateClass
                     <hr class="m-auto mt-4 mb-2" style="width:85%;height:3px;">
 
                     <!-- order form  -->
-                    <form>
+                    <form method="POST" action="php/basket.php?action=order">
                         <div class="d-flex flex-column">
                             <div class="d-flex flex-row text-align-center align-items-center m-1 mt-2">
                                 <label class="fw-lighter fst-italic w-50"> Podaj adres dostawy: </label>
-                                <input type="text" class="form-control adres w-50" placeholder="Podaj Adres">
+                                <input name="address" required type="text" class="form-control adres w-50" placeholder="Podaj Adres">
                             </div>
                             <div class="d-flex flex-row text-align-center align-items-center m-1 mt-2">
                                 <label class="fw-lighter fst-italic w-50"> Podaj numer telefonu: </label>
-                                <input type="text" class="form-control adres w-50" placeholder="Podaj Telefon">
+                                <input name="phone" required type="tel" class="form-control adres w-50" placeholder="Podaj Telefon" value="$phone">
                             </div>
                             <div class="d-flex flex-row text-align-center align-items-center  m-1 mb-2">
                                 <label class="fw-lighter fst-italic w-50"> Metoda Płatności: </label>
-                                <select class="form-select paymethod  w-50" aria-label="Default select example">
-                                <option selected>Karta Płatnicza</option>
-                                <option value="Gotówka">Gotówka</option>
-                                <option value="Paypal">Paypal</option>
+                                <select name="paymentMethod" required class="form-select paymethod  w-50" aria-label="Default select example">
+                                    $paymentMethods
                                 </select>
                             </div>
                         </div>
-                    </form>
+                    
                     <!-- order form  -->
 
                     <div class="mt-3 d-flex justify-content-center align-items-center">
-                        <button type="button" class="finish  text-white">Zamów</button>
+                        <input type="submit" class="finish  text-white" value="Zamów">
                         <h1 class="fs-2 text-center fw-bold ms-4">$price zł </h1>
                     </div>
+                    </form>
                 </div>
             </div>
             <!-- koszyk -->
@@ -545,7 +614,7 @@ class TemplateClass
                         <img src="$userImage" alt="icon">
                     </button>
                     <ul class="dropdown-menu dropdown-menu-lg-start">
-                        <li><a class="dropdown-item" href="dashbord.html">Dashbord</a></li>
+                        <li><a class="dropdown-item" href="dashboard.php">Dashbord</a></li>
                         <li><a class="dropdown-item" href="#">Historia</a></li>
                         <li><a class="dropdown-item" href="php/user.php?action=logout">Wyloguj się</a></li>
                     </ul>
@@ -553,5 +622,124 @@ class TemplateClass
             </li>
         TEMPLATE;
     }
+    function userDashboard($data) {
+        $phone = join(" ", str_split($data[4], 3));
+        return <<< TEMPLATE
+            <div class="d-flex justify-content-center flex-wrap">
+                <div data-aos="zoom-in-up" id="user-info" class="d-flex justify-content-center m-3">
+                <div id="user-photo" class="d-flex flex-column justify-content-center align-items-center">
+                    <img src="$data[5]" alt="user-photo">
+                </div>
+                <div id="user-description" class="d-flex flex-column justify-content-center align-items-start">
+                    <div>
+                        <h1>$data[1] $data[2]</h1>
+                    </div>
+                    <h3 class="mt-2 ms-4 fst-italic fw-lighter fs-5">Imie: <b class="fs-4">$data[1]</b></h3>
+                    <h3 class="mt-2 ms-4 fst-italic fw-lighter fs-5">Nazwisko: <b class="fs-4">$data[2]</b> </h3>
+                    <h3 class="mt-2 ms-4 fst-italic fw-lighter fs-5">E-mail: <b class="email">$data[3]</b> </h3>
+                    <h3 class="mt-2 ms-4 fst-italic fw-lighter fs-5">Telefon: <b class="fs-4">$phone</b></h3>
+                    <div class="social-media d-flex justify-content-center align-items-center flex-row m-3">
+                        <img src="./img/facebook.png" class="m-2" alt="facebook">
+                        <img src="./img/instagram.png" class="m-2" alt="facebook">
+                        <img src="./img/github-sign.png" class="m-2" alt="facebook">
+                    </div>
+                </div>
+            </div>
+        TEMPLATE;
+    }
+    function userPromotion($data) {
+        return <<< TEMPLATE
+            <div class="promocja2">
+                <div class=" kod d-flex justify-content-center align-items-center"> Kod: $data[0] </div>
+                <img src="$data[1]" class="mb-3" alt="promocja">
+            </div>
+        TEMPLATE;
+    }
+    function userNoPromotion() {
+        return <<< TEMPLATE
+            <div class="promocja2">
+                <div class="d-flex justify-content-center align-items-center text-white">Nie ma promocji ciebie </div>
+            </div>
+        TEMPLATE;
+    }
+    function paymentMethod($data) {
+        return <<< TEMPLATE
+            <option value="$data[0]">$data[1]</option>
+        TEMPLATE;
+    }
+    function userFavoritePizzas($data) {
+        return <<< TEMPLATE
+            <div data-aos="zoom-in-up" id="top-pizza" class="m-3 pt-4">
+                <div class="h-100 d-flex justify-content-center align-items-center flex-column">
+                    <h1 class="text-white text-center "> Ulubione pizze </h1>
+                    <div class="d-flex justify-content-center align-items-center ps-5 pe-5 h-100">
+                        <div class="podium-space d-flex justify-content-center align-items-center flex-column m-2">
+                            <img data-aos="zoom-in-up" data-aos-delay="500" src="$data[1]" alt="mięsna">
+                            <div id="drugie-podium" class="d-flex justify-content-center align-items-center fs-1 fw-bold">2</div>
+                        </div>
+                        <div class="podium-space d-flex justify-content-center align-items-center flex-column m-2">
+                            <img data-aos="zoom-in-up" data-aos-delay="650" src="$data[0]" alt="peperoni">
+                            <div id="pierwsze-podium" class="d-flex justify-content-center align-items-center fs-1 fw-bold">1</div>
+                        </div>
+                        <div class="podium-space d-flex justify-content-center align-items-center flex-column m-2">
+                            <img data-aos="zoom-in-up" data-aos-delay="350" src="$data[2]" alt="hawajska">
+                            <div id="trzecie-podium" class="d-flex justify-content-center align-items-center fs-1 fw-bold">3</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        TEMPLATE;
+    }
+    function noUserFavoritePizzas() {
+        return <<< TEMPLATE
+        <div data-aos="zoom-in-up" id="top-pizza" class="m-3 p-4">
+            <div class="d-flex justify-content-center align-items-center flex-column">
+                <h1 class="text-white text-center "> Ulubione pizze </h1>
+                <div class="d-flex justify-content-center align-items-center ps-5 pe-5 h-100 text-white">
+                    Nie masz jeszcze ulubionych pizz
+                </div>
+            </div>
+        </div>
+        TEMPLATE;
+    }
+    function userOrderHistory($rows) {
+        return <<< TEMPLATE
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">DATA</th>
+                    <th scope="col">ADRES</th>
+                    <th scope="col">METODA</th>
+                    <th scope="col">KWOTA</th>
+                </tr>
+                </thead>
+                <tbody>
+                    $rows
+                </tbody>
+            </table>
+        TEMPLATE;
+    }
+    function noUserOrderHistory() {
+        return <<< TEMPLATE
+        <div class="tabelka text-white align-items-center">
+            Jeszcze nic nie zamówiłeś
+        </div>
+        TEMPLATE;
+    }
+    function userOrderHistoryRow($data) {
+        $date=date_create($data[1]);
+        $date=date_format($date,"d.m.Y H:i");
+        return <<< TEMPLATE
+            <tr>
+                <th scope="row">$data[0]</th>
+                <td>$date</td>
+                <td>$data[2]</td>
+                <td>$data[3]</td>
+                <td>$data[4] zł</td>
+            </tr>
+        TEMPLATE;
+    }
+
 }
 define("Template", new TemplateClass());
