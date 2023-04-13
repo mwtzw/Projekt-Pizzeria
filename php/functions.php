@@ -48,16 +48,20 @@ class UserClass
         session_start();
         $email = $post["email"];
         $password = md5($post["password"]);
-        $result = Database->getData("SELECT id FROM users WHERE email='$email' AND password='$password'");
+        $result = Database->getData("SELECT id, name, surname, email, phone, image FROM users WHERE email='$email' AND password='$password'");
         if ($result->resultNum) {
             $_SESSION['isLoggedIn'] = true;
             $_SESSION['userId'] = $result->results[0][0];
+            $_SESSION['userData'] = $result->results[0];
             return true;
         } else return false;
     }
     function getUserId()
     {
         return $_SESSION['userId'];
+    }
+    function getUserData() {
+        return $_SESSION['userData'];
     }
     function isLoggedIn()
     {
@@ -123,6 +127,9 @@ class ContentClass
     {
         $result = Database->getData("SELECT image FROM users WHERE id=" . User->getUserId())->results[0][0];
         echo Template->userMenu($result);
+    }
+    function generateUserDashboard() {
+        echo Template->userDashboard(User->getUserData());
     }
 }
 define("Content", new ContentClass());
@@ -545,12 +552,36 @@ class TemplateClass
                         <img src="$userImage" alt="icon">
                     </button>
                     <ul class="dropdown-menu dropdown-menu-lg-start">
-                        <li><a class="dropdown-item" href="dashbord.html">Dashbord</a></li>
+                        <li><a class="dropdown-item" href="dashboard.php">Dashbord</a></li>
                         <li><a class="dropdown-item" href="#">Historia</a></li>
                         <li><a class="dropdown-item" href="php/user.php?action=logout">Wyloguj się</a></li>
                     </ul>
                 </div>
             </li>
+        TEMPLATE;
+    }
+    function userDashboard($data) {
+        return <<< TEMPLATE
+            <div class="d-flex justify-content-center flex-wrap">
+                <div data-aos="zoom-in-up" id="user-info" class="d-flex justify-content-center m-3">
+                <div id="user-photo" class="d-flex flex-column justify-content-center align-items-center">
+                    <img src="$data[5]" alt="user-photo">
+                </div>
+                <div id="user-description" class="d-flex flex-column justify-content-center align-items-start">
+                    <div>
+                        <h1>$data[1] $data[2]</h1>
+                    </div>
+                    <h3 class="mt-2 ms-4 fst-italic fw-lighter fs-5">Imie: <b class="fs-4">$data[1]</b></h3>
+                    <h3 class="mt-2 ms-4 fst-italic fw-lighter fs-5">Nazwisko: <b class="fs-4">$data[2]</b> </h3>
+                    <h3 class="mt-2 ms-4 fst-italic fw-lighter fs-5">E-mail: <b class="email">$data[3]</b> </h3>
+                    <h3 class="mt-2 ms-4 fst-italic fw-lighter fs-5">Telefon: <b class="fs-4">$data[4]</b></h3>
+                    <div class="social-media d-flex justify-content-center align-items-center flex-row m-3">
+                        <img src="./img/facebook.png" class="m-2" alt="facebook">
+                        <img src="./img/instagram.png" class="m-2" alt="facebook">
+                        <img src="./img/github-sign.png" class="m-2" alt="facebook">
+                    </div>
+                </div>
+            </div>
         TEMPLATE;
     }
 }
