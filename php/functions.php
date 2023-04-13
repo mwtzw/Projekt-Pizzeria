@@ -725,10 +725,12 @@ class TemplateClass
         TEMPLATE;
     }
     function userOrderHistoryRow($data) {
+        $date=date_create($data[1]);
+        $date=date_format($date,"d.m.Y H:i");
         return <<< TEMPLATE
             <tr>
                 <th scope="row">$data[0]</th>
-                <td>$data[1]</td>
+                <td>$date</td>
                 <td>$data[2]</td>
                 <td>$data[3]</td>
                 <td>$data[4] zł</td>
