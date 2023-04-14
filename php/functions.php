@@ -175,7 +175,7 @@ class ContentClass
         }
     }
     function generateBestsellers() {
-        $query = "SELECT products.image, products.name FROM orders, products WHERE products.id = JSON_VALUE(orderData, '$.products[*].id') GROUP BY JSON_VALUE(orderData, '$.products[*].id') ORDER BY SUM(JSON_VALUE(orderData, '$.products[*].count')) DESC LIMIT 3;";
+        $query = "SELECT products.image, products.name, SUM(JSON_VALUE(orderData, '$.products[*].count')) AS S FROM orders, products WHERE products.id = JSON_VALUE(orderData, '$.products[*].id') GROUP BY products.id ORDER BY S DESC LIMIT 3;";
         $result = Database->getData($query);
         if($result->resultNum == 3) {
             $pizzas = array();
