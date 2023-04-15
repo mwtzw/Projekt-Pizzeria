@@ -4,7 +4,12 @@ if(isset($_GET)) {
         if(isset($_POST['email'])) 
             if(User->loginUser($_POST)) {
                 header("Location: ../menu1.php");
-            } else header("Location: ../index.php"); 
+            } else {
+                $_SESSION['message']['message'] = "Nieprawidłowy login lub hasło";
+                $_SESSION['message']['type'] = "error";
+                header("Location: ../index.php");
+            }  
+                
         exit();
     }
     if($_GET['action'] === "logout") {

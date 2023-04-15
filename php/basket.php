@@ -1,4 +1,11 @@
 <?php require("functions.php");
+
+if(User->isNotLoggedIn()) {
+    $_SESSION['message']['message'] = "Musisz być zalogowany aby dodać produkt do koszyka";
+    $_SESSION['message']['type'] = "error";
+    header("Location: ../menu1.php");
+}
+
 if(isset($_GET['action'])) {
     if($_GET['action'] === "remove") {
         $id = $_GET["id"];
