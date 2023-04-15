@@ -36,7 +36,7 @@
   </script>
 
     <header>
-       
+    
     <!-- =====================MEUN======================= -->
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
       <div class="container py-3">
@@ -59,10 +59,10 @@
               <a href="menu1.php" class="nav-link">Menu</a>
               </li>
               <li class="nav-item m-1 d-flex justify-content-center align-items-center">
-                <a class="nav-link ">Bestsellery</a>
+                <a href="./#best2" class="nav-link ">Bestsellery</a>
               </li>
               <li class="nav-item m-1 d-flex justify-content-center align-items-center">
-                <a class="nav-link ">Zamów</a>
+                <a  href="./#onas3" class="nav-link ">O nas</a>
               </li>
               <?php
               if (User->isNotLoggedIn()) {
@@ -92,10 +92,14 @@
   </div>
   </div>
   </header>
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
 <!-- MAIN ================================ -->
       <div class="container-fluid main-banner">
     <div class="h-100 align-items-center d-flex justify-content-center flex-column">
-        <div class="align-middle d-flex justify-content-center align-items-center flex-column position-relative">
+        <div data-aos="zoom-in-up" class="align-middle d-flex justify-content-center align-items-center flex-column position-relative">
             <h1 id="menu">ITALIANA</h1>
             <h1 id="menu-opis"> Prawdziwa Włoska Pizzeria</h1>
         </div>
@@ -255,7 +259,7 @@
 
 <!-- ------------------O NAS ----------------------- -->
 
-<div class="aboutus container-fluid d-flex flex-wrap align-items-center">
+<div id="onas3" class="aboutus container-fluid d-flex flex-wrap align-items-center">
   <div class="container aboutus-content">
     <div class="mb-5 d-flex justify-content-center flex-wrap "> 
       <div class="aboutus-photo d-flex justify-content-center align-items-center "> 
@@ -386,7 +390,9 @@ Aby przygotować cienkie ciasto w pizzerii, potrzebne są podstawowe składniki,
             <li> Regulamin</li>
           </a>
           <li> Promocje</li>
-          <li> Kontakt</li>
+          <a href="kontakt.html" style="color:white;">
+            <li> Kontakt</li>
+          </a>
           <li> Polityka Prywatności</li>
         </ul>
       </div>
@@ -397,14 +403,21 @@ Aby przygotować cienkie ciasto w pizzerii, potrzebne są podstawowe składniki,
           <li> Instagram</li>
           <li> Tiktok</li>
           <li> Facebook</li>
-          <img class="m-2 mt-3" src="img/instagram.png" alt="insta">
-          <img class="m-2 mt-3" src="img/tiktok.png" alt="insta">
-          <img class="m-2 mt-3" src="img/facebook.png" alt="insta">
+          <a style="text-decoration: none;"href="https://github.com/Matitek24">
+          <img class="m-2 mt-3" src="./img/instagram.png" alt="insta">
+          </a>
+          <a style="text-decoration: none;" href="https://github.com/Matitek24">
+          <img class="m-2 mt-3" src="./img/tiktok.png" alt="insta">
+          </a>
+          <a style="text-decoration: none;" href="https://github.com/Matitek24">
+          <img class="m-2 mt-3" src="./img/facebook.png" alt="insta">
+          </a>
         </ul>
       </div>
     </div>
     <div id="authors" class="d-flex justify-content-center text-white">
-      <h4 class="fw-lighter"> Mateusz Skrzypek <img src="img/github-sign.png" alt="github"> | <img src="img/github-sign.png" alt="github"> Mateusz Wyszogrodzki </h4>
+      <h4 class="fw-lighter"> Mateusz Skrzypek <a style="text-decoration: none;" href="https://github.com/Matitek24"><img src="img/github-sign.png" alt="github"> </a>
+       |<a style="text-decoration: none;" href="https://github.com/mwtzw"> <img src="img/github-sign.png" alt="github"> </a>Mateusz Wyszogrodzki </h4>
 
     </div>
   </div>
@@ -500,5 +513,6 @@ Aby przygotować cienkie ciasto w pizzerii, potrzebne są podstawowe składniki,
   </div>
 </div>
   <!-- MODAL LOKALIZACJI -->
+  
 </body>
 </html>

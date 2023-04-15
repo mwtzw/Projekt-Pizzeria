@@ -157,6 +157,7 @@
 .gtco-testimonials {
     position: relative;
     margin-top: 30px;
+    overflow: hidden;
   }
   .gtco-testimonials h2 {
     font-size: 30px;
@@ -394,7 +395,9 @@ font-size: 30px;
 
 @media (max-width: 825px) {
 
-    
+  #carousel-thumbs img{
+   height: 50px;
+  }
     .bestse{
         background-attachment: fixed;
     }

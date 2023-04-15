@@ -45,14 +45,14 @@
           </ul>
           <div class="d-flex justify-content-center">
             <ul class="text-white navbar-nav mb-2 mb-md-0">
-              <li class="nav-item m-1 d-flex justify-content-center align-items-center">
-                <a class="nav-link">Menu</a>
+            <li class="nav-item m-1 d-flex justify-content-center align-items-center">
+              <a href="menu1.php" class="nav-link">Menu</a>
               </li>
               <li class="nav-item m-1 d-flex justify-content-center align-items-center">
-                <a class="nav-link ">Bestsellery</a>
+                <a href="./#best2" class="nav-link ">Bestsellery</a>
               </li>
               <li class="nav-item m-1 d-flex justify-content-center align-items-center">
-                <a class="nav-link ">Zamów</a>
+                <a  href="./#onas3" class="nav-link ">O nas</a>
               </li>
               <?php
               if (User->isNotLoggedIn()) {
@@ -179,7 +179,9 @@
             <li> Regulamin</li>
           </a>
           <li> Promocje</li>
-          <li> Kontakt</li>
+          <a href="kontakt.html" style="color:white;">
+            <li> Kontakt</li>
+          </a>
           <li> Polityka Prywatności</li>
         </ul>
       </div>
@@ -190,14 +192,21 @@
           <li> Instagram</li>
           <li> Tiktok</li>
           <li> Facebook</li>
+          <a style="text-decoration: none;"href="https://github.com/Matitek24">
           <img class="m-2 mt-3" src="./img/instagram.png" alt="insta">
+          </a>
+          <a style="text-decoration: none;" href="https://github.com/Matitek24">
           <img class="m-2 mt-3" src="./img/tiktok.png" alt="insta">
+          </a>
+          <a style="text-decoration: none;" href="https://github.com/Matitek24">
           <img class="m-2 mt-3" src="./img/facebook.png" alt="insta">
+          </a>
         </ul>
       </div>
     </div>
     <div id="authors" class="d-flex justify-content-center text-white">
-      <h4 class="fw-lighter"> Mateusz Skrzypek <img src="./img/github-sign.png" alt="github"> | <img src="./img/github-sign.png" alt="github"> Mateusz Wyszogrodzki </h4>
+    <h4 class="fw-lighter"> Mateusz Skrzypek <a style="text-decoration: none;" href="https://github.com/Matitek24"><img src="img/github-sign.png" alt="github"> </a>
+       |<a style="text-decoration: none;" href="https://github.com/mwtzw"> <img src="img/github-sign.png" alt="github"> </a>Mateusz Wyszogrodzki </h4>
 
     </div>
   </div>

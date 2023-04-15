@@ -495,7 +495,18 @@ font-size: 22px;
 .adres{
     box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.216);
 }
-
+.alert-warning {
+    --bs-alert-color: var(--bs-warning-text);
+    --bs-alert-bg: var(--bs-warning-bg-subtle);
+    --bs-alert-border-color: var(--bs-warning-border-subtle);
+    --bs-alert-link-color: var(--bs-warning-text);
+    margin-bottom: 10px;
+    margin-right: 10px;
+    position: fixed;
+    z-index:20;
+    right:0;
+    bottom:0;
+}
 
 @media (max-width: 800px) {
 
