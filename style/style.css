@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'pizza';
-    src: url("font/CHEESEPIZZA.ttf");
+    src: url("../font/CHEESEPIZZA.ttf");
 }
 
 *{
@@ -107,7 +107,7 @@ transition: 0.3s ease-in-out;
 .banner{
     width: 100%;
     height: 70vh;
-    background-image:url("img/background/pizza3p.jpg");
+    background-image:url("../img/background/pizza3p.jpg");
     background-size: cover;
     background-attachment:fixed;
     position: relative;
@@ -116,7 +116,7 @@ transition: 0.3s ease-in-out;
 .main-banner{
     width: 100%;
     height: 70vh;
-    background-image:url("img/background/main-back.jpg");
+    background-image:url("../img/background/main-back.jpg");
     background-size: cover;
     background-attachment:fixed;
     position: relative;
@@ -208,7 +208,7 @@ font-size: 22px;
     border: 5px dashed rgb(255, 255, 255);
     border-radius: 40px 40px 40px 40px;
     border-radius: 33px;
-    background-image: url("img/background/pizza2.jpg");
+    background-image: url("../img/background/pizza2.jpg");
     background-attachment: fixed;
     background-size: cover;
 }
@@ -314,12 +314,12 @@ font-size: 22px;
     left:0px;
 }
 #back{
-   background-image: url("img/background/back2.jpg"); 
+   background-image: url("../img/background/back2.jpg"); 
    background-repeat: repeat;    
     position: relative;
 }
 #back::before{
-    background: url("img/background/wave2.png"); 
+    background: url("../img/background/wave2.png"); 
     content: '';
     width: 100%;
     height: 100%;
@@ -333,7 +333,7 @@ font-size: 22px;
     z-index: 0;
 }
 #back2::before{
-    background: url("img/background/wave3.png"); 
+    background: url("../img/background/wave3.png"); 
     content: '';
     width: 100%;
     height:115px;
@@ -409,12 +409,12 @@ font-size: 22px;
 }
 #stopka{
     width: 100%;
-    background-image: url("img/background/pizza-gfb7907314_1920.jpg");
+    background-image: url("../img/background/pizza-gfb7907314_1920.jpg");
     position: relative;
     padding-top: 150px;
 }
 #stopka::before{
-    background: url("img/background/wave4.png"); 
+    background: url("../img/background/wave4.png"); 
     content: '';
     width: 100%;
     height:400px;
