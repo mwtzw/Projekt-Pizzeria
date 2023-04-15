@@ -22,5 +22,12 @@ if(isset($_GET)) {
         header("Location: ../index.php");
         exit();
     }
+    if($_GET['action'] === "review") {
+        if(isset($_POST['review'])) User->addReview($_POST);
+        header("Location: ../index.php");
+        $_SESSION['message']['message'] = "Dziękujemy za opinię";
+            $_SESSION['message']['type'] = "info";
+        exit();
+    }
 }
 header("Location: ../index.php");
