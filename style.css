@@ -196,7 +196,6 @@ width: 40px;
 text-align: center;
 border: none;
 color:white;
-background-color: #CE5E31;
 font-size: 22px;
 }
 .plus{
@@ -241,9 +240,7 @@ font-size: 22px;
     grid-column-gap: 15px;
     grid-row-gap: 15px;
   }
-.pizza-description{
-    background-color: #CE5E31;
-}
+
 .pizzee .card{
     width: 320px;
     height: 580px;

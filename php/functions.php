@@ -464,7 +464,7 @@ class TemplateClass
         return <<< TEMPLATE
                 <div class="product border rounded-5 d-flex flex-column align-items-center justify-content-start">
                     <img src="$data[3]">
-                    <div class="bg-success-emphasis rounded-5 rounded-top-0 w-100 h-100 text-center" style="background-color: #4f8f5b;">
+                    <div class="pizza-ingredient rounded-5 rounded-top-0 w-100 h-100 text-center" style="background-color: #4f8f5b;">
                     <h1 class="mt-3 fs-3 text-white">$data[1]</h1>
                         <div id="incrementor">
                             <input class="fs-5 nr" type="number" value="0" name="ingredient[$data[0]]" id="nr" min="0" max="5">
