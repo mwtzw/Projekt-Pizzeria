@@ -7,30 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>!!!!!!!!!!!!!!!!!!!!!!!!
     </title>
-      <!-- bootstrap  -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    <!-- bootstrap  -->
-     <!-- jquery -->
-    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
-    <!-- jquery -->
+    <link href="libraries/bootstrap.min.css" rel="stylesheet">
+    <script src="libraries/bootstrap.bundle.min.js"></script>
+    <script src="libraries/jquery-3.6.4.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="style/jquery.nice-number.css">
     <script src="javascript/jquery.nice-number.js"></script>
-    <!-- AOS -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <!-- AOS -->
-    <!-- OWL CAROUSEL -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <!-- biblioteka do galeri -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js"></script>
-    <!-- biblioteka do galeri -->
+    <link rel="stylesheet" href="libraries/aos.css" />
+    <link rel="stylesheet" href="libraries/owl.carousel.min.css">
+    <script src="libraries/owl.carousel.min.js"></script>
+    <script src="libraries/popper.min.js"></script>
+    <script src="libraries/bootstrap.min.js"></script>
 </head>
 <body>
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script src="libraries/aos.js"></script>
   <script>
     AOS.init();
   </script>
@@ -121,13 +112,13 @@
                <!-- INFO  -->
                 <div class="local-info d-flex justify-content-center align-items-center h-100">
                   <div class="w-50 d-flex justify-content-center align-items-center flex-column"> 
-                    <img src="img/phone.png" class="mb-3" alt="phone">
+                    <img loading="lazy" src="img/phone.png" class="mb-3" alt="phone">
                     <h1 class="fw-bold fs-4"> Numer Telefonu</h1>
                     <h1 class="fw-light fs-4">tel: 702-304-302</h1>
                     <button class="call2 border rounded-5 w-50 text-white mt-1" disabled> Zadzwoń </button>
                   </div>
                   <div class="w-50 d-flex justify-content-center align-items-center flex-column"> 
-                    <img src="img/location.png" class="mb-3" alt="location">
+                    <img loading="lazy" src="img/location.png" class="mb-3" alt="location">
                     <h1 class="fw-bold fs-4"> Warszawa</h1>
                     <h1 class="fw-light fs-4"> ul. Kapucyńska 32</h1>
                     <button class="call border rounded-5 w-50 text-white mt-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop"> Odwiedź </button>
@@ -137,13 +128,13 @@
 
                  <div class="local-info d-none justify-content-center align-items-center h-100">
                     <div class="w-50 d-flex justify-content-center align-items-center flex-column"> 
-                      <img src="img/phone.png" class="mb-3" alt="phone">
+                      <img loading="lazy" src="img/phone.png" class="mb-3" alt="phone">
                       <h1 class="fw-bold fs-4"> Numer Telefonu</h1>
                       <h1 class="fw-light fs-4">tel: 603-203-321</h1>
                       <button class="call2 border rounded-5 w-50 text-white mt-1" disabled> Zadzwoń </button>
                     </div>
                     <div class="w-50 d-flex justify-content-center align-items-center flex-column"> 
-                      <img src="img/location.png" class="mb-3" alt="location">
+                      <img loading="lazy" src="img/location.png" class="mb-3" alt="location">
                       <h1 class="fw-bold fs-4"> Kraków</h1>
                       <h1 class="fw-light fs-4"> ul. Floriańska 57</h1>
                       <button class="call border rounded-5 w-50 text-white mt-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop2"> Odwiedź </button>
@@ -152,13 +143,13 @@
 
               <div class="local-info d-none justify-content-center align-items-center h-100">
                   <div class="w-50 d-flex justify-content-center align-items-center flex-column"> 
-                    <img src="img/phone.png" class="mb-3" alt="phone">
+                    <img loading="lazy" src="img/phone.png" class="mb-3" alt="phone">
                     <h1 class="fw-bold fs-4"> Numer Telefonu</h1>
                     <h1 class="fw-light fs-4">tel: 032-321-532</h1>
                     <button class="call2 border rounded-5 w-50 text-white mt-1" disabled> Zadzwoń </button>
                   </div>
                   <div class="w-50 d-flex justify-content-center align-items-center flex-column"> 
-                    <img src="img/location.png" class="mb-3" alt="location">
+                    <img loading="lazy" src="img/location.png" class="mb-3" alt="location">
                     <h1 class="fw-bold fs-4"> Poznań</h1>
                     <h1 class="fw-light fs-4"> ul. Kramarska 234</h1>
                     <button class="call border rounded-5 w-50 text-white mt-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop3"> Odwiedź </button>
@@ -168,13 +159,13 @@
 
               <div class="local-info d-none justify-content-center align-items-center h-100">
                   <div class="w-50 d-flex justify-content-center align-items-center flex-column"> 
-                    <img src="img/phone.png" class="mb-3" alt="phone">
+                    <img loading="lazy" src="img/phone.png" class="mb-3" alt="phone">
                     <h1 class="fw-bold fs-4"> Numer Telefonu</h1>
                     <h1 class="fw-light fs-4">tel: 200-300-400</h1>
                     <button class="call2 border rounded-5 w-50 text-white mt-1" disabled> Zadzwoń </button>
                   </div>
                   <div class="w-50 d-flex justify-content-center align-items-center flex-column"> 
-                    <img src="img/location.png" class="mb-3" alt="location">
+                    <img loading="lazy" src="img/location.png" class="mb-3" alt="location">
                     <h1 class="fw-bold fs-4"> Wyszków</h1>
                     <h1 class="fw-light fs-4"> ul. Matejki 9</h1>
                     <button class="call border rounded-5 w-50 text-white mt-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop4"> Odwiedź </button>
@@ -199,22 +190,22 @@
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active" data-slide-number="0">
-              <img src="img/galeria/pizzeria2.jpg" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/Pn6iimgM-wo/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+              <img loading="lazy" src="img/galeria/pizzeria2.jpg" class="d-block w-100" alt="..." data-toggle="lightbox" data-gallery="example-gallery">
             </div>
             <div class="carousel-item" data-slide-number="1">
-              <img src="img/galeria/pizzeria1.jpg" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/tXqVe7oO-go/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+              <img loading="lazy" src="img/galeria/pizzeria1.jpg" class="d-block w-100" alt="..." data-toggle="lightbox" data-gallery="example-gallery">
             </div>
             <div class="carousel-item" data-slide-number="2">
-              <img src="img/galeria/pizzeria3.jpg" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/qlYQb7B9vog/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+              <img loading="lazy" src="img/galeria/pizzeria3.jpg" class="d-block w-100" alt="..." data-toggle="lightbox" data-gallery="example-gallery">
             </div>
             <div class="carousel-item" data-slide-number="3">
-              <img src="img/galeria/pizzeria4.jpg" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/QfEfkWk1Uhk/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+              <img loading="lazy" src="img/galeria/pizzeria4.jpg" class="d-block w-100" alt="..." data-toggle="lightbox" data-gallery="example-gallery">
             </div>
             <div class="carousel-item" data-slide-number="4">
-              <img src="img/galeria/pizzeria5.jpg" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/CSIcgaLiFO0/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+              <img loading="lazy" src="img/galeria/pizzeria5.jpg" class="d-block w-100" alt="..." data-toggle="lightbox" data-gallery="example-gallery">
             </div>
             <div class="carousel-item" data-slide-number="5">
-              <img src="img/galeria/pizzeria6.jpg" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/a_xa7RUKzdc/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+              <img loading="lazy" src="img/galeria/pizzeria6.jpg" class="d-block w-100" alt="..." data-toggle="lightbox" data-gallery="example-gallery">
             </div>
             
           </div>
@@ -226,22 +217,22 @@
             <div class="carousel-item active">
               <div class="row mx-0">
                 <div id="carousel-selector-0" class="thumb col-4 col-sm-2 px-1 py-2 selected" data-target="#myCarousel" data-slide-to="0">
-                  <img src="img/galeria/pizzeria2.jpg" class="img-fluid" alt="...">
+                  <img loading="lazy" src="img/galeria/pizzeria2.jpg" class="img-fluid" alt="...">
                 </div>
                 <div id="carousel-selector-1" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="1">
-                  <img src="img/galeria/pizzeria1.jpg" class="img-fluid" alt="...">
+                  <img loading="lazy" src="img/galeria/pizzeria1.jpg" class="img-fluid" alt="...">
                 </div>
                 <div id="carousel-selector-2" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="2">
-                  <img src="img/galeria/pizzeria3.jpg" class="img-fluid" alt="...">
+                  <img loading="lazy" src="img/galeria/pizzeria3.jpg" class="img-fluid" alt="...">
                 </div>
                 <div id="carousel-selector-3" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="3">
-                  <img src="img/galeria/pizzeria4.jpg" class="img-fluid" alt="...">
+                  <img loading="lazy" src="img/galeria/pizzeria4.jpg" class="img-fluid" alt="...">
                 </div>
                 <div id="carousel-selector-4" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="4">
-                  <img src="img/galeria/pizzeria5.jpg" class="img-fluid" alt="...">
+                  <img loading="lazy" src="img/galeria/pizzeria5.jpg" class="img-fluid" alt="...">
                 </div>
                 <div id="carousel-selector-5" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="5">
-                  <img src="img/galeria/pizzeria6.jpg" class="img-fluid" alt="...">
+                  <img loading="lazy" src="img/galeria/pizzeria6.jpg" class="img-fluid" alt="...">
                 </div>
               </div>
             </div>
@@ -260,7 +251,7 @@
   <div class="container aboutus-content">
     <div  data-aos="fade-up" data-aos-delay="300" class="mb-5 d-flex justify-content-center flex-wrap "> 
       <div class="aboutus-photo d-flex justify-content-center align-items-center "> 
-        <img src="img/historia.jpg" alt="aboutuusphoot">
+        <img loading="lazy" src="img/historia.jpg" alt="aboutuusphoot">
       </div>
       <div class="aboutus-description d-flex justify-content-center align-items-start flex-column"> 
         <h1> Historia Italiany</h1>
@@ -276,7 +267,7 @@
     </div>
     <div  data-aos="fade-up" data-aos-delay="300" class="d-flex mt-5 justify-content-center flex-wrap flex-row-reverse"> 
       <div class="aboutus-photo d-flex justify-content-center align-items-center flex-wrap"> 
-        <img src="img/ciasto.jpg" alt="aboutuusphoot">
+        <img loading="lazy" src="img/ciasto.jpg" alt="aboutuusphoot">
       </div>
       <div class="aboutus-description d-flex justify-content-center align-items-start flex-column"> 
         <h1> Włoskie Ciasto</h1>
@@ -334,20 +325,20 @@ Aby przygotować cienkie ciasto w pizzerii, potrzebne są podstawowe składniki,
           <li> Tiktok</li>
           <li> Facebook</li>
           <a style="text-decoration: none;"href="https://github.com/Matitek24">
-          <img class="m-2 mt-3" src="./img/instagram.png" alt="insta">
+          <img loading="lazy" class="m-2 mt-3" src="./img/instagram.png" alt="insta">
           </a>
           <a style="text-decoration: none;" href="https://github.com/Matitek24">
-          <img class="m-2 mt-3" src="./img/tiktok.png" alt="insta">
+          <img loading="lazy" class="m-2 mt-3" src="./img/tiktok.png" alt="insta">
           </a>
           <a style="text-decoration: none;" href="https://github.com/Matitek24">
-          <img class="m-2 mt-3" src="./img/facebook.png" alt="insta">
+          <img loading="lazy" class="m-2 mt-3" src="./img/facebook.png" alt="insta">
           </a>
         </ul>
       </div>
     </div>
     <div id="authors" class="d-flex justify-content-center text-white">
-      <h4 class="fw-lighter"> Mateusz Skrzypek <a style="text-decoration: none;" href="https://github.com/Matitek24"><img src="img/github-sign.png" alt="github"> </a>
-       |<a style="text-decoration: none;" href="https://github.com/mwtzw"> <img src="img/github-sign.png" alt="github"> </a>Mateusz Wyszogrodzki </h4>
+      <h4 class="fw-lighter"> Mateusz Skrzypek <a style="text-decoration: none;" href="https://github.com/Matitek24"><img loading="lazy" src="img/github-sign.png" alt="github"> </a>
+       |<a style="text-decoration: none;" href="https://github.com/mwtzw"> <img loading="lazy" src="img/github-sign.png" alt="github"> </a>Mateusz Wyszogrodzki </h4>
 
     </div>
   </div>
@@ -376,7 +367,7 @@ Aby przygotować cienkie ciasto w pizzerii, potrzebne są podstawowe składniki,
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body d-flex justify-content-center mt-2 mb-2">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2442.801315114377!2d21.010373899999998!3d52.246992399999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc65b7036bb9%3A0x220526641b287b21!2sKapucy%C5%84ska%2032%2C%2000-245%20Warszawa!5e0!3m2!1spl!2spl!4v1681335616736!5m2!1spl!2spl" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2442.801315114377!2d21.010373899999998!3d52.246992399999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc65b7036bb9%3A0x220526641b287b21!2sKapucy%C5%84ska%2032%2C%2000-245%20Warszawa!5e0!3m2!1spl!2spl!4v1681335616736!5m2!1spl!2spl" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
       <div class="modal-footer d-flex justify-content-center">
         <h1 class="fs-3 fw-light">Warszawa, Kapucyńska 32</h1>
@@ -396,7 +387,7 @@ Aby przygotować cienkie ciasto w pizzerii, potrzebne są podstawowe składniki,
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body d-flex justify-content-center mt-2 mb-2">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2561.15122834644!2d19.93883197687947!3d50.06472941506112!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47165b103cd158f9%3A0xdd903fa4685ee6da!2sFloria%C5%84ska%2057%2C%2031-015%20Krak%C3%B3w!5e0!3m2!1spl!2spl!4v1681335891310!5m2!1spl!2spl" width="600" height="450"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2561.15122834644!2d19.93883197687947!3d50.06472941506112!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47165b103cd158f9%3A0xdd903fa4685ee6da!2sFloria%C5%84ska%2057%2C%2031-015%20Krak%C3%B3w!5e0!3m2!1spl!2spl!4v1681335891310!5m2!1spl!2spl" width="600" height="450"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
       <div class="modal-footer d-flex justify-content-center">
         <h1 class="fs-3 fw-light">Kraków, Floriańska 57</h1>
@@ -416,7 +407,7 @@ Aby przygotować cienkie ciasto w pizzerii, potrzebne są podstawowe składniki,
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body d-flex justify-content-center mt-2 mb-2">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2433.8547880098963!2d16.931325476986828!3d52.40930794441853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47045b474ba7a0af%3A0x3dc3c5e07ebf902f!2sKramarska%2C%2061-001%20Pozna%C5%84!5e0!3m2!1spl!2spl!4v1681335932791!5m2!1spl!2spl" width="600" height="450"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2433.8547880098963!2d16.931325476986828!3d52.40930794441853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47045b474ba7a0af%3A0x3dc3c5e07ebf902f!2sKramarska%2C%2061-001%20Pozna%C5%84!5e0!3m2!1spl!2spl!4v1681335932791!5m2!1spl!2spl" width="600" height="450"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
       <div class="modal-footer d-flex justify-content-center">
         <h1 class="fs-3 fw-light">Poznań, Kramarska 234</h1>
@@ -436,7 +427,7 @@ Aby przygotować cienkie ciasto w pizzerii, potrzebne są podstawowe składniki,
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body d-flex justify-content-center mt-2 mb-2">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2423.0399227180246!2d21.460423676995912!3d52.60504922992886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ee50976711853%3A0x916bb99713fbbb34!2sJana%20Matejki%209%2C%2007-200%20Wyszk%C3%B3w!5e0!3m2!1spl!2spl!4v1681336001984!5m2!1spl!2spl" width="600" height="450"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2423.0399227180246!2d21.460423676995912!3d52.60504922992886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ee50976711853%3A0x916bb99713fbbb34!2sJana%20Matejki%209%2C%2007-200%20Wyszk%C3%B3w!5e0!3m2!1spl!2spl!4v1681336001984!5m2!1spl!2spl" width="600" height="450"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
       <div class="modal-footer d-flex justify-content-center">
         <h1 class="fs-3 fw-light">Wyszków, Matejki 9</h1>
