@@ -90,12 +90,12 @@ setTimeout(() => {
 			let c = ing % 2 == 0 ? 1 : 0;
 			let cc = ing % 2 == 0 ? 0 : 1;
 			e.style = `background-color: ${ingredientColors[c]}`;
-			document.querySelectorAll(".minus")[
-				ing
-			].style = `background-color: ${ingredientColors[cc]}`;
-			document.querySelectorAll(".plus")[
-				ing
-			].style = `background-color: ${ingredientColors[cc]}`;
+			// document.querySelectorAll(".minus")[
+			// 	ing
+			// ].style = `background-color: ${ingredientColors[cc]}`;
+			// document.querySelectorAll(".plus")[
+			// 	ing
+			// ].style = `background-color: ${ingredientColors[cc]}`;
 			ing++;
 		});
 	}
