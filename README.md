@@ -2,12 +2,12 @@
 
 https://105.pl/
 
-- [ ] Rejestracja 
+- [x] Rejestracja 
 - [ ] Stylowanie login
-- [ ] Historia
-- [ ] Dashboard
-- [ ] User
+- [x] Historia
+- [x] Dashboard
+- [x] User
 - [ ] Strona główna 
 - [ ] Zmniejszenie obrazkow
 - [ ] Stopka
-- [ ] Stronę z zamówieniami wybieranie płatności itp.
+- [x] Stronę z zamówieniami wybieranie płatności itp.

@@ -93,20 +93,20 @@ define("User", new UserClass());
 
 class ContentClass
 {
-    function generateProducts($count = 4)
+    function generateProducts()
     {
-        $query = "SELECT id, name, description, price, image FROM products ORDER BY sold DESC LIMIT $count";
-        $result = Database->getData($query)->results;
-        for ($i = 0; $i < $count; $i++) {
-            if (!$result[$i][0] == 0) echo Template->productCard($result[$i]);
+        $query = "SELECT id, name, description, price, image FROM products";
+        $result = Database->getData($query);
+        for ($i = 0; $i < $result->resultNum; $i++) {
+            if (!$result->results[$i][0] == 0) echo Template->productCard($result->results[$i]);
         }
     }
     function generateIngredients()
     {
         $query = "SELECT id, name, price, image FROM ingredients";
-        $result = Database->getData($query)->results;
-        for ($i = 0; $i < count($result); $i++) {
-            echo Template->ingredientCard($result[$i]);
+        $result = Database->getData($query);
+        for ($i = 0; $i < $result->resultNum; $i++) {
+            echo Template->ingredientCard($result->results[$i]);
         }
     }
     function generateBasket()
@@ -172,6 +172,15 @@ class ContentClass
             echo Template->userOrderHistory($historyRows);
         } else {
             echo Template->noUserOrderHistory();
+        }
+    }
+    function generateBestsellers() {
+        $query = "SELECT products.image, products.name, SUM(JSON_VALUE(orderData, '$.products[*].count')) AS S FROM orders, products WHERE products.id = JSON_VALUE(orderData, '$.products[*].id') GROUP BY products.id ORDER BY S DESC LIMIT 3;";
+        $result = Database->getData($query);
+        if($result->resultNum == 3) {
+            $pizzas = array();
+            for($i = 0; $i < $result->resultNum; $i++) array_push($pizzas, array("image" => $result->results[$i][0], "name" => $result->results[$i][1])); 
+            echo Template->bestsellers($pizzas);
         }
     }
 }
@@ -738,6 +747,36 @@ class TemplateClass
                 <td>$data[3]</td>
                 <td>$data[4] zł</td>
             </tr>
+        TEMPLATE;
+    }
+    function bestsellers($data) {
+        return <<< TEMPLATE
+            <DIV class="container-fluid bestse">
+                <div class="top d-flex justify-content-center flex-wrap">
+                    <div class="best d-flex justify-content-between align-items-center flex-column">
+                        <img src="img/laur.png" alt="laur" class="laur">
+                        <div class="best-zdjecie mt-2">
+                        <img src="{$data[1]['image']}" alt="{$data[1]['name']}">
+                        </div>
+                        <div id="podium-drugie" class="mb-5 text-white d-flex justify-content-center align-items-center fs-1 fw-bold">2</div>
+                    </div>
+                    <div class="best2 d-flex justify-content-center align-items-center flex-column">
+                        <img src="img/laur1.png" alt="laur" class="laur2">
+                        <div class="best-zdjecie">
+                        <img src="{$data[0]['image']}" alt="{$data[0]['name']}">
+                        </div>
+                        <div id="podium-pierwsze" class="text-white d-flex justify-content-center align-items-center fs-1 fw-bold">1</div>
+                    </div>
+                    <div class="best d-flex justify-content-between align-items-center flex-column">
+                        <img src="img/laur3.png" alt="laur" class="laur">
+                        <div class="best-zdjecie mt-2">
+                        <img src="{$data[2]['image']}" alt="{$data[2]['name']}">
+                        </div>
+                        <div id="podium-trzecie" class="mb-5 text-white d-flex justify-content-center align-items-center fs-1 fw-bold">3</div>
+                    </div>
+                </div>
+            </DIV>
+            <div id="back2"></div>
         TEMPLATE;
     }
 

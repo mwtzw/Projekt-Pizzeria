@@ -16,8 +16,8 @@
     <!-- jquery -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="./style/jquery.nice-number.css">
-    <script src="./javascript/jquery.nice-number.js"></script>
+    <link rel="stylesheet" href="style/jquery.nice-number.css">
+    <script src="javascript/jquery.nice-number.js"></script>
     <!-- AOS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- AOS -->
@@ -120,13 +120,13 @@
                <!-- INFO  -->
                 <div class="local-info d-flex justify-content-center align-items-center h-100">
                   <div class="w-50 d-flex justify-content-center align-items-center flex-column"> 
-                    <img src="./img/phone.png" class="mb-3" alt="phone">
+                    <img src="img/phone.png" class="mb-3" alt="phone">
                     <h1 class="fw-bold fs-4"> Numer Telefonu</h1>
                     <h1 class="fw-light fs-4">tel: 702-304-302</h1>
                     <button class="call2 border rounded-5 w-50 text-white mt-1" disabled> Zadzwoń </button>
                   </div>
                   <div class="w-50 d-flex justify-content-center align-items-center flex-column"> 
-                    <img src="./img/location.png" class="mb-3" alt="location">
+                    <img src="img/location.png" class="mb-3" alt="location">
                     <h1 class="fw-bold fs-4"> Warszawa</h1>
                     <h1 class="fw-light fs-4"> ul. Kapucyńska 32</h1>
                     <button class="call border rounded-5 w-50 text-white mt-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop"> Odwiedź </button>
@@ -136,13 +136,13 @@
 
                  <div class="local-info d-none justify-content-center align-items-center h-100">
                     <div class="w-50 d-flex justify-content-center align-items-center flex-column"> 
-                      <img src="./img/phone.png" class="mb-3" alt="phone">
+                      <img src="img/phone.png" class="mb-3" alt="phone">
                       <h1 class="fw-bold fs-4"> Numer Telefonu</h1>
                       <h1 class="fw-light fs-4">tel: 603-203-321</h1>
                       <button class="call2 border rounded-5 w-50 text-white mt-1" disabled> Zadzwoń </button>
                     </div>
                     <div class="w-50 d-flex justify-content-center align-items-center flex-column"> 
-                      <img src="./img/location.png" class="mb-3" alt="location">
+                      <img src="img/location.png" class="mb-3" alt="location">
                       <h1 class="fw-bold fs-4"> Kraków</h1>
                       <h1 class="fw-light fs-4"> ul. Floriańska 57</h1>
                       <button class="call border rounded-5 w-50 text-white mt-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop2"> Odwiedź </button>
@@ -151,13 +151,13 @@
 
               <div class="local-info d-none justify-content-center align-items-center h-100">
                   <div class="w-50 d-flex justify-content-center align-items-center flex-column"> 
-                    <img src="./img/phone.png" class="mb-3" alt="phone">
+                    <img src="img/phone.png" class="mb-3" alt="phone">
                     <h1 class="fw-bold fs-4"> Numer Telefonu</h1>
                     <h1 class="fw-light fs-4">tel: 032-321-532</h1>
                     <button class="call2 border rounded-5 w-50 text-white mt-1" disabled> Zadzwoń </button>
                   </div>
                   <div class="w-50 d-flex justify-content-center align-items-center flex-column"> 
-                    <img src="./img/location.png" class="mb-3" alt="location">
+                    <img src="img/location.png" class="mb-3" alt="location">
                     <h1 class="fw-bold fs-4"> Poznań</h1>
                     <h1 class="fw-light fs-4"> ul. Kramarska 234</h1>
                     <button class="call border rounded-5 w-50 text-white mt-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop3"> Odwiedź </button>
@@ -167,13 +167,13 @@
 
               <div class="local-info d-none justify-content-center align-items-center h-100">
                   <div class="w-50 d-flex justify-content-center align-items-center flex-column"> 
-                    <img src="./img/phone.png" class="mb-3" alt="phone">
+                    <img src="img/phone.png" class="mb-3" alt="phone">
                     <h1 class="fw-bold fs-4"> Numer Telefonu</h1>
                     <h1 class="fw-light fs-4">tel: 200-300-400</h1>
                     <button class="call2 border rounded-5 w-50 text-white mt-1" disabled> Zadzwoń </button>
                   </div>
                   <div class="w-50 d-flex justify-content-center align-items-center flex-column"> 
-                    <img src="./img/location.png" class="mb-3" alt="location">
+                    <img src="img/location.png" class="mb-3" alt="location">
                     <h1 class="fw-bold fs-4"> Wyszków</h1>
                     <h1 class="fw-light fs-4"> ul. Matejki 9</h1>
                     <button class="call border rounded-5 w-50 text-white mt-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop4"> Odwiedź </button>
@@ -188,32 +188,7 @@
   </div>
 
 <!-- BESTSELLERY ================================ -->
-<DIV class="container-fluid bestse">
-  <div class="top d-flex justify-content-center flex-wrap">
-    <div class="best d-flex justify-content-between align-items-center flex-column">
-      <img src="./img/laur.png" alt="laur" class="laur">
-      <div class="best-zdjecie mt-2">
-        <img src="./img/products/meat.png" alt="miesna">
-      </div>
-      <div id="podium-drugie" class="mb-5 text-white d-flex justify-content-center align-items-center fs-1 fw-bold">2</div>
-    </div>
-    <div class="best2 d-flex justify-content-center align-items-center flex-column">
-      <img src="./img/laur1.png" alt="laur" class="laur2">
-      <div class="best-zdjecie">
-        <img src="./img/products/peperoni.png" alt="peperoni">
-      </div>
-      <div id="podium-pierwsze" class="text-white d-flex justify-content-center align-items-center fs-1 fw-bold">1</div>
-    </div>
-    <div class="best d-flex justify-content-between align-items-center flex-column">
-      <img src="./img/laur3.png" alt="laur" class="laur">
-      <div class="best-zdjecie mt-2">
-        <img src="./img/products/hawai.png" alt="hawai">
-      </div>
-      <div id="podium-trzecie" class="mb-5 text-white d-flex justify-content-center align-items-center fs-1 fw-bold">3</div>
-    </div>
-  </div>
-</DIV>
-<div id="back2"> </div>
+<?php Content->generateBestsellers() ?>
 <!-- BESTSELLERY ================================ -->
 
 <!-- GALERIA ZDJĘĆ  -->
@@ -223,22 +198,22 @@
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active" data-slide-number="0">
-              <img src="./img/galeria/pizzeria2.jpg" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/Pn6iimgM-wo/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+              <img src="img/galeria/pizzeria2.jpg" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/Pn6iimgM-wo/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
             </div>
             <div class="carousel-item" data-slide-number="1">
-              <img src="./img/galeria/pizzeria1.jpg" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/tXqVe7oO-go/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+              <img src="img/galeria/pizzeria1.jpg" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/tXqVe7oO-go/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
             </div>
             <div class="carousel-item" data-slide-number="2">
-              <img src="./img/galeria/pizzeria3.jpg" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/qlYQb7B9vog/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+              <img src="img/galeria/pizzeria3.jpg" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/qlYQb7B9vog/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
             </div>
             <div class="carousel-item" data-slide-number="3">
-              <img src="./img/galeria/pizzeria4.jpg" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/QfEfkWk1Uhk/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+              <img src="img/galeria/pizzeria4.jpg" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/QfEfkWk1Uhk/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
             </div>
             <div class="carousel-item" data-slide-number="4">
-              <img src="./img/galeria/pizzeria5.jpg" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/CSIcgaLiFO0/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+              <img src="img/galeria/pizzeria5.jpg" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/CSIcgaLiFO0/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
             </div>
             <div class="carousel-item" data-slide-number="5">
-              <img src="./img/galeria/pizzeria6.jpg" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/a_xa7RUKzdc/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+              <img src="img/galeria/pizzeria6.jpg" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/a_xa7RUKzdc/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
             </div>
             
           </div>
@@ -250,22 +225,22 @@
             <div class="carousel-item active">
               <div class="row mx-0">
                 <div id="carousel-selector-0" class="thumb col-4 col-sm-2 px-1 py-2 selected" data-target="#myCarousel" data-slide-to="0">
-                  <img src="/img/galeria/pizzeria2.jpg" class="img-fluid" alt="...">
+                  <img src="img/galeria/pizzeria2.jpg" class="img-fluid" alt="...">
                 </div>
                 <div id="carousel-selector-1" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="1">
-                  <img src="/img/galeria/pizzeria1.jpg" class="img-fluid" alt="...">
+                  <img src="img/galeria/pizzeria1.jpg" class="img-fluid" alt="...">
                 </div>
                 <div id="carousel-selector-2" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="2">
-                  <img src="/img/galeria/pizzeria3.jpg" class="img-fluid" alt="...">
+                  <img src="img/galeria/pizzeria3.jpg" class="img-fluid" alt="...">
                 </div>
                 <div id="carousel-selector-3" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="3">
-                  <img src="/img/galeria/pizzeria4.jpg" class="img-fluid" alt="...">
+                  <img src="img/galeria/pizzeria4.jpg" class="img-fluid" alt="...">
                 </div>
                 <div id="carousel-selector-4" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="4">
-                  <img src="/img/galeria/pizzeria5.jpg" class="img-fluid" alt="...">
+                  <img src="img/galeria/pizzeria5.jpg" class="img-fluid" alt="...">
                 </div>
                 <div id="carousel-selector-5" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="5">
-                  <img src="/img/galeria/pizzeria6.jpg" class="img-fluid" alt="...">
+                  <img src="img/galeria/pizzeria6.jpg" class="img-fluid" alt="...">
                 </div>
               </div>
             </div>
@@ -284,7 +259,7 @@
   <div class="container aboutus-content">
     <div class="mb-5 d-flex justify-content-center flex-wrap "> 
       <div class="aboutus-photo d-flex justify-content-center align-items-center "> 
-        <img src="./img/historia.jpg" alt="aboutuusphoot">
+        <img src="img/historia.jpg" alt="aboutuusphoot">
       </div>
       <div class="aboutus-description d-flex justify-content-center align-items-start flex-column"> 
         <h1> Historia Italiany</h1>
@@ -300,7 +275,7 @@
     </div>
     <div class="d-flex mt-5 justify-content-center flex-wrap flex-row-reverse"> 
       <div class="aboutus-photo d-flex justify-content-center align-items-center flex-wrap"> 
-        <img src="./img/ciasto.jpg" alt="aboutuusphoot">
+        <img src="img/ciasto.jpg" alt="aboutuusphoot">
       </div>
       <div class="aboutus-description d-flex justify-content-center align-items-start flex-column"> 
         <h1> Włoskie Ciasto</h1>
@@ -319,7 +294,7 @@ Aby przygotować cienkie ciasto w pizzerii, potrzebne są podstawowe składniki,
 <div class="gtco-testimonials mt-5">
         <div class="owl-carousel owl-carousel1 owl-theme">
           <div>
-            <div class="card text-center"><img class="card-img-top" src="./img/users/user1.png" alt="">
+            <div class="card text-center"><img class="card-img-top" src="img/users/user1.png" alt="">
               <div class="card-body">
                 <h5>Jan Kowalski <br />
                   <span> Uzytkownik </span>
@@ -329,7 +304,7 @@ Aby przygotować cienkie ciasto w pizzerii, potrzebne są podstawowe składniki,
             </div>
           </div>
           <div>
-            <div class="card text-center"><img class="card-img-top" src="./img/users/user2.png" alt="">
+            <div class="card text-center"><img class="card-img-top" src="img/users/user2.png" alt="">
               <div class="card-body">
                 <h5>Kacper Król <br />
                   <span> Uzytkownik </span>
@@ -339,7 +314,7 @@ Aby przygotować cienkie ciasto w pizzerii, potrzebne są podstawowe składniki,
             </div>
           </div>
           <div>
-            <div class="card text-center"><img class="card-img-top" src="./img/users/default.png" alt="">
+            <div class="card text-center"><img class="card-img-top" src="img/users/default.png" alt="">
               <div class="card-body">
                 <h5>Anna Mak <br />
                   <span> Uzytkownik </span>
@@ -349,7 +324,7 @@ Aby przygotować cienkie ciasto w pizzerii, potrzebne są podstawowe składniki,
             </div>
           </div>
           <div>
-            <div class="card text-center"><img class="card-img-top" src="./img/users/szef1.png" alt="">
+            <div class="card text-center"><img class="card-img-top" src="img/users/szef1.png" alt="">
               <div class="card-body">
                 <h5>Kacper Mat <br />
                   <span> Uzytkownik </span>
@@ -359,7 +334,7 @@ Aby przygotować cienkie ciasto w pizzerii, potrzebne są podstawowe składniki,
             </div>
           </div>
           <div>
-            <div class="card text-center"><img class="card-img-top" src="./img/users/user3.png" alt="">
+            <div class="card text-center"><img class="card-img-top" src="img/users/user3.png" alt="">
               <div class="card-body">
                 <h5>Kuba Kępka<br />
                   <span> Uzytkownik </span>
@@ -369,7 +344,7 @@ Aby przygotować cienkie ciasto w pizzerii, potrzebne są podstawowe składniki,
             </div>
           </div>
           <div>
-            <div class="card text-center"><img class="card-img-top" src="./img/users/szef1.png" alt="">
+            <div class="card text-center"><img class="card-img-top" src="img/users/szef1.png" alt="">
               <div class="card-body">
                 <h5>Mateusz Skrzypek<br />
                   <span> Pracownik </span>
@@ -379,7 +354,7 @@ Aby przygotować cienkie ciasto w pizzerii, potrzebne są podstawowe składniki,
             </div>
           </div>
           <div>
-            <div class="card text-center"><img class="card-img-top" src="./img/users/default.png" alt="">
+            <div class="card text-center"><img class="card-img-top" src="img/users/default.png" alt="">
               <div class="card-body">
                 <h5>Mateusz Wyszogrodzki<br />
                   <span> Programista </span>
@@ -422,21 +397,21 @@ Aby przygotować cienkie ciasto w pizzerii, potrzebne są podstawowe składniki,
           <li> Instagram</li>
           <li> Tiktok</li>
           <li> Facebook</li>
-          <img class="m-2 mt-3" src="./img/instagram.png" alt="insta">
-          <img class="m-2 mt-3" src="./img/tiktok.png" alt="insta">
-          <img class="m-2 mt-3" src="./img/facebook.png" alt="insta">
+          <img class="m-2 mt-3" src="img/instagram.png" alt="insta">
+          <img class="m-2 mt-3" src="img/tiktok.png" alt="insta">
+          <img class="m-2 mt-3" src="img/facebook.png" alt="insta">
         </ul>
       </div>
     </div>
     <div id="authors" class="d-flex justify-content-center text-white">
-      <h4 class="fw-lighter"> Mateusz Skrzypek <img src="./img/github-sign.png" alt="github"> | <img src="./img/github-sign.png" alt="github"> Mateusz Wyszogrodzki </h4>
+      <h4 class="fw-lighter"> Mateusz Skrzypek <img src="img/github-sign.png" alt="github"> | <img src="img/github-sign.png" alt="github"> Mateusz Wyszogrodzki </h4>
 
     </div>
   </div>
   <!-- stopka =================================================== -->
-      <script src="./javascript/mainscript.js"> </script>
-      <script src="./javascript/karuzela.js"> </script>
-      <script src="./javascript/galeria.js"> </script>
+      <script src="javascript/mainscript.js"> </script>
+      <script src="javascript/karuzela.js"> </script>
+      <script src="javascript/galeria.js"> </script>
 <!-- MAIN -->
 
 <?php if (User->isNotLoggedIn()) {
