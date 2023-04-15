@@ -183,6 +183,12 @@ class ContentClass
             echo Template->bestsellers($pizzas);
         }
     }
+    function generateMessage() {
+        if($_SESSION['message']['message'] != "") {
+            echo Template->message($_SESSION['message']['type'], "BŁĄD", $_SESSION['message']['message']);
+            unset($_SESSION['message']);
+        }
+    }
 }
 define("Content", new ContentClass());
 
@@ -777,6 +783,16 @@ class TemplateClass
                 </div>
             </DIV>
             <div id="back2"></div>
+        TEMPLATE;
+    }
+    function message($type, $title, $message) {
+        if($type == "success") $color = "alert-success";
+        if($type == "error") $color = "alert-danger";
+        return <<< TEMPLATE
+            <div class="message alert $color alert-dismissible fade show" role="alert">
+                <strong>$title</strong> $message
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
         TEMPLATE;
     }
 

@@ -82,6 +82,7 @@
   </div>
   </div>
   </header>
+  <?php Content->generateMessage(); ?>
   <div class="container-fluid banner">
     <div class="h-100 align-items-center d-flex justify-content-center flex-column">
       <div class="align-middle">
