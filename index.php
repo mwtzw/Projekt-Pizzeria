@@ -446,7 +446,7 @@ Aby przygotować cienkie ciasto w pizzerii, potrzebne są podstawowe składniki,
 
   <!-- MODAL LOKALIZACJI -->
   <div class="modal fade" id="staticBackdrop" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
+  <div class="modal-dialog ">
     <div class="modal-content">
       <div class="modal-header">
       <svg xmlns="http://www.w3.org/2000/svg" class="me-2" xmlns:xlink="http://www.w3.org/1999/xlink" fill="black" height="50px" width="50px" version="1.1" id="Capa_1" viewBox="0 0 448.898 448.898" xml:space="preserve">
@@ -466,7 +466,7 @@ Aby przygotować cienkie ciasto w pizzerii, potrzebne są podstawowe składniki,
 </div>
 
 <div class="modal fade" id="staticBackdrop2"  tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
+  <div class="modal-dialog ">
     <div class="modal-content">
       <div class="modal-header">
       <svg xmlns="http://www.w3.org/2000/svg" class="me-2" xmlns:xlink="http://www.w3.org/1999/xlink" fill="black" height="50px" width="50px" version="1.1" id="Capa_1" viewBox="0 0 448.898 448.898" xml:space="preserve">
@@ -486,7 +486,7 @@ Aby przygotować cienkie ciasto w pizzerii, potrzebne są podstawowe składniki,
 </div>
 
 <div class="modal fade" id="staticBackdrop3"  tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
+  <div class="modal-dialog ">
     <div class="modal-content">
       <div class="modal-header">
       <svg xmlns="http://www.w3.org/2000/svg" class="me-2" xmlns:xlink="http://www.w3.org/1999/xlink" fill="black" height="50px" width="50px" version="1.1" id="Capa_1" viewBox="0 0 448.898 448.898" xml:space="preserve">
@@ -506,7 +506,7 @@ Aby przygotować cienkie ciasto w pizzerii, potrzebne są podstawowe składniki,
 </div>
 
 <div class="modal fade" id="staticBackdrop4"  tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
+  <div class="modal-dialog ">
     <div class="modal-content">
       <div class="modal-header">
       <svg xmlns="http://www.w3.org/2000/svg" class="me-2" xmlns:xlink="http://www.w3.org/1999/xlink" fill="black" height="50px" width="50px" version="1.1" id="Capa_1" viewBox="0 0 448.898 448.898" xml:space="preserve">
