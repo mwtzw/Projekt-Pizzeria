@@ -815,8 +815,8 @@ class TemplateClass
     public function bestsellers($data)
     {
         return <<< TEMPLATE
-            <DIV class="container-fluid bestse" id="best2">
-                <div class="top d-flex justify-content-center flex-wrap">
+            <DIV  class="container-fluid bestse" id="best2">
+                <div  data-aos="fade-up" data-aos-delay="300" class="top d-flex justify-content-center flex-wrap">
                     <div class="best d-flex justify-content-between align-items-center flex-column">
                         <img src="img/laur.png" alt="laur" class="laur">
                         <div class="best-zdjecie mt-2">

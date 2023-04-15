@@ -103,7 +103,7 @@
         
     </div>
     </div>
-    <div class="container-fluid">
+    <div  data-aos="fade-up" class="container-fluid">
       <div id="test" class="d-flex justify-content-center">
          <div id="find" class="justify-content-center align-items-center d-flex flex-column">
             <h2 class="mb-3 fw-bold">
@@ -193,7 +193,7 @@
 <!-- BESTSELLERY ================================ -->
 
 <!-- GALERIA ZDJĘĆ  -->
-<div class="container-sm gallery mt-2 mb-3 w-50">
+<div data-aos="fade-up" data-aos-delay="300" class="container-sm gallery mt-2 mb-3 w-50">
         <div class="mt-5 mb-5 carousel-container position-relative row">
           <h1 class="text-center mb-5 nasze-pizze "> Nasze Pizzerie</h1>
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -258,7 +258,7 @@
 
 <div id="onas3" class="aboutus container-fluid d-flex flex-wrap align-items-center">
   <div class="container aboutus-content">
-    <div class="mb-5 d-flex justify-content-center flex-wrap "> 
+    <div  data-aos="fade-up" data-aos-delay="300" class="mb-5 d-flex justify-content-center flex-wrap "> 
       <div class="aboutus-photo d-flex justify-content-center align-items-center "> 
         <img src="img/historia.jpg" alt="aboutuusphoot">
       </div>
@@ -274,7 +274,7 @@
             takie jak świeże owoce morza, aromatyczne zioła i oliwki pochodziły z lokalnych upraw i ryneczków.</p>
       </div>
     </div>
-    <div class="d-flex mt-5 justify-content-center flex-wrap flex-row-reverse"> 
+    <div  data-aos="fade-up" data-aos-delay="300" class="d-flex mt-5 justify-content-center flex-wrap flex-row-reverse"> 
       <div class="aboutus-photo d-flex justify-content-center align-items-center flex-wrap"> 
         <img src="img/ciasto.jpg" alt="aboutuusphoot">
       </div>
