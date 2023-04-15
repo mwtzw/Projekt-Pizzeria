@@ -41,20 +41,20 @@
     margin-top: 0px;
 }
 #podium-drugie{
-    width: 250px;
+    /* width: 250px; */
     height: 100px;
     background-color: silver;
     border-radius: 30px;
 }
 #podium-pierwsze{
-    width: 300px;
+    /* width: 300px; */
     height: 140px;
     background-color: gold;
     border-radius: 60px;
 
 }
 #podium-trzecie{
-    width: 250px;
+    /* width: 250px; */
     height: 100px;
     background-color: rgb(134, 71, 0);
     border-radius: 30px;
