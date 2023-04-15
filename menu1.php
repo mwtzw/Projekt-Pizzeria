@@ -85,7 +85,7 @@
   <div class="container-fluid banner">
     <div class="h-100 align-items-center d-flex justify-content-center flex-column">
       <div class="align-middle">
-        <h1 id="menu">MENU</h1>
+        <h1 data-aos="zoom-in-up" id="menu">MENU</h1>
       </div>
       <button type="button" id="guzik" class="btn fw-bold"><a id="hrefguzik" class=" d-flex align-items-center justify-content-center text-white text-decoration-none" href="#pizzas">Czytaj Więcej</a></button>
     </div>

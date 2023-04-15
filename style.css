@@ -507,7 +507,15 @@ font-size: 22px;
     right:0;
     bottom:0;
 }
+#opinia{
+    width: 400px;
+}
+#opinia textarea{
+    height:120px;
+    resize: none;
+    border-radius: 30px;
 
+}
 @media (max-width: 800px) {
 
     .navbar-toggler{
