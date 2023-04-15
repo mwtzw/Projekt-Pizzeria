@@ -63,7 +63,7 @@ class TemplateClass
                         </div>
                         <div class="cena-koszyk d-flex flex-column">
                             <h1 class="text-center fw-light fst-italic fs-4 w-30 ms-3 me-3" style="font-size:4px; ">$price zł</h1>
-                            <a href="php/basket.php$link"><img class="bin" src="./img/bin.png" style="width:30px;" alt="bin"></a>
+                            <a href="php/basket.php$link"><img class="bin" src="img/icons/bin.png" style="width:30px;" alt="bin"></a>
                         </div>
                     </div>
                 </div>
@@ -166,9 +166,9 @@ class TemplateClass
                         <p class="fw-lighter text-center"> Nie masz konta <b class="fw-bold" id="res"> Zarejestruj się </b> </p>
                         <p class="fw-lighter text-center"> Zaloguj się za pomocą </p>
                         <div class="login-social d-flex justify-content-center">
-                        <img src="./img/instagram2.png" class="ms-3 me-3" alt="insta">
-                        <img src="./img/facebook2.png" class="ms-3 me-3" alt="facebook">
-                        <img src="./img/social2.png" class="ms-3 me-3" alt="social">
+                        <img src="img/icons/instagram2.png" class="ms-3 me-3" alt="insta">
+                        <img src="img/icons/facebook2.png" class="ms-3 me-3" alt="facebook">
+                        <img src="img/icons/social2.png" class="ms-3 me-3" alt="social">
                         </div>
                     </form>
                     <!-- form  -->
@@ -209,9 +209,9 @@ class TemplateClass
                         </p>
                         <p class="fw-lighter text-center"> Zarejestruj się za pomocą </p>
                         <div class="login-social d-flex justify-content-center">
-                        <img src="./img/instagram2.png" class="ms-3 me-3" alt="insta">
-                        <img src="./img/facebook2.png" class="ms-3 me-3" alt="facebook">
-                        <img src="./img/social2.png" class="ms-3 me-3" alt="social">
+                        <img src="img/icons/instagram2.png" class="ms-3 me-3" alt="insta">
+                        <img src="img/icons/facebook2.png" class="ms-3 me-3" alt="facebook">
+                        <img src="img/icons/social2.png" class="ms-3 me-3" alt="social">
                         </div>
                     </form>
                     <!-- form  -->
@@ -237,7 +237,7 @@ class TemplateClass
         return <<< TEMPLATE
             <li class="nav-item m-1 d-flex justify-content-center align-items-center">
                 <button class="btn cart pb-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
-                <img src="./img/shopping-cart2.png" style="width:30px;" alt="koszyk"></button>
+                <img src="img/icons/shopping-cart2.png" style="width:30px;" alt="koszyk"></button>
             </li>
         TEMPLATE;
     }
@@ -276,9 +276,9 @@ class TemplateClass
                     <h3 class="mt-2 ms-4 fst-italic fw-lighter fs-5">E-mail: <b class="email">$data[3]</b> </h3>
                     <h3 class="mt-2 ms-4 fst-italic fw-lighter fs-5">Telefon: <b class="fs-4">$phone</b></h3>
                     <div class="social-media d-flex justify-content-center align-items-center flex-row m-3">
-                        <img src="./img/facebook.png" class="m-2" alt="facebook">
-                        <img src="./img/instagram.png" class="m-2" alt="facebook">
-                        <img src="./img/github-sign.png" class="m-2" alt="facebook">
+                        <img src="img/icons/facebook.png" class="m-2" alt="facebook">
+                        <img src="img/icons/instagram.png" class="m-2" alt="facebook">
+                        <img src="img/icons/github.png" class="m-2" alt="facebook">
                     </div>
                 </div>
             </div>
@@ -391,21 +391,21 @@ class TemplateClass
             <DIV  class="container-fluid bestse" id="best2">
                 <div  data-aos="fade-up" data-aos-delay="300" class="top d-flex justify-content-center flex-wrap">
                     <div class="best d-flex justify-content-between align-items-center flex-column">
-                        <img src="img/laur.png" alt="laur" class="laur">
+                        <img src="img/icons/laur2.png" alt="laur" class="laur">
                         <div class="best-zdjecie mt-2">
                         <img src="{$data[1]['image']}" alt="{$data[1]['name']}">
                         </div>
                         <div id="podium-drugie" class="mb-5 p-4 text-center text-white d-flex justify-content-center align-items-center fs-1 fw-bold">2. {$data[1]['name']}</div>
                     </div>
                     <div class="best2 d-flex justify-content-center align-items-center flex-column">
-                        <img src="img/laur1.png" alt="laur" class="laur2">
+                        <img src="img/icons/laur1.png" alt="laur" class="laur2">
                         <div class="best-zdjecie">
                         <img src="{$data[0]['image']}" alt="{$data[0]['name']}">
                         </div>
                         <div id="podium-pierwsze" class="p-4 text-center text-white d-flex justify-content-center align-items-center fs-1 fw-bold">1. {$data[0]['name']}</div>
                     </div>
                     <div class="best d-flex justify-content-between align-items-center flex-column">
-                        <img src="img/laur3.png" alt="laur" class="laur">
+                        <img src="img/icons/laur3.png" alt="laur" class="laur">
                         <div class="best-zdjecie mt-2">
                         <img src="{$data[2]['image']}" alt="{$data[2]['name']}">
                         </div>
@@ -480,9 +480,9 @@ class TemplateClass
 
                         <p class="fw-lighter text-center"> Prosimy o napisanie konstruktywnej opinni </p>
                         <div class="login-social d-flex justify-content-center">
-                            <img src="./img/instagram2.png" class="ms-3 me-3" alt="insta">
-                            <img src="./img/facebook2.png" class="ms-3 me-3" alt="facebook">
-                            <img src="./img/social2.png" class="ms-3 me-3" alt="social">
+                            <img src="img/icons/instagram2.png" class="ms-3 me-3" alt="insta">
+                            <img src="img/icons/facebook2.png" class="ms-3 me-3" alt="facebook">
+                            <img src="img/icons/social2.png" class="ms-3 me-3" alt="social">
                         </div>
                     </form>
                 </div>

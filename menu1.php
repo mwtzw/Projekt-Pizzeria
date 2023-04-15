@@ -134,9 +134,9 @@
           <p class="fs-1 ms-5"> Dostępne metody płatności </p>
         </div>
         <div class="infoblock-image w-50 d-flex flex-column align-items-center justify-content-center">
-          <img style="width:80px;" class="mt-2" src="./img/payment-method.png" alt="payment">
-          <img style="width:80px;" class="mt-2" src="./img/blik.png" alt="payment">
-          <img style="width:80px;" class="mt-2" src="./img/dotpay.jpg" alt="payment">
+          <img style="width:80px;" class="mt-2" src="img/icons/payment-method.png" alt="payment">
+          <img style="width:80px;" class="mt-2" src="img/icons/blik.png" alt="payment">
+          <img style="width:80px;" class="mt-2" src="img/icons/dotpay.jpg" alt="payment">
         </div>
       </div>
     </div>
@@ -146,7 +146,7 @@
           <p class="fs-1 ms-5"> Zamów przez internet </p>
         </div>
         <div class="infoblock-image w-50 d-flex flex-column align-items-center justify-content-center">
-          <img style="width:120px;" class="mt-2" src="./img/wifi.png" alt="payment">
+          <img style="width:120px;" class="mt-2" src="img/icons/wifi.png" alt="payment">
         </div>
       </div>
     </div>
@@ -156,7 +156,7 @@
           <p class="fs-1 ms-5"> Darmowa dostawa </p>
         </div>
         <div class="infoblock-image w-50 d-flex flex-column align-items-center justify-content-center">
-          <img style="width:80px;" class="mt-2" src="./img/delivery.png" alt="payment">
+          <img style="width:80px;" class="mt-2" src="img/icons/delivery.png" alt="payment">
         </div>
       </div>
     </div>
@@ -194,20 +194,20 @@
           <li> Tiktok</li>
           <li> Facebook</li>
           <a style="text-decoration: none;" href="https://github.com/Matitek24">
-            <img class="m-2 mt-3" src="./img/instagram.png" alt="insta">
+            <img class="m-2 mt-3" src="img/icons/instagram.png" alt="insta">
           </a>
           <a style="text-decoration: none;" href="https://github.com/Matitek24">
-            <img class="m-2 mt-3" src="./img/tiktok.png" alt="insta">
+            <img class="m-2 mt-3" src="img/icons/tiktok.png" alt="insta">
           </a>
           <a style="text-decoration: none;" href="https://github.com/Matitek24">
-            <img class="m-2 mt-3" src="./img/facebook.png" alt="insta">
+            <img class="m-2 mt-3" src="img/icons/facebook.png" alt="insta">
           </a>
         </ul>
       </div>
     </div>
     <div id="authors" class="d-flex justify-content-center text-white">
-      <h4 class="fw-lighter"> Mateusz Skrzypek <a style="text-decoration: none;" href="https://github.com/Matitek24"><img src="img/github-sign.png" alt="github"> </a>
-        |<a style="text-decoration: none;" href="https://github.com/mwtzw"> <img src="img/github-sign.png" alt="github"> </a>Mateusz Wyszogrodzki </h4>
+      <h4 class="fw-lighter"> Mateusz Skrzypek <a style="text-decoration: none;" href="https://github.com/Matitek24"><img src="img/icons/github.png" alt="github"> </a>
+        |<a style="text-decoration: none;" href="https://github.com/mwtzw"> <img src="img/icons/github.png" alt="github"> </a>Mateusz Wyszogrodzki </h4>
 
     </div>
   </div>

@@ -115,13 +115,13 @@
           <!-- INFO  -->
           <div class="local-info d-flex justify-content-center align-items-center h-100">
             <div class="w-50 d-flex justify-content-center align-items-center flex-column">
-              <img loading="lazy" src="img/phone.png" class="mb-3" alt="phone">
+              <img loading="lazy" src="img/icons/phone.png" class="mb-3" alt="phone">
               <h1 class="fw-bold fs-4"> Numer Telefonu</h1>
               <h1 class="fw-light fs-4">tel: 702-304-302</h1>
               <button class="call2 border rounded-5 w-50 text-white mt-1" disabled> Zadzwoń </button>
             </div>
             <div class="w-50 d-flex justify-content-center align-items-center flex-column">
-              <img loading="lazy" src="img/location.png" class="mb-3" alt="location">
+              <img loading="lazy" src="img/icons/location.png" class="mb-3" alt="location">
               <h1 class="fw-bold fs-4"> Warszawa</h1>
               <h1 class="fw-light fs-4"> ul. Kapucyńska 32</h1>
               <button class="call border rounded-5 w-50 text-white mt-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop"> Odwiedź </button>
@@ -131,13 +131,13 @@
 
           <div class="local-info d-none justify-content-center align-items-center h-100">
             <div class="w-50 d-flex justify-content-center align-items-center flex-column">
-              <img loading="lazy" src="img/phone.png" class="mb-3" alt="phone">
+              <img loading="lazy" src="img/icons/phone.png" class="mb-3" alt="phone">
               <h1 class="fw-bold fs-4"> Numer Telefonu</h1>
               <h1 class="fw-light fs-4">tel: 603-203-321</h1>
               <button class="call2 border rounded-5 w-50 text-white mt-1" disabled> Zadzwoń </button>
             </div>
             <div class="w-50 d-flex justify-content-center align-items-center flex-column">
-              <img loading="lazy" src="img/location.png" class="mb-3" alt="location">
+              <img loading="lazy" src="img/icons/location.png" class="mb-3" alt="location">
               <h1 class="fw-bold fs-4"> Kraków</h1>
               <h1 class="fw-light fs-4"> ul. Floriańska 57</h1>
               <button class="call border rounded-5 w-50 text-white mt-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop2"> Odwiedź </button>
@@ -146,13 +146,13 @@
 
           <div class="local-info d-none justify-content-center align-items-center h-100">
             <div class="w-50 d-flex justify-content-center align-items-center flex-column">
-              <img loading="lazy" src="img/phone.png" class="mb-3" alt="phone">
+              <img loading="lazy" src="img/icons/phone.png" class="mb-3" alt="phone">
               <h1 class="fw-bold fs-4"> Numer Telefonu</h1>
               <h1 class="fw-light fs-4">tel: 032-321-532</h1>
               <button class="call2 border rounded-5 w-50 text-white mt-1" disabled> Zadzwoń </button>
             </div>
             <div class="w-50 d-flex justify-content-center align-items-center flex-column">
-              <img loading="lazy" src="img/location.png" class="mb-3" alt="location">
+              <img loading="lazy" src="img/icons/location.png" class="mb-3" alt="location">
               <h1 class="fw-bold fs-4"> Poznań</h1>
               <h1 class="fw-light fs-4"> ul. Kramarska 234</h1>
               <button class="call border rounded-5 w-50 text-white mt-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop3"> Odwiedź </button>
@@ -162,13 +162,13 @@
 
           <div class="local-info d-none justify-content-center align-items-center h-100">
             <div class="w-50 d-flex justify-content-center align-items-center flex-column">
-              <img loading="lazy" src="img/phone.png" class="mb-3" alt="phone">
+              <img loading="lazy" src="img/icons/phone.png" class="mb-3" alt="phone">
               <h1 class="fw-bold fs-4"> Numer Telefonu</h1>
               <h1 class="fw-light fs-4">tel: 200-300-400</h1>
               <button class="call2 border rounded-5 w-50 text-white mt-1" disabled> Zadzwoń </button>
             </div>
             <div class="w-50 d-flex justify-content-center align-items-center flex-column">
-              <img loading="lazy" src="img/location.png" class="mb-3" alt="location">
+              <img loading="lazy" src="img/icons/location.png" class="mb-3" alt="location">
               <h1 class="fw-bold fs-4"> Wyszków</h1>
               <h1 class="fw-light fs-4"> ul. Matejki 9</h1>
               <button class="call border rounded-5 w-50 text-white mt-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop4"> Odwiedź </button>
@@ -254,7 +254,7 @@
     <div class="container aboutus-content">
       <div data-aos="fade-up" data-aos-delay="300" class="mb-5 d-flex justify-content-center flex-wrap ">
         <div class="aboutus-photo d-flex justify-content-center align-items-center ">
-          <img loading="lazy" src="img/historia.jpg" alt="aboutuusphoot">
+          <img loading="lazy" src="img/background/historia.jpg" alt="aboutuusphoot">
         </div>
         <div class="aboutus-description d-flex justify-content-center align-items-start flex-column">
           <h1> Historia Italiany</h1>
@@ -270,7 +270,7 @@
       </div>
       <div data-aos="fade-up" data-aos-delay="300" class="d-flex mt-5 justify-content-center flex-wrap flex-row-reverse">
         <div class="aboutus-photo d-flex justify-content-center align-items-center flex-wrap">
-          <img loading="lazy" src="img/ciasto.jpg" alt="aboutuusphoot">
+          <img loading="lazy" src="img/background/ciasto.jpg" alt="aboutuusphoot">
         </div>
         <div class="aboutus-description d-flex justify-content-center align-items-start flex-column">
           <h1> Włoskie Ciasto</h1>
@@ -328,20 +328,20 @@
           <li> Tiktok</li>
           <li> Facebook</li>
           <a style="text-decoration: none;" href="https://github.com/Matitek24">
-            <img loading="lazy" class="m-2 mt-3" src="./img/instagram.png" alt="insta">
+            <img loading="lazy" class="m-2 mt-3" src="img/icons/instagram.png" alt="insta">
           </a>
           <a style="text-decoration: none;" href="https://github.com/Matitek24">
-            <img loading="lazy" class="m-2 mt-3" src="./img/tiktok.png" alt="insta">
+            <img loading="lazy" class="m-2 mt-3" src="img/icons/tiktok.png" alt="insta">
           </a>
           <a style="text-decoration: none;" href="https://github.com/Matitek24">
-            <img loading="lazy" class="m-2 mt-3" src="./img/facebook.png" alt="insta">
+            <img loading="lazy" class="m-2 mt-3" src="img/icons/facebook.png" alt="insta">
           </a>
         </ul>
       </div>
     </div>
     <div id="authors" class="d-flex justify-content-center text-white">
-      <h4 class="fw-lighter"> Mateusz Skrzypek <a style="text-decoration: none;" href="https://github.com/Matitek24"><img loading="lazy" src="img/github-sign.png" alt="github"> </a>
-        |<a style="text-decoration: none;" href="https://github.com/mwtzw"> <img loading="lazy" src="img/github-sign.png" alt="github"> </a>Mateusz Wyszogrodzki </h4>
+      <h4 class="fw-lighter"> Mateusz Skrzypek <a style="text-decoration: none;" href="https://github.com/Matitek24"><img loading="lazy" src="img/icons/github.png" alt="github"> </a>
+        |<a style="text-decoration: none;" href="https://github.com/mwtzw"> <img loading="lazy" src="img/icons/github.png" alt="github"> </a>Mateusz Wyszogrodzki </h4>
 
     </div>
   </div>
