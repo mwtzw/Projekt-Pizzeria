@@ -28,4 +28,4 @@ if(isset($_GET['action'])) {
         Basket->addProduct($id, $size);
     }
 }
-header("Location: ../menu1.php");
+header("Location: ../menu1.php#pizzas");

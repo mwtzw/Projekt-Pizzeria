@@ -87,7 +87,7 @@
       <div class="align-middle">
         <h1 id="menu">MENU</h1>
       </div>
-      <button type="button" id="guzik" class="btn fw-bold"><a id="hrefguzik" class=" d-flex align-items-center justify-content-center text-white text-decoration-none" href="#text2">Czytaj Więcej</a></button>
+      <button type="button" id="guzik" class="btn fw-bold"><a id="hrefguzik" class=" d-flex align-items-center justify-content-center text-white text-decoration-none" href="#pizzas">Czytaj Więcej</a></button>
     </div>
   </div>
   <div class="container-fluid">
@@ -118,7 +118,7 @@
   </form>
   <!-- wybieranie pizzy -->
   <div id="back" class="container-fluid pt-5 pb-5">
-    <div class="pt-5 pb-5">
+    <div id="pizzas" class="pt-5 pb-5">
 
       <div class="grid-parent d-flex flex-wrap justify-content-center">
         <?php Content->generateProducts(); ?>
