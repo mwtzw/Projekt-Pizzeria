@@ -1,4 +1,10 @@
-<?php require("php/functions.php"); ?>
+<?php 
+  require("php/functions.php"); 
+  if(User->isNotLoggedIn()) {
+    header("Location: index.php");
+    exit();
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
