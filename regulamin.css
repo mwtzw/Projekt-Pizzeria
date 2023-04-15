@@ -1,53 +1,51 @@
-body{
-    background-image: url("./img/regulamin.jpg");
-    background-size: cover;
+body {
+	background-image: url("./img/regulamin.jpg");
+	background-size: cover;
 }
-.reg{
-background-color: aliceblue;
-padding: 60px;
-border-radius: 50px;
-width: 50%;
-margin-bottom:50px;
+.reg {
+	background-color: aliceblue;
+	padding: 60px;
+	border-radius: 50px;
+	width: 50%;
+	margin-bottom: 50px;
 }
-#nagl{
-    font-size: 20px;
-    font-weight: bold;
-    font-style: italic;
+#nagl {
+	font-size: 20px;
+	font-weight: bold;
+	font-style: italic;
 }
-.reg ul li{
-    list-style-type: disc;
+.reg ul li {
+	list-style-type: disc;
 }
-#regulamin{
-    z-index: 3;
-    color:black;
+#regulamin {
+	z-index: 3;
+	color: black;
 }
-button{
-    width: 200px;
-    height: 60px;
-    border:none;
-    background-color: #CE5E31;
-    color: white;
-    font-size: 20px;
-    border-radius: 20px;
-    transition: 0.3s ease-in-out;
+button {
+	width: 200px;
+	height: 60px;
+	border: none;
+	background-color: #ce5e31;
+	color: white;
+	font-size: 20px;
+	border-radius: 20px;
+	transition: 0.3s ease-in-out;
 }
-button:hover{
-    transform: scale(1.06);
+button:hover {
+	transform: scale(1.06);
 }
-iframe{
-    width:800px;
-    border-radius: 40px;
-    margin-bottom:40px;
-    margin-top:40px;
+iframe {
+	width: 800px;
+	border-radius: 40px;
+	margin-bottom: 40px;
+	margin-top: 40px;
 }
 @media (max-width: 800px) {
-
-    .reg{
-        background-color: aliceblue;
-        padding: 10px;
-        border-radius: 50px;
-        width: 50%;
-        margin-bottom:50px;
-        }
-
-   }
+	.reg {
+		background-color: aliceblue;
+		padding: 10px;
+		border-radius: 50px;
+		width: 50%;
+		margin-bottom: 50px;
+	}
+}

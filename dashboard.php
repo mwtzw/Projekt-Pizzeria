@@ -1,9 +1,9 @@
-<?php 
-  require("php/functions.php"); 
-  if(User->isNotLoggedIn()) {
-    header("Location: index.php");
-    exit();
-  }
+<?php
+require("php/functions.php");
+if (User->isNotLoggedIn()) {
+  header("Location: index.php");
+  exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,14 +17,11 @@
   <link href="libraries/bootstrap.min.css" rel="stylesheet">
   <script src="libraries/bootstrap.bundle.min.js">
   </script>
-  <!-- bootstrap  -->
   <script src="libraries/jquery-3.6.4.js"></script>
-  <!-- jquery -->
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="dashbord.css">
   <link rel="stylesheet" href="./style/jquery.nice-number.css">
   <script src="./javascript/jquery.nice-number.js"></script>
-  <!-- AOS -->
   <link rel="stylesheet" href="libraries/aos.css" />
 </head>
 
@@ -54,14 +51,14 @@
           </ul>
           <div class="d-flex justify-content-center">
             <ul class="text-white navbar-nav mb-2 mb-md-0">
-            <li class="nav-item m-1 d-flex justify-content-center align-items-center">
-              <a href="menu1.php" class="nav-link">Menu</a>
+              <li class="nav-item m-1 d-flex justify-content-center align-items-center">
+                <a href="menu1.php" class="nav-link">Menu</a>
               </li>
               <li class="nav-item m-1 d-flex justify-content-center align-items-center">
                 <a href="./#best2" class="nav-link ">Bestsellery</a>
               </li>
               <li class="nav-item m-1 d-flex justify-content-center align-items-center">
-                <a  href="./#onas3" class="nav-link ">O nas</a>
+                <a href="./#onas3" class="nav-link ">O nas</a>
               </li>
               <?php
               if (User->isNotLoggedIn()) {
@@ -144,16 +141,16 @@
     <div class="d-flex justify-content-center flex-wrap">
       <div data-aos="zoom-in-up" id="history" class="p-4 m-3">
         <h1 class="text-white text-center">Historia Zamówień</h1>
-          <div class="tabelka text-white text-center">
-            <?php Content->generateUserOrderHistory() ?>
-          </div>
+        <div class="tabelka text-white text-center">
+          <?php Content->generateUserOrderHistory() ?>
         </div>
       </div>
-      <!-- ========================= TOP PIZZA  ===============================  -->
-      <?php Content->generateUserFavoritePizzas() ?>
-      <!-- ========================= TOP PIZZA  ===============================  -->
-
     </div>
+    <!-- ========================= TOP PIZZA  ===============================  -->
+    <?php Content->generateUserFavoritePizzas() ?>
+    <!-- ========================= TOP PIZZA  ===============================  -->
+
+  </div>
 
   </div>
   <script src="./javascript/script.js"> </script>

@@ -1,4 +1,4 @@
-<?php 
+<?php
 class TemplateClass
 {
     public function productCard($data)
@@ -73,8 +73,8 @@ class TemplateClass
     {
         $price = number_format($price, 2);
         $display = "";
-        if($cards == "" && $cards == "") {
-            $cards = "<div class='text-center w-100'>Jeszcze nic tu niema</div>"; 
+        if ($cards == "" && $cards == "") {
+            $cards = "<div class='text-center w-100'>Jeszcze nic tu niema</div>";
             $display = "disabled style='background-color: #828282'";
         }
         return <<< TEMPLATE
@@ -418,12 +418,11 @@ class TemplateClass
     }
     public function message($type, $title, $message)
     {
-        
+
         if ($type == "success") {
             $color = "alert-success";
-            
         }
-        
+
         if ($type == "error") {
             $color = "alert-danger";
         }

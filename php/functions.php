@@ -1,4 +1,4 @@
-<?php 
+<?php
 require "config.php";
 require "templates.php";
 
@@ -88,7 +88,7 @@ class UserClass
         $email = $POST['email'];
         $password = md5($POST['password']);
 
-        if(Database->getData("SELECT id FROM users WHERE email = '$email' OR phone = '$phone'")->resultNum == 0) {
+        if (Database->getData("SELECT id FROM users WHERE email = '$email' OR phone = '$phone'")->resultNum == 0) {
             Database->setData("INSERT INTO users(email, phone, password, name, surname) VALUES ('$email', '$phone', '$password', '$name', '$surname')");
             $result = Database->getData("SELECT id FROM users WHERE email='$email' AND password='$password'")->results[0][0];
             $basket = array("products" => [], "customProducts" => []);
@@ -98,15 +98,15 @@ class UserClass
         } else {
             return false;
         }
-
-        
     }
-    public function addReview($POST) {
+    public function addReview($POST)
+    {
         $review = $POST['review'];
         $userId = User->getUserId();
         $result = Database->setData("INSERT INTO reviews (userId, review) VALUES ('$userId', '$review')");
     }
-    public function setMessage($title, $message, $type) {
+    public function setMessage($title, $message, $type)
+    {
         $_SESSION['message']['title'] = $title;
         $_SESSION['message']['message'] = $message;
         $_SESSION['message']['type'] = $type;
@@ -233,9 +233,9 @@ class ContentClass
     public function generateReviews()
     {
         $results = Database->getData("SELECT users.name, users.surname, reviews.review, users.image FROM reviews JOIN users ON reviews.userId = users.id");
-        if($results->resultNum > 0) {
+        if ($results->resultNum > 0) {
             $reviews = "";
-            for($i = 0; $i < $results->resultNum; $i++) {
+            for ($i = 0; $i < $results->resultNum; $i++) {
                 $reviews .= Template->review($results->results[$i]);
             }
             echo $reviews;
