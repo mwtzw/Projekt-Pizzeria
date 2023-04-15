@@ -97,6 +97,11 @@ class UserClass
         $userId = User->getUserId();
         $result = Database->setData("INSERT INTO reviews (userId, review) VALUES ('$userId', '$review')");
     }
+    public function setMessage($title, $message, $type) {
+        $_SESSION['message']['title'] = $title;
+        $_SESSION['message']['message'] = $message;
+        $_SESSION['message']['type'] = $type;
+    }
 }
 define("User", new UserClass());
 
@@ -204,7 +209,7 @@ class ContentClass
     public function generateMessage()
     {
         if ($_SESSION['message']['message'] != "") {
-            echo Template->message($_SESSION['message']['type'], "", $_SESSION['message']['message']);
+            echo Template->message($_SESSION['message']['type'], $_SESSION['message']['title'], $_SESSION['message']['message']);
             unset($_SESSION['message']);
         }
     }
@@ -822,21 +827,21 @@ class TemplateClass
                         <div class="best-zdjecie mt-2">
                         <img src="{$data[1]['image']}" alt="{$data[1]['name']}">
                         </div>
-                        <div id="podium-drugie" class="mb-5 text-white d-flex justify-content-center align-items-center fs-1 fw-bold">2</div>
+                        <div id="podium-drugie" class="mb-5 text-white d-flex justify-content-center align-items-center fs-1 fw-bold">2. {$data[1]['name']}</div>
                     </div>
                     <div class="best2 d-flex justify-content-center align-items-center flex-column">
                         <img src="img/laur1.png" alt="laur" class="laur2">
                         <div class="best-zdjecie">
                         <img src="{$data[0]['image']}" alt="{$data[0]['name']}">
                         </div>
-                        <div id="podium-pierwsze" class="text-white d-flex justify-content-center align-items-center fs-1 fw-bold">1</div>
+                        <div id="podium-pierwsze" class="text-white d-flex justify-content-center align-items-center fs-1 fw-bold">1. {$data[0]['name']}</div>
                     </div>
                     <div class="best d-flex justify-content-between align-items-center flex-column">
                         <img src="img/laur3.png" alt="laur" class="laur">
                         <div class="best-zdjecie mt-2">
                         <img src="{$data[2]['image']}" alt="{$data[2]['name']}">
                         </div>
-                        <div id="podium-trzecie" class="mb-5 text-white d-flex justify-content-center align-items-center fs-1 fw-bold">3</div>
+                        <div id="podium-trzecie" class="mb-5 text-white d-flex justify-content-center align-items-center fs-1 fw-bold">3. {$data[2]['name']}</div>
                     </div>
                 </div>
             </DIV>
