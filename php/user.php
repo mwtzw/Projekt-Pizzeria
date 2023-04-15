@@ -18,7 +18,9 @@ if(isset($_GET)) {
         exit();
     }
     if($_GET['action'] === "register") {
-        if(isset($_POST['email'])) User->register($_POST);
+        if(isset($_POST['email'])) { 
+            if(!User->register($_POST)) User->setMessage("", "Taki użytkownik już istnieje", "error");
+        }
         header("Location: ../index.php");
         exit();
     }

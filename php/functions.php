@@ -88,11 +88,18 @@ class UserClass
         $email = $POST['email'];
         $password = md5($POST['password']);
 
-        Database->setData("INSERT INTO users(email, phone, password, name, surname) VALUES ('$email', '$phone', '$password', '$name', '$surname')");
-        $result = Database->getData("SELECT id FROM users WHERE email='$email' AND password='$password'")->results[0][0];
-        $basket = array("products" => [], "customProducts" => []);
-        $basket = json_encode($basket);
-        Database->setData("INSERT INTO baskets (userId, basketData) VALUES ('$result', '$basket')");
+        if(Database->getData("SELECT id FROM users WHERE email = '$email' OR phone = '$phone'")->resultNum == 0) {
+            Database->setData("INSERT INTO users(email, phone, password, name, surname) VALUES ('$email', '$phone', '$password', '$name', '$surname')");
+            $result = Database->getData("SELECT id FROM users WHERE email='$email' AND password='$password'")->results[0][0];
+            $basket = array("products" => [], "customProducts" => []);
+            $basket = json_encode($basket);
+            Database->setData("INSERT INTO baskets (userId, basketData) VALUES ('$result', '$basket')");
+            return true;
+        } else {
+            return false;
+        }
+
+        
     }
     public function addReview($POST) {
         $review = $POST['review'];
@@ -129,7 +136,7 @@ class ContentClass
     }
     public function generateBasket()
     {
-        echo Template->basket(Basket->getPaymentMethods(), "12345678", Basket->getBasketCards(), Basket->getCalculatedPrice(), Basket->getCustomBasketCards());
+        echo Template->basket(Basket->getPaymentMethods(), User->getUserData()[4], Basket->getBasketCards(), Basket->getCalculatedPrice(), Basket->getCustomBasketCards());
     }
     public function generateLoginForm()
     {

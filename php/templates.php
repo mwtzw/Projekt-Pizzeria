@@ -72,6 +72,11 @@ class TemplateClass
     public function basket($paymentMethods, $phone, $cards, $price, $customCards = "")
     {
         $price = number_format($price, 2);
+        $display = "";
+        if($cards == "" && $cards == "") {
+            $cards = "<div class='text-center w-100'>Jeszcze nic tu niema</div>"; 
+            $display = "disabled style='background-color: #828282'";
+        }
         return <<< TEMPLATE
             <!-- koszyk -->
             <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasScrollingLabel">
@@ -116,7 +121,7 @@ class TemplateClass
                     <!-- order form  -->
 
                     <div class="mt-3 d-flex justify-content-center align-items-center">
-                        <input type="submit" class="finish  text-white" value="Zamów">
+                        <input type="submit" class="finish  text-white" value="Zamów" $display">
                         <h1 class="fs-2 text-center fw-bold ms-4">$price zł </h1>
                     </div>
                     </form>
