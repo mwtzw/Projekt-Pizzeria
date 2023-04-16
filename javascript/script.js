@@ -11,92 +11,59 @@ AOS.init({
 setTimeout(() => {
 	let plus = document.getElementsByClassName("plus");
 	if (plus != null) {
-		let minus = document.getElementsByClassName("minus");
 		let nr = document.getElementsByClassName("nr");
 		let price = document.querySelector("#price");
-		let wynik = 20;
-		let product_price = 0;
+		let ingredientButtons = document.querySelectorAll(".pizza-ingredient button");
 		let defaultPrice = 20;
 		let fullCost = defaultPrice;
-		for (let i = 0; i < nr.length; i++) {
-			plus[i].addEventListener("click", () => {
-				for (let l = 0; l < nr.length; l++) {
-					let cost = parseFloat(
-						document
-							.querySelectorAll(".product .mt-2")
-							[l].textContent.split(":")[1]
-							.split("zł")[0]
-					);
-					let quantity = Number(
-						document.querySelectorAll(".nr")[l].value
-					);
-					fullCost += cost * quantity;
-				}
-				setTimeout(() => {
-					price.classList.add("text_green");
-					price.classList.remove("text_white");
-					price.innerHTML = fullCost + "zł";
-					fullCost = defaultPrice;
-					setTimeout(() => {
-						price.classList.add("text_white");
-						price.classList.remove("text_green");
-					}, "500");
-				}, "100");
-			});
-			minus[i].addEventListener("click", () => {
-				price.classList.add("text_red");
-				price.classList.remove("text_white");
-				let fullCost = defaultPrice;
-				for (let l = 0; l < nr.length; l++) {
-					let cost = parseFloat(
-						document
-							.querySelectorAll(".product .mt-2")
-							[l].textContent.split(":")[1]
-							.split("zł")[0]
-					);
-					let quantity = Number(
-						document.querySelectorAll(".nr")[l].value
-					);
-					fullCost += cost * quantity;
-				}
-				setTimeout(() => {
-					price.classList.add("text_red");
-					price.classList.remove("text_white");
-					price.innerHTML = fullCost + "zł";
-					fullCost = defaultPrice;
-					setTimeout(() => {
-						price.classList.add("text_white");
-						price.classList.remove("text_red");
-					}, "500");
-				}, "100");
-			});
-		}
 
-		let pizzaColors = ["#4f8f5b;", "#CE5E31"];
-		let pizza = 0;
-		document.querySelectorAll(".pizza-description").forEach((e) => {
-			let c = pizza % 2 == 0 ? 1 : 0;
-			pizza++;
-			e.style = `background-color: ${pizzaColors[c]}`;
-			if (pizza == 4) {
-				pizzaColors = [pizzaColors[1], pizzaColors[0]];
-				pizza = 0;
-			}
+		ingredientButtons.forEach((e) => {
+			let buttonClass = e.classList[0];
+			e.addEventListener("click", () => {
+				for (let l = 0; l < nr.length; l++) {
+					let cost = parseFloat(document.querySelectorAll(".product .mt-2")[l].textContent.split(":")[1].split("zł")[0]);
+					let quantity = Number(document.querySelectorAll(".nr")[l].value);
+					fullCost += cost * quantity;
+				}
+				setTimeout(() => {
+					if (buttonClass == "plus") price.classList.add("text_green");
+					if (buttonClass == "minus") price.classList.add("text_red");
+					price.classList.remove("text_white");
+					price.innerHTML = fullCost + "zł";
+					fullCost = defaultPrice;
+					setTimeout(() => {
+						price.classList.add("text_white");
+						if (buttonClass == "plus") price.classList.remove("text_green");
+						if (buttonClass == "minus") price.classList.remove("text_red");
+					}, "500");
+				}, "100");
+			});
 		});
 
-		let ingredientColors = ["#4f8f5b;", "#CE5E31"];
-		let ing = 0;
-		document.querySelectorAll(".pizza-ingredient").forEach((e) => {
-			let c = ing % 2 == 0 ? 1 : 0;
-			let cc = ing % 2 == 0 ? 0 : 1;
-			e.style = `background-color: ${ingredientColors[c]}`;
-			// document.querySelectorAll(".minus")[
-			// 	ing
-			// ].style = `background-color: ${ingredientColors[cc]}`;
-			// document.querySelectorAll(".plus")[
-			// 	ing
-			// ].style = `background-color: ${ingredientColors[cc]}`;
-			ing++;
+		let cardColors = ["#4f8f5b;", "#CE5E31"];
+		document.querySelectorAll(".pizza-description").forEach((e, i) => {
+			let c = i % 2 == 0 ? 1 : 0;
+			e.style = `background-color: ${cardColors[c]}`;
+			if (i == 3) cardColors = [cardColors[1], cardColors[0]];
+		});
+
+		document.querySelectorAll(".pizza-ingredient").forEach((e, i) => {
+			let c = i % 2 == 0 ? 1 : 0;
+			e.style = `background-color: ${cardColors[c]}`;
+		});
+
+		let basePrices = [];
+		document.querySelectorAll(".pizza-description").forEach((e, i) => {
+			let price = e.querySelector(".pizza-price");
+			basePrices.push(Number(price.textContent.split(" ")[0]));
+			let currentPrice = basePrices[i];
+			e.querySelectorAll("input[type=radio]").forEach((b) => {
+				b.addEventListener("click", () => {
+					if (b.value == "30cm") price.textContent = `${(currentPrice * 0.8).toFixed(2)} zł`;
+					if (b.value == "45cm") price.textContent = `${(currentPrice * 1.0).toFixed(2)} zł`;
+					if (b.value == "60cm") price.textContent = `${(currentPrice * 1.2).toFixed(2)} zł`;
+				});
+			});
 		});
 	}
 }, 200);
@@ -178,8 +145,8 @@ if (daysTag != null) {
 		for (let i = 1; i <= lastDateofMonth; i++) {
 			let isToday =
 				i === new Date().getDate() &&
-				currMonth === new Date().getMonth() &&
-				currYear === new Date().getFullYear()
+					currMonth === new Date().getMonth() &&
+					currYear === new Date().getFullYear()
 					? "active"
 					: "";
 			liTag += `<li class="${isToday}">${i}</li>`;
