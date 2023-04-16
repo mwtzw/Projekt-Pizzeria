@@ -3,7 +3,7 @@ if (isset($_GET)) {
     if ($_GET['action'] === "login") {
         if (isset($_POST['email']))
             if (User->loginUser($_POST)) {
-                header("Location: ../menu1.php");
+                header("Location: ../menu.php");
             } else {
                 User->setMessage("", "Nieprawidłowy login lub hasło", "error");
                 header("Location: ../index.php");

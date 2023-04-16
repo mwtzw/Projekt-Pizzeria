@@ -3,7 +3,7 @@
 if (User->isNotLoggedIn()) {
     $_SESSION['message']['message'] = "Musisz być zalogowany aby dodać produkt do koszyka";
     $_SESSION['message']['type'] = "error";
-    header("Location: ../menu1.php");
+    header("Location: ../menu.php");
 }
 
 if (isset($_GET['action'])) {
@@ -40,4 +40,4 @@ if (isset($_GET['action'])) {
         User->setMessage("Dodano", "produkt do koszyka", "info");
     }
 }
-header("Location: ../menu1.php#pizzas");
+header("Location: ../menu.php#pizzas");

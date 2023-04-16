@@ -42,7 +42,7 @@
           <div class="d-flex justify-content-center">
             <ul class="text-white navbar-nav mb-2 mb-md-0">
               <li class="nav-item m-1 d-flex justify-content-center align-items-center">
-                <a href="menu1.php" class="nav-link">Menu</a>
+                <a href="menu.php" class="nav-link">Menu</a>
               </li>
               <li class="nav-item m-1 d-flex justify-content-center align-items-center">
                 <a href="./#best2" class="nav-link ">Bestsellery</a>
