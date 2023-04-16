@@ -73,7 +73,7 @@ class TemplateClass
     {
         $price = number_format($price, 2);
         $display = "";
-        if ($cards == "" && $cards == "") {
+        if ($cards == "" && $customCards == "") {
             $cards = "<div class='text-center w-100'>Jeszcze nic tu niema</div>";
             $display = "disabled style='background-color: #828282'";
         }
