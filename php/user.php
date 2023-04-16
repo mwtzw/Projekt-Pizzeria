@@ -5,8 +5,7 @@ if (isset($_GET)) {
             if (User->loginUser($_POST)) {
                 header("Location: ../menu1.php");
             } else {
-                $_SESSION['message']['message'] = "Nieprawidłowy login lub hasło";
-                $_SESSION['message']['type'] = "error";
+                User->setMessage("", "Nieprawidłowy login lub hasło", "error");
                 header("Location: ../index.php");
             }
 
