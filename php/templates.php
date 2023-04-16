@@ -175,29 +175,29 @@ class TemplateClass
                     <!-- form  do REJESTRACJI -->
                     <form id="form2" action="php/user.php?action=register" method="post" class="m-3 d-none">
                         <div class="form-floating mb-3">
-                        <input name="name" type="text" class="form-control rounded-4" id="floatingInput" placeholder=".">
+                        <input name="name" required type="text" class="form-control rounded-4" id="floatingInput" placeholder=".">
                         <label for="floatingInput">Imię</label>
                         </div>
 
                         <div class="form-floating mb-3">
-                        <input name="surname" type="text" class="form-control rounded-4" id="floatingInput" placeholder=".">
+                        <input name="surname" required type="text" class="form-control rounded-4" id="floatingInput" placeholder=".">
                         <label for="floatingInput">Nazwisko</label>
                         </div>
 
 
                         <div class="form-floating mb-3">
-                        <input name="phone" type="text" class="form-control rounded-4" id="floatingInput" placeholder=".">
+                        <input name="phone" required pattern="[0-9]{9}" type="text" class="form-control rounded-4" id="floatingInput" placeholder=".">
                         <label for="floatingInput">Numer</label>
                         </div>
 
                         <div class="form-floating mb-3">
-                        <input name="email" type="text" class="form-control rounded-4" id="floatingInput" placeholder=".">
+                        <input name="email" required  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" type="text" class="form-control rounded-4" id="floatingInput" placeholder=".">
                         <label for="floatingInput">Adres e-mail</label>
                         </div>
 
 
                         <div class="form-floating mb-3">
-                        <input name="password" type="password" id="password-field" class="form-control rounded-4" id="floatingPassword" placeholder=".">
+                        <input name="password" required type="password" id="password-field" class="form-control rounded-4" id="floatingPassword" placeholder=".">
                         <label for="floatingPassword">Hasło</label>
 
                         </div>
