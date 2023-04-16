@@ -251,7 +251,6 @@ class TemplateClass
                     </button>
                     <ul class="dropdown-menu dropdown-menu-lg-start">
                         <li><a class="dropdown-item" href="dashboard.php">Dashbord</a></li>
-                        <li><a class="dropdown-item" href="#">Historia</a></li>
                         <li><a class="dropdown-item" href="php/user.php?action=logout">Wyloguj się</a></li>
                     </ul>
                 </div>
