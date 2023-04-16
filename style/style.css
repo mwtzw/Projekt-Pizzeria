@@ -9,13 +9,7 @@
     --bs-nav-link-color: none;
 }
 
-/* #login-form{
-    background-color: rgb(255, 255, 255);
-    width: 500px;
-    height: 700px;
-    opacity: 70%;
-    border-radius: 20px;
-} */
+
 header #navbarHeader .row a:hover {
     background-color: #CE5E31;
 }
@@ -145,7 +139,8 @@ transition: 0.3s ease-in-out;
     color: #ffffff;
     font-family: pizza;
     text-align: center;
-    font-size: 400px;
+    z-index:-2;
+    font-size: 340px;
     text-shadow: 5px 2px 2px rgba(0, 0, 0, 0.975); 
     margin-bottom: 7rem;
 }

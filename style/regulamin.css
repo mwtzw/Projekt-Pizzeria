@@ -35,7 +35,7 @@ button:hover {
 	transform: scale(1.06);
 }
 iframe {
-	width: 800px;
+	width: 100%;
 	border-radius: 40px;
 	margin-bottom: 40px;
 	margin-top: 40px;
