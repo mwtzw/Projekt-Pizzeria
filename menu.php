@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="style/jquery.nice-number.css">
   <script src="javascript/jquery.nice-number.js"></script>
   <link rel="stylesheet" href="libraries/aos.css" />
+  <link rel="shortcut icon" href="img/icons/favicon.svg" type="image/x-icon">
 </head>
 
 <body>

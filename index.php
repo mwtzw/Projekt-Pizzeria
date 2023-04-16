@@ -20,6 +20,7 @@
   <script src="libraries/owl.carousel.min.js"></script>
   <script src="libraries/popper.min.js"></script>
   <script src="libraries/bootstrap.min.js"></script>
+  <link rel="shortcut icon" href="img/icons/favicon.svg" type="image/x-icon">
 </head>
 
 <body>
