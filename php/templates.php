@@ -387,7 +387,7 @@ class TemplateClass
     public function bestsellers($data)
     {
         return <<< TEMPLATE
-            <DIV  class="container-fluid bestse" id="best2">
+            <DIV  class="container-fluid bestse" id="bestsellers">
                 <div  data-aos="fade-up" data-aos-delay="300" class="top d-flex justify-content-center flex-wrap">
                     <div class="best d-flex justify-content-between align-items-center flex-column">
                         <img src="img/icons/laur2.png" alt="laur" class="laur">
@@ -396,7 +396,7 @@ class TemplateClass
                         </div>
                         <div id="podium-drugie" class="mb-5 p-4 text-center text-white d-flex justify-content-center align-items-center fs-1 fw-bold">2. {$data[1]['name']}</div>
                     </div>
-                    <div class="best2 d-flex justify-content-center align-items-center flex-column">
+                    <div class="bestsellers d-flex justify-content-center align-items-center flex-column">
                         <img src="img/icons/laur1.png" alt="laur" class="laur2">
                         <div class="best-zdjecie">
                         <img src="{$data[0]['image']}" alt="{$data[0]['name']}">

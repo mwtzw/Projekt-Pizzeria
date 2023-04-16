@@ -45,10 +45,10 @@
                 <a href="menu.php" class="nav-link">Menu</a>
               </li>
               <li class="nav-item m-1 d-flex justify-content-center align-items-center">
-                <a href="./#best2" class="nav-link ">Bestsellery</a>
+                <a href="./#bestsellers" class="nav-link ">Bestsellery</a>
               </li>
               <li class="nav-item m-1 d-flex justify-content-center align-items-center">
-                <a href="./#onas3" class="nav-link ">O nas</a>
+                <a href="./#aboutUs" class="nav-link ">O nas</a>
               </li>
               <?php
               if (User->isNotLoggedIn()) {
